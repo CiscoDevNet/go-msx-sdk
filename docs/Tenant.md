@@ -1,0 +1,285 @@
+# Tenant
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **string** |  | [optional] [readonly] 
+**CreatedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
+**ModifiedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
+**Suspended** | Pointer to **bool** |  | [optional] [readonly] 
+**Name** | **string** |  | 
+**Description** | Pointer to **string** |  | [optional] 
+**Url** | Pointer to **string** |  | [optional] 
+**Image** | Pointer to **string** |  | [optional] 
+**ParentId** | Pointer to **string** |  | [optional] 
+**NumberOfChildren** | Pointer to **int64** |  | [optional] [readonly] 
+
+## Methods
+
+### NewTenant
+
+`func NewTenant(name string, ) *Tenant`
+
+NewTenant instantiates a new Tenant object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewTenantWithDefaults
+
+`func NewTenantWithDefaults() *Tenant`
+
+NewTenantWithDefaults instantiates a new Tenant object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *Tenant) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *Tenant) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *Tenant) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *Tenant) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetCreatedOn
+
+`func (o *Tenant) GetCreatedOn() time.Time`
+
+GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
+
+### GetCreatedOnOk
+
+`func (o *Tenant) GetCreatedOnOk() (*time.Time, bool)`
+
+GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedOn
+
+`func (o *Tenant) SetCreatedOn(v time.Time)`
+
+SetCreatedOn sets CreatedOn field to given value.
+
+### HasCreatedOn
+
+`func (o *Tenant) HasCreatedOn() bool`
+
+HasCreatedOn returns a boolean if a field has been set.
+
+### GetModifiedOn
+
+`func (o *Tenant) GetModifiedOn() time.Time`
+
+GetModifiedOn returns the ModifiedOn field if non-nil, zero value otherwise.
+
+### GetModifiedOnOk
+
+`func (o *Tenant) GetModifiedOnOk() (*time.Time, bool)`
+
+GetModifiedOnOk returns a tuple with the ModifiedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedOn
+
+`func (o *Tenant) SetModifiedOn(v time.Time)`
+
+SetModifiedOn sets ModifiedOn field to given value.
+
+### HasModifiedOn
+
+`func (o *Tenant) HasModifiedOn() bool`
+
+HasModifiedOn returns a boolean if a field has been set.
+
+### GetSuspended
+
+`func (o *Tenant) GetSuspended() bool`
+
+GetSuspended returns the Suspended field if non-nil, zero value otherwise.
+
+### GetSuspendedOk
+
+`func (o *Tenant) GetSuspendedOk() (*bool, bool)`
+
+GetSuspendedOk returns a tuple with the Suspended field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuspended
+
+`func (o *Tenant) SetSuspended(v bool)`
+
+SetSuspended sets Suspended field to given value.
+
+### HasSuspended
+
+`func (o *Tenant) HasSuspended() bool`
+
+HasSuspended returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *Tenant) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *Tenant) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *Tenant) SetName(v string)`
+
+SetName sets Name field to given value.
+
+
+### GetDescription
+
+`func (o *Tenant) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *Tenant) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *Tenant) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *Tenant) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetUrl
+
+`func (o *Tenant) GetUrl() string`
+
+GetUrl returns the Url field if non-nil, zero value otherwise.
+
+### GetUrlOk
+
+`func (o *Tenant) GetUrlOk() (*string, bool)`
+
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrl
+
+`func (o *Tenant) SetUrl(v string)`
+
+SetUrl sets Url field to given value.
+
+### HasUrl
+
+`func (o *Tenant) HasUrl() bool`
+
+HasUrl returns a boolean if a field has been set.
+
+### GetImage
+
+`func (o *Tenant) GetImage() string`
+
+GetImage returns the Image field if non-nil, zero value otherwise.
+
+### GetImageOk
+
+`func (o *Tenant) GetImageOk() (*string, bool)`
+
+GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImage
+
+`func (o *Tenant) SetImage(v string)`
+
+SetImage sets Image field to given value.
+
+### HasImage
+
+`func (o *Tenant) HasImage() bool`
+
+HasImage returns a boolean if a field has been set.
+
+### GetParentId
+
+`func (o *Tenant) GetParentId() string`
+
+GetParentId returns the ParentId field if non-nil, zero value otherwise.
+
+### GetParentIdOk
+
+`func (o *Tenant) GetParentIdOk() (*string, bool)`
+
+GetParentIdOk returns a tuple with the ParentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentId
+
+`func (o *Tenant) SetParentId(v string)`
+
+SetParentId sets ParentId field to given value.
+
+### HasParentId
+
+`func (o *Tenant) HasParentId() bool`
+
+HasParentId returns a boolean if a field has been set.
+
+### GetNumberOfChildren
+
+`func (o *Tenant) GetNumberOfChildren() int64`
+
+GetNumberOfChildren returns the NumberOfChildren field if non-nil, zero value otherwise.
+
+### GetNumberOfChildrenOk
+
+`func (o *Tenant) GetNumberOfChildrenOk() (*int64, bool)`
+
+GetNumberOfChildrenOk returns a tuple with the NumberOfChildren field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNumberOfChildren
+
+`func (o *Tenant) SetNumberOfChildren(v int64)`
+
+SetNumberOfChildren sets NumberOfChildren field to given value.
+
+### HasNumberOfChildren
+
+`func (o *Tenant) HasNumberOfChildren() bool`
+
+HasNumberOfChildren returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
