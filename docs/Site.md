@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Address** | Pointer to [**SiteAddress**](SiteAddress.md) |  | [optional] 
-**Contact** | Pointer to [**SiteContact**](SiteContact.md) |  | [optional] 
+**Address** | Pointer to [**NullableSiteAddress**](SiteAddress.md) |  | [optional] 
+**Contact** | Pointer to [**NullableSiteContact**](SiteContact.md) |  | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
 **Attributes** | Pointer to **map[string]string** |  | [optional] 
 **Devices** | Pointer to [**[]DeviceSummary**](DeviceSummary.md) |  | [optional] 
@@ -217,6 +217,16 @@ SetAddress sets Address field to given value.
 
 HasAddress returns a boolean if a field has been set.
 
+### SetAddressNil
+
+`func (o *Site) SetAddressNil(b bool)`
+
+ SetAddressNil sets the value for Address to be an explicit nil
+
+### UnsetAddress
+`func (o *Site) UnsetAddress()`
+
+UnsetAddress ensures that no value is present for Address, not even an explicit nil
 ### GetContact
 
 `func (o *Site) GetContact() SiteContact`
@@ -242,6 +252,16 @@ SetContact sets Contact field to given value.
 
 HasContact returns a boolean if a field has been set.
 
+### SetContactNil
+
+`func (o *Site) SetContactNil(b bool)`
+
+ SetContactNil sets the value for Contact to be an explicit nil
+
+### UnsetContact
+`func (o *Site) UnsetContact()`
+
+UnsetContact ensures that no value is present for Contact, not even an explicit nil
 ### GetImage
 
 `func (o *Site) GetImage() string`

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GitInfo** | Pointer to [**WorkflowMetadataGitInfo**](WorkflowMetadata_git_info.md) |  | [optional] 
+**GitInfo** | Pointer to [**WorkflowMetadataGitInfo**](WorkflowMetadataGitInfo.md) |  | [optional] 
 
 ## Methods
 

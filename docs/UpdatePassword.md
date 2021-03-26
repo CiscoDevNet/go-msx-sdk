@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Username** | **string** |  | 
-**OldPassword** | **string** |  | 
+**OldPassword** | Pointer to **NullableString** |  | [optional] 
 **NewPassword** | **string** |  | 
 
 ## Methods
 
 ### NewUpdatePassword
 
-`func NewUpdatePassword(username string, oldPassword string, newPassword string, ) *UpdatePassword`
+`func NewUpdatePassword(username string, newPassword string, ) *UpdatePassword`
 
 NewUpdatePassword instantiates a new UpdatePassword object
 This constructor will assign default values to properties that have it defined,
@@ -66,7 +66,22 @@ and a boolean to check if the value has been set.
 
 SetOldPassword sets OldPassword field to given value.
 
+### HasOldPassword
 
+`func (o *UpdatePassword) HasOldPassword() bool`
+
+HasOldPassword returns a boolean if a field has been set.
+
+### SetOldPasswordNil
+
+`func (o *UpdatePassword) SetOldPasswordNil(b bool)`
+
+ SetOldPasswordNil sets the value for OldPassword to be an explicit nil
+
+### UnsetOldPassword
+`func (o *UpdatePassword) UnsetOldPassword()`
+
+UnsetOldPassword ensures that no value is present for OldPassword, not even an explicit nil
 ### GetNewPassword
 
 `func (o *UpdatePassword) GetNewPassword() string`

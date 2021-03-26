@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **ProviderId** | Pointer to **string** |  | [optional] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
-**ServiceId** | Pointer to **string** |  | [optional] 
+**ServiceInstanceId** | Pointer to **string** |  | [optional] 
 **SubscriptionId** | Pointer to **string** |  | [optional] 
 **TenantId** | **string** |  | 
 **Name** | **string** |  | 
@@ -170,30 +170,30 @@ SetModifiedOn sets ModifiedOn field to given value.
 
 HasModifiedOn returns a boolean if a field has been set.
 
-### GetServiceId
+### GetServiceInstanceId
 
-`func (o *Device) GetServiceId() string`
+`func (o *Device) GetServiceInstanceId() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceInstanceId returns the ServiceInstanceId field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceInstanceIdOk
 
-`func (o *Device) GetServiceIdOk() (*string, bool)`
+`func (o *Device) GetServiceInstanceIdOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceInstanceIdOk returns a tuple with the ServiceInstanceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceInstanceId
 
-`func (o *Device) SetServiceId(v string)`
+`func (o *Device) SetServiceInstanceId(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceInstanceId sets ServiceInstanceId field to given value.
 
-### HasServiceId
+### HasServiceInstanceId
 
-`func (o *Device) HasServiceId() bool`
+`func (o *Device) HasServiceInstanceId() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceInstanceId returns a boolean if a field has been set.
 
 ### GetSubscriptionId
 

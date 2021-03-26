@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] [readonly] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
-**Suspended** | Pointer to **bool** |  | [optional] [readonly] 
+**Suspended** | Pointer to **NullableBool** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Url** | Pointer to **string** |  | [optional] 
-**Image** | Pointer to **string** |  | [optional] 
-**ParentId** | Pointer to **string** |  | [optional] 
-**NumberOfChildren** | Pointer to **int64** |  | [optional] [readonly] 
+**Image** | Pointer to **NullableString** |  | [optional] 
+**ParentId** | Pointer to **NullableString** |  | [optional] 
+**NumberOfChildren** | Pointer to **NullableInt64** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -134,6 +134,16 @@ SetSuspended sets Suspended field to given value.
 
 HasSuspended returns a boolean if a field has been set.
 
+### SetSuspendedNil
+
+`func (o *Tenant) SetSuspendedNil(b bool)`
+
+ SetSuspendedNil sets the value for Suspended to be an explicit nil
+
+### UnsetSuspended
+`func (o *Tenant) UnsetSuspended()`
+
+UnsetSuspended ensures that no value is present for Suspended, not even an explicit nil
 ### GetName
 
 `func (o *Tenant) GetName() string`
@@ -229,6 +239,16 @@ SetImage sets Image field to given value.
 
 HasImage returns a boolean if a field has been set.
 
+### SetImageNil
+
+`func (o *Tenant) SetImageNil(b bool)`
+
+ SetImageNil sets the value for Image to be an explicit nil
+
+### UnsetImage
+`func (o *Tenant) UnsetImage()`
+
+UnsetImage ensures that no value is present for Image, not even an explicit nil
 ### GetParentId
 
 `func (o *Tenant) GetParentId() string`
@@ -254,6 +274,16 @@ SetParentId sets ParentId field to given value.
 
 HasParentId returns a boolean if a field has been set.
 
+### SetParentIdNil
+
+`func (o *Tenant) SetParentIdNil(b bool)`
+
+ SetParentIdNil sets the value for ParentId to be an explicit nil
+
+### UnsetParentId
+`func (o *Tenant) UnsetParentId()`
+
+UnsetParentId ensures that no value is present for ParentId, not even an explicit nil
 ### GetNumberOfChildren
 
 `func (o *Tenant) GetNumberOfChildren() int64`
@@ -279,6 +309,16 @@ SetNumberOfChildren sets NumberOfChildren field to given value.
 
 HasNumberOfChildren returns a boolean if a field has been set.
 
+### SetNumberOfChildrenNil
+
+`func (o *Tenant) SetNumberOfChildrenNil(b bool)`
+
+ SetNumberOfChildrenNil sets the value for NumberOfChildren to be an explicit nil
+
+### UnsetNumberOfChildren
+`func (o *Tenant) UnsetNumberOfChildren()`
+
+UnsetNumberOfChildren ensures that no value is present for NumberOfChildren, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServiceId** | Pointer to **string** |  | [optional] 
+**ServiceInstanceId** | Pointer to **string** |  | [optional] 
 **SubscriptionId** | Pointer to **string** |  | [optional] 
 **TenantId** | **string** |  | 
 **Name** | **string** |  | 
@@ -40,30 +40,30 @@ NewDeviceCreateWithDefaults instantiates a new DeviceCreate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetServiceId
+### GetServiceInstanceId
 
-`func (o *DeviceCreate) GetServiceId() string`
+`func (o *DeviceCreate) GetServiceInstanceId() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetServiceInstanceId returns the ServiceInstanceId field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetServiceInstanceIdOk
 
-`func (o *DeviceCreate) GetServiceIdOk() (*string, bool)`
+`func (o *DeviceCreate) GetServiceInstanceIdOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetServiceInstanceIdOk returns a tuple with the ServiceInstanceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetServiceInstanceId
 
-`func (o *DeviceCreate) SetServiceId(v string)`
+`func (o *DeviceCreate) SetServiceInstanceId(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetServiceInstanceId sets ServiceInstanceId field to given value.
 
-### HasServiceId
+### HasServiceInstanceId
 
-`func (o *DeviceCreate) HasServiceId() bool`
+`func (o *DeviceCreate) HasServiceInstanceId() bool`
 
-HasServiceId returns a boolean if a field has been set.
+HasServiceInstanceId returns a boolean if a field has been set.
 
 ### GetSubscriptionId
 

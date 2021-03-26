@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] [readonly] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
-**Suspended** | Pointer to **bool** |  | [optional] [readonly] 
+**Suspended** | Pointer to **NullableBool** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -128,6 +128,16 @@ SetSuspended sets Suspended field to given value.
 
 HasSuspended returns a boolean if a field has been set.
 
+### SetSuspendedNil
+
+`func (o *TenantAllOf) SetSuspendedNil(b bool)`
+
+ SetSuspendedNil sets the value for Suspended to be an explicit nil
+
+### UnsetSuspended
+`func (o *TenantAllOf) UnsetSuspended()`
+
+UnsetSuspended ensures that no value is present for Suspended, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

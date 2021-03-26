@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Username** | Pointer to **string** |  | [optional] 
-**Password** | **string** |  | 
+**Password** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
 ### NewUserCreateAllOf
 
-`func NewUserCreateAllOf(password string, ) *UserCreateAllOf`
+`func NewUserCreateAllOf() *UserCreateAllOf`
 
 NewUserCreateAllOf instantiates a new UserCreateAllOf object
 This constructor will assign default values to properties that have it defined,
@@ -70,7 +70,22 @@ and a boolean to check if the value has been set.
 
 SetPassword sets Password field to given value.
 
+### HasPassword
 
+`func (o *UserCreateAllOf) HasPassword() bool`
+
+HasPassword returns a boolean if a field has been set.
+
+### SetPasswordNil
+
+`func (o *UserCreateAllOf) SetPasswordNil(b bool)`
+
+ SetPasswordNil sets the value for Password to be an explicit nil
+
+### UnsetPassword
+`func (o *UserCreateAllOf) UnsetPassword()`
+
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

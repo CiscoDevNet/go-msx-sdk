@@ -41,7 +41,7 @@ func main() {
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
     resp, r, err := api_client.SecurityApi.GetAccessToken(context.Background()).Authorization(authorization).GrantType(grantType).Username(username).Password(password).AccessToken(accessToken).SwitchUsername(switchUsername).TenantId(tenantId).Scope(scope).Nonce(nonce).TenantName(tenantName).Execute()
-    if err.Error() != "" {
+    if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.GetAccessToken``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }

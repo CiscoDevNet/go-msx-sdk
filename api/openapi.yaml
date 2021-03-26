@@ -1,16 +1,12 @@
 openapi: 3.0.0
 info:
-  contact:
-    email: somecontact@cisco.com
-    name: Cisco Systems Inc.
-    url: http://www.cisco.com
   description: MSX Platform SDK
   license:
     name: Apache License Version 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: http://www.cisco.com
   title: KAKAPO - MSX SDK
-  version: 3.10.0
+  version: 1.0.1
 servers:
 - url: //localhost:8765
 paths:
@@ -1560,77 +1556,100 @@ paths:
         name: deviceIds
         required: false
         schema:
-          $ref: '#/components/schemas/StringArray'
+          items:
+            type: string
+          type: array
         style: form
       - explode: true
         in: query
         name: serviceIds
         required: false
         schema:
-          $ref: '#/components/schemas/StringArray'
+          items:
+            type: string
+          type: array
         style: form
       - explode: true
         in: query
         name: types
         required: false
         schema:
-          $ref: '#/components/schemas/StringArray'
+          items:
+            type: string
+          type: array
         style: form
       - explode: true
         in: query
         name: serialKeys
         required: false
         schema:
-          $ref: '#/components/schemas/StringArray'
+          items:
+            type: string
+          type: array
         style: form
       - explode: true
         in: query
         name: serviceTypes
         required: false
         schema:
-          $ref: '#/components/schemas/StringArray'
+          items:
+            type: string
+          type: array
         style: form
       - explode: true
         in: query
         name: models
         required: false
         schema:
-          $ref: '#/components/schemas/StringArray'
+          items:
+            type: string
+          type: array
         style: form
       - explode: true
         in: query
         name: subtypes
         required: false
         schema:
-          $ref: '#/components/schemas/StringArray'
+          items:
+            type: string
+          type: array
         style: form
       - explode: true
         in: query
         name: names
         required: false
         schema:
-          $ref: '#/components/schemas/StringArray'
+          items:
+            type: string
+          type: array
         style: form
       - explode: true
         in: query
         name: versions
         required: false
         schema:
-          $ref: '#/components/schemas/StringArray'
+          items:
+            type: string
+          type: array
         style: form
       - explode: true
         in: query
         name: tenantIds
         required: false
         schema:
-          $ref: '#/components/schemas/UuidArray'
+          items:
+            format: uuid
+            type: string
+          type: array
         style: form
       - explode: true
         in: query
         name: severities
         required: false
         schema:
-          $ref: '#/components/schemas/StringArray'
+          items:
+            type: string
+          type: array
         style: form
       - explode: true
         in: query
@@ -4377,7 +4396,6 @@ paths:
           application/json:
             schema:
               items:
-                format: uuid
                 type: string
               minItems: 1
               type: array
@@ -4466,7 +4484,6 @@ paths:
           application/json:
             schema:
               items:
-                format: uuid
                 type: string
               minItems: 1
               type: array
@@ -4555,7 +4572,6 @@ paths:
           application/json:
             schema:
               items:
-                format: uuid
                 type: string
               minItems: 1
               type: array
@@ -4636,7 +4652,6 @@ paths:
         name: id
         required: true
         schema:
-          format: uuid
           type: string
         style: simple
       requestBody:
@@ -4644,7 +4659,6 @@ paths:
           application/json:
             schema:
               items:
-                format: uuid
                 type: string
               minItems: 1
               type: array
@@ -6434,6 +6448,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       responses:
@@ -6480,6 +6495,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       responses:
@@ -6592,6 +6608,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       - explode: true
@@ -6662,6 +6679,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       responses:
@@ -6786,6 +6804,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       - explode: true
@@ -6878,6 +6897,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       responses:
@@ -6944,6 +6964,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       responses:
@@ -7135,6 +7156,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       responses:
@@ -7181,6 +7203,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       responses:
@@ -7246,6 +7269,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       requestBody:
@@ -7480,6 +7504,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       responses:
@@ -7526,6 +7551,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       responses:
@@ -7593,6 +7619,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       requestBody:
@@ -7676,6 +7703,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       - explode: true
@@ -7845,6 +7873,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       responses:
@@ -7948,6 +7977,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       responses:
@@ -7999,6 +8029,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       - explode: false
@@ -8275,6 +8306,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       - explode: true
@@ -8533,6 +8565,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       responses:
@@ -8579,6 +8612,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       responses:
@@ -8652,6 +8686,7 @@ paths:
         name: id
         required: true
         schema:
+          format: ksuid
           type: string
         style: simple
       requestBody:
@@ -10864,6 +10899,7 @@ components:
         company: company
         postCode: postCode
         state: state
+      nullable: true
       properties:
         name:
           type: string
@@ -10896,6 +10932,7 @@ components:
         phone: phone
         name: name
         email: email
+      nullable: true
       properties:
         name:
           type: string
@@ -11075,12 +11112,15 @@ components:
           type: string
         image:
           maxLength: 40000
+          nullable: true
           type: string
         parentId:
           format: uuid
+          nullable: true
           type: string
         numberOfChildren:
           format: int64
+          nullable: true
           readOnly: true
           type: integer
       required:
@@ -11177,13 +11217,13 @@ components:
           type: string
         oldPassword:
           format: password
+          nullable: true
           type: string
         newPassword:
           format: password
           type: string
       required:
       - newPassword
-      - oldPassword
       - username
       type: object
     UsersPage:
@@ -11219,6 +11259,7 @@ components:
           key: '{}'
       properties:
         id:
+          format: ksuid
           type: string
         definition_id:
           type: string
@@ -11328,6 +11369,7 @@ components:
           key: '{}'
       properties:
         id:
+          format: ksuid
           type: string
         workflow_id:
           type: string
@@ -11685,15 +11727,6 @@ components:
         value:
           type: string
       type: object
-    StringArray:
-      items:
-        type: string
-      type: array
-    UuidArray:
-      items:
-        format: uuid
-        type: string
-      type: array
     PageHeader:
       properties:
         page:
@@ -11726,18 +11759,6 @@ components:
           readOnly: true
           type: string
       type: object
-    Name:
-      maxLength: 128
-      minLength: 1
-      type: string
-    Label:
-      maxLength: 128
-      minLength: 1
-      type: string
-    Description:
-      maxLength: 512
-      minLength: 1
-      type: string
     inline_object:
       properties:
         file:
@@ -11791,7 +11812,7 @@ components:
       type: object
     DeviceCreate_allOf:
       properties:
-        serviceId:
+        serviceInstanceId:
           type: string
         subscriptionId:
           type: string
@@ -11868,6 +11889,7 @@ components:
           readOnly: true
           type: string
         suspended:
+          nullable: true
           readOnly: true
           type: boolean
       type: object
@@ -11895,9 +11917,8 @@ components:
           type: string
         password:
           format: password
+          nullable: true
           type: string
-      required:
-      - password
       type: object
     UsersPage_allOf:
       properties:
@@ -11909,6 +11930,7 @@ components:
     Workflow_allOf:
       properties:
         id:
+          format: ksuid
           type: string
         schema_id:
           type: string
@@ -12011,6 +12033,7 @@ components:
     WorkflowEvent_allOf:
       properties:
         id:
+          format: ksuid
           type: string
         name:
           type: string
@@ -12030,6 +12053,7 @@ components:
     WorkflowInstance_allOf:
       properties:
         id:
+          format: ksuid
           type: string
         definition_id:
           type: string
@@ -12067,6 +12091,7 @@ components:
     WorkflowSchema_allOf:
       properties:
         id:
+          format: ksuid
           type: string
         schema_id:
           type: string
@@ -12112,6 +12137,7 @@ components:
     WorkflowTarget_allOf:
       properties:
         id:
+          format: ksuid
           type: string
         schema_id:
           type: string
