@@ -6,17 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] [readonly] 
 **TenantId** | Pointer to **string** |  | [optional] 
-**ParentId** | Pointer to **string** |  | [optional] 
+**ParentId** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Address** | Pointer to [**NullableSiteAddress**](SiteAddress.md) |  | [optional] 
 **Contact** | Pointer to [**NullableSiteContact**](SiteContact.md) |  | [optional] 
-**Image** | Pointer to **string** |  | [optional] 
+**Image** | Pointer to **NullableString** |  | [optional] 
 **Attributes** | Pointer to **map[string]string** |  | [optional] 
 **Devices** | Pointer to [**[]DeviceSummary**](DeviceSummary.md) |  | [optional] 
-**ServiceInstanceIds** | Pointer to **[]string** |  | [optional] 
-**Location** | Pointer to [**SiteLocation**](SiteLocation.md) |  | [optional] 
+**ServiceIds** | Pointer to **[]string** |  | [optional] 
+**Location** | Pointer to [**NullableSiteLocation**](SiteLocation.md) |  | [optional] 
 **Status** | Pointer to [**SiteStatus**](SiteStatus.md) |  | [optional] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
 **CreatedBy** | Pointer to **string** |  | [optional] [readonly] 
@@ -117,6 +117,16 @@ SetParentId sets ParentId field to given value.
 
 HasParentId returns a boolean if a field has been set.
 
+### SetParentIdNil
+
+`func (o *Site) SetParentIdNil(b bool)`
+
+ SetParentIdNil sets the value for ParentId to be an explicit nil
+
+### UnsetParentId
+`func (o *Site) UnsetParentId()`
+
+UnsetParentId ensures that no value is present for ParentId, not even an explicit nil
 ### GetName
 
 `func (o *Site) GetName() string`
@@ -167,6 +177,16 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *Site) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *Site) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetDescription
 
 `func (o *Site) GetDescription() string`
@@ -287,6 +307,16 @@ SetImage sets Image field to given value.
 
 HasImage returns a boolean if a field has been set.
 
+### SetImageNil
+
+`func (o *Site) SetImageNil(b bool)`
+
+ SetImageNil sets the value for Image to be an explicit nil
+
+### UnsetImage
+`func (o *Site) UnsetImage()`
+
+UnsetImage ensures that no value is present for Image, not even an explicit nil
 ### GetAttributes
 
 `func (o *Site) GetAttributes() map[string]string`
@@ -312,6 +342,16 @@ SetAttributes sets Attributes field to given value.
 
 HasAttributes returns a boolean if a field has been set.
 
+### SetAttributesNil
+
+`func (o *Site) SetAttributesNil(b bool)`
+
+ SetAttributesNil sets the value for Attributes to be an explicit nil
+
+### UnsetAttributes
+`func (o *Site) UnsetAttributes()`
+
+UnsetAttributes ensures that no value is present for Attributes, not even an explicit nil
 ### GetDevices
 
 `func (o *Site) GetDevices() []DeviceSummary`
@@ -337,30 +377,30 @@ SetDevices sets Devices field to given value.
 
 HasDevices returns a boolean if a field has been set.
 
-### GetServiceInstanceIds
+### GetServiceIds
 
-`func (o *Site) GetServiceInstanceIds() []string`
+`func (o *Site) GetServiceIds() []string`
 
-GetServiceInstanceIds returns the ServiceInstanceIds field if non-nil, zero value otherwise.
+GetServiceIds returns the ServiceIds field if non-nil, zero value otherwise.
 
-### GetServiceInstanceIdsOk
+### GetServiceIdsOk
 
-`func (o *Site) GetServiceInstanceIdsOk() (*[]string, bool)`
+`func (o *Site) GetServiceIdsOk() (*[]string, bool)`
 
-GetServiceInstanceIdsOk returns a tuple with the ServiceInstanceIds field if it's non-nil, zero value otherwise
+GetServiceIdsOk returns a tuple with the ServiceIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceInstanceIds
+### SetServiceIds
 
-`func (o *Site) SetServiceInstanceIds(v []string)`
+`func (o *Site) SetServiceIds(v []string)`
 
-SetServiceInstanceIds sets ServiceInstanceIds field to given value.
+SetServiceIds sets ServiceIds field to given value.
 
-### HasServiceInstanceIds
+### HasServiceIds
 
-`func (o *Site) HasServiceInstanceIds() bool`
+`func (o *Site) HasServiceIds() bool`
 
-HasServiceInstanceIds returns a boolean if a field has been set.
+HasServiceIds returns a boolean if a field has been set.
 
 ### GetLocation
 
@@ -387,6 +427,16 @@ SetLocation sets Location field to given value.
 
 HasLocation returns a boolean if a field has been set.
 
+### SetLocationNil
+
+`func (o *Site) SetLocationNil(b bool)`
+
+ SetLocationNil sets the value for Location to be an explicit nil
+
+### UnsetLocation
+`func (o *Site) UnsetLocation()`
+
+UnsetLocation ensures that no value is present for Location, not even an explicit nil
 ### GetStatus
 
 `func (o *Site) GetStatus() SiteStatus`

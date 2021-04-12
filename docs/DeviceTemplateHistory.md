@@ -6,12 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
 **DeviceId** | Pointer to **string** |  | [optional] 
+**InstanceId** | Pointer to **string** |  | [optional] 
 **TemplateId** | Pointer to **string** |  | [optional] 
 **UserId** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **StatusError** | Pointer to **string** |  | [optional] 
 **TemplateParams** | Pointer to [**[]NameValue**](NameValue.md) |  | [optional] 
-**ModifiedOn** | Pointer to **time.Time** |  | [optional] 
+**LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
 
@@ -81,6 +82,31 @@ SetDeviceId sets DeviceId field to given value.
 `func (o *DeviceTemplateHistory) HasDeviceId() bool`
 
 HasDeviceId returns a boolean if a field has been set.
+
+### GetInstanceId
+
+`func (o *DeviceTemplateHistory) GetInstanceId() string`
+
+GetInstanceId returns the InstanceId field if non-nil, zero value otherwise.
+
+### GetInstanceIdOk
+
+`func (o *DeviceTemplateHistory) GetInstanceIdOk() (*string, bool)`
+
+GetInstanceIdOk returns a tuple with the InstanceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInstanceId
+
+`func (o *DeviceTemplateHistory) SetInstanceId(v string)`
+
+SetInstanceId sets InstanceId field to given value.
+
+### HasInstanceId
+
+`func (o *DeviceTemplateHistory) HasInstanceId() bool`
+
+HasInstanceId returns a boolean if a field has been set.
 
 ### GetTemplateId
 
@@ -207,30 +233,30 @@ SetTemplateParams sets TemplateParams field to given value.
 
 HasTemplateParams returns a boolean if a field has been set.
 
-### GetModifiedOn
+### GetLastUpdated
 
-`func (o *DeviceTemplateHistory) GetModifiedOn() time.Time`
+`func (o *DeviceTemplateHistory) GetLastUpdated() time.Time`
 
-GetModifiedOn returns the ModifiedOn field if non-nil, zero value otherwise.
+GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
 
-### GetModifiedOnOk
+### GetLastUpdatedOk
 
-`func (o *DeviceTemplateHistory) GetModifiedOnOk() (*time.Time, bool)`
+`func (o *DeviceTemplateHistory) GetLastUpdatedOk() (*time.Time, bool)`
 
-GetModifiedOnOk returns a tuple with the ModifiedOn field if it's non-nil, zero value otherwise
+GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetModifiedOn
+### SetLastUpdated
 
-`func (o *DeviceTemplateHistory) SetModifiedOn(v time.Time)`
+`func (o *DeviceTemplateHistory) SetLastUpdated(v time.Time)`
 
-SetModifiedOn sets ModifiedOn field to given value.
+SetLastUpdated sets LastUpdated field to given value.
 
-### HasModifiedOn
+### HasLastUpdated
 
-`func (o *DeviceTemplateHistory) HasModifiedOn() bool`
+`func (o *DeviceTemplateHistory) HasLastUpdated() bool`
 
-HasModifiedOn returns a boolean if a field has been set.
+HasLastUpdated returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

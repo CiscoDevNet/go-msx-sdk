@@ -4,25 +4,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Description** | Pointer to **string** |  | [optional] 
-**Version** | Pointer to **string** |  | [optional] 
-**ServiceType** | **string** |  | 
-**DeviceModels** | Pointer to **[]string** |  | [optional] 
-**ConfigContent** | **string** |  | 
-**ResourceProvider** | **string** |  | 
-**TemplateStandard** | Pointer to **string** |  | [optional] 
-**TenantAccess** | Pointer to [**NullableDeviceTemplateAccess**](DeviceTemplateAccess.md) |  | [optional] 
-**TemplateParameterValidators** | Pointer to [**[]TemplateParameterValidator**](TemplateParameterValidator.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] [readonly] 
 **UserId** | Pointer to **string** |  | [optional] [readonly] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
+**Name** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
+**Version** | Pointer to **string** |  | [optional] 
+**ServiceType** | Pointer to **string** |  | [optional] 
+**DeviceModels** | Pointer to **[]string** |  | [optional] 
+**ConfigContent** | Pointer to **NullableString** |  | [optional] 
+**ResourceProvider** | Pointer to **NullableString** |  | [optional] 
+**TemplateStandard** | Pointer to **string** |  | [optional] 
+**TenantAccess** | Pointer to [**NullableDeviceTemplateAccess**](DeviceTemplateAccess.md) |  | [optional] 
+**TemplateParameterValidators** | Pointer to [**[]TemplateParameterValidator**](TemplateParameterValidator.md) |  | [optional] 
 
 ## Methods
 
 ### NewDeviceTemplate
 
-`func NewDeviceTemplate(name string, serviceType string, configContent string, resourceProvider string, ) *DeviceTemplate`
+`func NewDeviceTemplate() *DeviceTemplate`
 
 NewDeviceTemplate instantiates a new DeviceTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -36,6 +36,81 @@ will change when the set of required properties is changed
 NewDeviceTemplateWithDefaults instantiates a new DeviceTemplate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *DeviceTemplate) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *DeviceTemplate) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *DeviceTemplate) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *DeviceTemplate) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetUserId
+
+`func (o *DeviceTemplate) GetUserId() string`
+
+GetUserId returns the UserId field if non-nil, zero value otherwise.
+
+### GetUserIdOk
+
+`func (o *DeviceTemplate) GetUserIdOk() (*string, bool)`
+
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserId
+
+`func (o *DeviceTemplate) SetUserId(v string)`
+
+SetUserId sets UserId field to given value.
+
+### HasUserId
+
+`func (o *DeviceTemplate) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
+
+### GetCreatedOn
+
+`func (o *DeviceTemplate) GetCreatedOn() time.Time`
+
+GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
+
+### GetCreatedOnOk
+
+`func (o *DeviceTemplate) GetCreatedOnOk() (*time.Time, bool)`
+
+GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedOn
+
+`func (o *DeviceTemplate) SetCreatedOn(v time.Time)`
+
+SetCreatedOn sets CreatedOn field to given value.
+
+### HasCreatedOn
+
+`func (o *DeviceTemplate) HasCreatedOn() bool`
+
+HasCreatedOn returns a boolean if a field has been set.
 
 ### GetName
 
@@ -56,6 +131,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *DeviceTemplate) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -126,6 +206,11 @@ and a boolean to check if the value has been set.
 
 SetServiceType sets ServiceType field to given value.
 
+### HasServiceType
+
+`func (o *DeviceTemplate) HasServiceType() bool`
+
+HasServiceType returns a boolean if a field has been set.
 
 ### GetDeviceModels
 
@@ -152,6 +237,16 @@ SetDeviceModels sets DeviceModels field to given value.
 
 HasDeviceModels returns a boolean if a field has been set.
 
+### SetDeviceModelsNil
+
+`func (o *DeviceTemplate) SetDeviceModelsNil(b bool)`
+
+ SetDeviceModelsNil sets the value for DeviceModels to be an explicit nil
+
+### UnsetDeviceModels
+`func (o *DeviceTemplate) UnsetDeviceModels()`
+
+UnsetDeviceModels ensures that no value is present for DeviceModels, not even an explicit nil
 ### GetConfigContent
 
 `func (o *DeviceTemplate) GetConfigContent() string`
@@ -171,7 +266,22 @@ and a boolean to check if the value has been set.
 
 SetConfigContent sets ConfigContent field to given value.
 
+### HasConfigContent
 
+`func (o *DeviceTemplate) HasConfigContent() bool`
+
+HasConfigContent returns a boolean if a field has been set.
+
+### SetConfigContentNil
+
+`func (o *DeviceTemplate) SetConfigContentNil(b bool)`
+
+ SetConfigContentNil sets the value for ConfigContent to be an explicit nil
+
+### UnsetConfigContent
+`func (o *DeviceTemplate) UnsetConfigContent()`
+
+UnsetConfigContent ensures that no value is present for ConfigContent, not even an explicit nil
 ### GetResourceProvider
 
 `func (o *DeviceTemplate) GetResourceProvider() string`
@@ -191,7 +301,22 @@ and a boolean to check if the value has been set.
 
 SetResourceProvider sets ResourceProvider field to given value.
 
+### HasResourceProvider
 
+`func (o *DeviceTemplate) HasResourceProvider() bool`
+
+HasResourceProvider returns a boolean if a field has been set.
+
+### SetResourceProviderNil
+
+`func (o *DeviceTemplate) SetResourceProviderNil(b bool)`
+
+ SetResourceProviderNil sets the value for ResourceProvider to be an explicit nil
+
+### UnsetResourceProvider
+`func (o *DeviceTemplate) UnsetResourceProvider()`
+
+UnsetResourceProvider ensures that no value is present for ResourceProvider, not even an explicit nil
 ### GetTemplateStandard
 
 `func (o *DeviceTemplate) GetTemplateStandard() string`
@@ -277,81 +402,16 @@ SetTemplateParameterValidators sets TemplateParameterValidators field to given v
 
 HasTemplateParameterValidators returns a boolean if a field has been set.
 
-### GetId
+### SetTemplateParameterValidatorsNil
 
-`func (o *DeviceTemplate) GetId() string`
+`func (o *DeviceTemplate) SetTemplateParameterValidatorsNil(b bool)`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+ SetTemplateParameterValidatorsNil sets the value for TemplateParameterValidators to be an explicit nil
 
-### GetIdOk
+### UnsetTemplateParameterValidators
+`func (o *DeviceTemplate) UnsetTemplateParameterValidators()`
 
-`func (o *DeviceTemplate) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *DeviceTemplate) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *DeviceTemplate) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetUserId
-
-`func (o *DeviceTemplate) GetUserId() string`
-
-GetUserId returns the UserId field if non-nil, zero value otherwise.
-
-### GetUserIdOk
-
-`func (o *DeviceTemplate) GetUserIdOk() (*string, bool)`
-
-GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserId
-
-`func (o *DeviceTemplate) SetUserId(v string)`
-
-SetUserId sets UserId field to given value.
-
-### HasUserId
-
-`func (o *DeviceTemplate) HasUserId() bool`
-
-HasUserId returns a boolean if a field has been set.
-
-### GetCreatedOn
-
-`func (o *DeviceTemplate) GetCreatedOn() time.Time`
-
-GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
-
-### GetCreatedOnOk
-
-`func (o *DeviceTemplate) GetCreatedOnOk() (*time.Time, bool)`
-
-GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedOn
-
-`func (o *DeviceTemplate) SetCreatedOn(v time.Time)`
-
-SetCreatedOn sets CreatedOn field to given value.
-
-### HasCreatedOn
-
-`func (o *DeviceTemplate) HasCreatedOn() bool`
-
-HasCreatedOn returns a boolean if a field has been set.
-
+UnsetTemplateParameterValidators ensures that no value is present for TemplateParameterValidators, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

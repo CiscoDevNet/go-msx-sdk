@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TenantIds** | Pointer to **[]string** | List of tenants to grant access. Mutually exclusive from global flag field. | [optional] 
-**Global** | Pointer to **bool** | Determines if the template is globally accessible. Mutually exclusive from tenant list field. | [optional] 
+**Global** | Pointer to **NullableBool** | Determines if the template is globally accessible. Mutually exclusive from tenant list field. | [optional] 
 
 ## Methods
 
@@ -51,6 +51,16 @@ SetTenantIds sets TenantIds field to given value.
 
 HasTenantIds returns a boolean if a field has been set.
 
+### SetTenantIdsNil
+
+`func (o *DeviceTemplateAccess) SetTenantIdsNil(b bool)`
+
+ SetTenantIdsNil sets the value for TenantIds to be an explicit nil
+
+### UnsetTenantIds
+`func (o *DeviceTemplateAccess) UnsetTenantIds()`
+
+UnsetTenantIds ensures that no value is present for TenantIds, not even an explicit nil
 ### GetGlobal
 
 `func (o *DeviceTemplateAccess) GetGlobal() bool`
@@ -76,6 +86,16 @@ SetGlobal sets Global field to given value.
 
 HasGlobal returns a boolean if a field has been set.
 
+### SetGlobalNil
+
+`func (o *DeviceTemplateAccess) SetGlobalNil(b bool)`
+
+ SetGlobalNil sets the value for Global to be an explicit nil
+
+### UnsetGlobal
+`func (o *DeviceTemplateAccess) UnsetGlobal()`
+
+UnsetGlobal ensures that no value is present for Global, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

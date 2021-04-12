@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **FailureListOfTenants** | Pointer to **[]string** |  | [optional] 
-**Global** | Pointer to **bool** |  | [optional] 
+**Global** | Pointer to **NullableBool** |  | [optional] 
 **SuccessListOfTenants** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
@@ -52,6 +52,16 @@ SetFailureListOfTenants sets FailureListOfTenants field to given value.
 
 HasFailureListOfTenants returns a boolean if a field has been set.
 
+### SetFailureListOfTenantsNil
+
+`func (o *DeviceTemplateAccessResponse) SetFailureListOfTenantsNil(b bool)`
+
+ SetFailureListOfTenantsNil sets the value for FailureListOfTenants to be an explicit nil
+
+### UnsetFailureListOfTenants
+`func (o *DeviceTemplateAccessResponse) UnsetFailureListOfTenants()`
+
+UnsetFailureListOfTenants ensures that no value is present for FailureListOfTenants, not even an explicit nil
 ### GetGlobal
 
 `func (o *DeviceTemplateAccessResponse) GetGlobal() bool`
@@ -77,6 +87,16 @@ SetGlobal sets Global field to given value.
 
 HasGlobal returns a boolean if a field has been set.
 
+### SetGlobalNil
+
+`func (o *DeviceTemplateAccessResponse) SetGlobalNil(b bool)`
+
+ SetGlobalNil sets the value for Global to be an explicit nil
+
+### UnsetGlobal
+`func (o *DeviceTemplateAccessResponse) UnsetGlobal()`
+
+UnsetGlobal ensures that no value is present for Global, not even an explicit nil
 ### GetSuccessListOfTenants
 
 `func (o *DeviceTemplateAccessResponse) GetSuccessListOfTenants() []string`
@@ -102,6 +122,16 @@ SetSuccessListOfTenants sets SuccessListOfTenants field to given value.
 
 HasSuccessListOfTenants returns a boolean if a field has been set.
 
+### SetSuccessListOfTenantsNil
+
+`func (o *DeviceTemplateAccessResponse) SetSuccessListOfTenantsNil(b bool)`
+
+ SetSuccessListOfTenantsNil sets the value for SuccessListOfTenants to be an explicit nil
+
+### UnsetSuccessListOfTenants
+`func (o *DeviceTemplateAccessResponse) UnsetSuccessListOfTenants()`
+
+UnsetSuccessListOfTenants ensures that no value is present for SuccessListOfTenants, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -149,6 +149,16 @@ SetDeviceModels sets DeviceModels field to given value.
 
 HasDeviceModels returns a boolean if a field has been set.
 
+### SetDeviceModelsNil
+
+`func (o *DeviceTemplateCreate) SetDeviceModelsNil(b bool)`
+
+ SetDeviceModelsNil sets the value for DeviceModels to be an explicit nil
+
+### UnsetDeviceModels
+`func (o *DeviceTemplateCreate) UnsetDeviceModels()`
+
+UnsetDeviceModels ensures that no value is present for DeviceModels, not even an explicit nil
 ### GetConfigContent
 
 `func (o *DeviceTemplateCreate) GetConfigContent() string`

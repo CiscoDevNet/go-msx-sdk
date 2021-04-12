@@ -303,6 +303,16 @@ and a boolean to check if the value has been set.
 SetProperties sets Properties field to given value.
 
 
+### SetPropertiesNil
+
+`func (o *ProductCreate) SetPropertiesNil(b bool)`
+
+ SetPropertiesNil sets the value for Properties to be an explicit nil
+
+### UnsetProperties
+`func (o *ProductCreate) UnsetProperties()`
+
+UnsetProperties ensures that no value is present for Properties, not even an explicit nil
 ### GetConfiguration
 
 `func (o *ProductCreate) GetConfiguration() map[string]string`

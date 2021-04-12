@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TotalActions** | Pointer to **int32** |  | [optional] 
-**TotalValid** | Pointer to **int32** |  | [optional] 
-**WorkflowValid** | Pointer to **bool** |  | [optional] 
+**TotalActions** | Pointer to **NullableInt32** |  | [optional] 
+**TotalValid** | Pointer to **NullableInt32** |  | [optional] 
+**WorkflowValid** | Pointer to **NullableBool** |  | [optional] 
 **InvalidActionIds** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
@@ -53,6 +53,16 @@ SetTotalActions sets TotalActions field to given value.
 
 HasTotalActions returns a boolean if a field has been set.
 
+### SetTotalActionsNil
+
+`func (o *ValidateWorkflowResponse) SetTotalActionsNil(b bool)`
+
+ SetTotalActionsNil sets the value for TotalActions to be an explicit nil
+
+### UnsetTotalActions
+`func (o *ValidateWorkflowResponse) UnsetTotalActions()`
+
+UnsetTotalActions ensures that no value is present for TotalActions, not even an explicit nil
 ### GetTotalValid
 
 `func (o *ValidateWorkflowResponse) GetTotalValid() int32`
@@ -78,6 +88,16 @@ SetTotalValid sets TotalValid field to given value.
 
 HasTotalValid returns a boolean if a field has been set.
 
+### SetTotalValidNil
+
+`func (o *ValidateWorkflowResponse) SetTotalValidNil(b bool)`
+
+ SetTotalValidNil sets the value for TotalValid to be an explicit nil
+
+### UnsetTotalValid
+`func (o *ValidateWorkflowResponse) UnsetTotalValid()`
+
+UnsetTotalValid ensures that no value is present for TotalValid, not even an explicit nil
 ### GetWorkflowValid
 
 `func (o *ValidateWorkflowResponse) GetWorkflowValid() bool`
@@ -103,6 +123,16 @@ SetWorkflowValid sets WorkflowValid field to given value.
 
 HasWorkflowValid returns a boolean if a field has been set.
 
+### SetWorkflowValidNil
+
+`func (o *ValidateWorkflowResponse) SetWorkflowValidNil(b bool)`
+
+ SetWorkflowValidNil sets the value for WorkflowValid to be an explicit nil
+
+### UnsetWorkflowValid
+`func (o *ValidateWorkflowResponse) UnsetWorkflowValid()`
+
+UnsetWorkflowValid ensures that no value is present for WorkflowValid, not even an explicit nil
 ### GetInvalidActionIds
 
 `func (o *ValidateWorkflowResponse) GetInvalidActionIds() []string`
@@ -128,6 +158,16 @@ SetInvalidActionIds sets InvalidActionIds field to given value.
 
 HasInvalidActionIds returns a boolean if a field has been set.
 
+### SetInvalidActionIdsNil
+
+`func (o *ValidateWorkflowResponse) SetInvalidActionIdsNil(b bool)`
+
+ SetInvalidActionIdsNil sets the value for InvalidActionIds to be an explicit nil
+
+### UnsetInvalidActionIds
+`func (o *ValidateWorkflowResponse) UnsetInvalidActionIds()`
+
+UnsetInvalidActionIds ensures that no value is present for InvalidActionIds, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

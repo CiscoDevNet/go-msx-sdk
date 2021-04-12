@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Model** | **string** |  | 
 **Type** | **string** |  | 
-**SubType** | Pointer to **string** |  | [optional] 
+**SubType** | Pointer to **NullableString** |  | [optional] 
 **ServiceType** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to **map[string]string** |  | [optional] 
 **SerialKey** | **string** |  | 
@@ -325,6 +325,16 @@ SetSubType sets SubType field to given value.
 
 HasSubType returns a boolean if a field has been set.
 
+### SetSubTypeNil
+
+`func (o *Device) SetSubTypeNil(b bool)`
+
+ SetSubTypeNil sets the value for SubType to be an explicit nil
+
+### UnsetSubType
+`func (o *Device) UnsetSubType()`
+
+UnsetSubType ensures that no value is present for SubType, not even an explicit nil
 ### GetServiceType
 
 `func (o *Device) GetServiceType() string`
@@ -375,6 +385,16 @@ SetTags sets Tags field to given value.
 
 HasTags returns a boolean if a field has been set.
 
+### SetTagsNil
+
+`func (o *Device) SetTagsNil(b bool)`
+
+ SetTagsNil sets the value for Tags to be an explicit nil
+
+### UnsetTags
+`func (o *Device) UnsetTags()`
+
+UnsetTags ensures that no value is present for Tags, not even an explicit nil
 ### GetSerialKey
 
 `func (o *Device) GetSerialKey() string`

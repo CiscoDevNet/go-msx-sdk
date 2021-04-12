@@ -7,9 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Url** | Pointer to **string** |  | [optional] 
-**Image** | Pointer to **string** |  | [optional] 
-**ParentId** | Pointer to **string** |  | [optional] 
-**NumberOfChildren** | Pointer to **int64** |  | [optional] [readonly] 
+**Image** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -125,56 +123,16 @@ SetImage sets Image field to given value.
 
 HasImage returns a boolean if a field has been set.
 
-### GetParentId
+### SetImageNil
 
-`func (o *TenantUpdate) GetParentId() string`
+`func (o *TenantUpdate) SetImageNil(b bool)`
 
-GetParentId returns the ParentId field if non-nil, zero value otherwise.
+ SetImageNil sets the value for Image to be an explicit nil
 
-### GetParentIdOk
+### UnsetImage
+`func (o *TenantUpdate) UnsetImage()`
 
-`func (o *TenantUpdate) GetParentIdOk() (*string, bool)`
-
-GetParentIdOk returns a tuple with the ParentId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParentId
-
-`func (o *TenantUpdate) SetParentId(v string)`
-
-SetParentId sets ParentId field to given value.
-
-### HasParentId
-
-`func (o *TenantUpdate) HasParentId() bool`
-
-HasParentId returns a boolean if a field has been set.
-
-### GetNumberOfChildren
-
-`func (o *TenantUpdate) GetNumberOfChildren() int64`
-
-GetNumberOfChildren returns the NumberOfChildren field if non-nil, zero value otherwise.
-
-### GetNumberOfChildrenOk
-
-`func (o *TenantUpdate) GetNumberOfChildrenOk() (*int64, bool)`
-
-GetNumberOfChildrenOk returns a tuple with the NumberOfChildren field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNumberOfChildren
-
-`func (o *TenantUpdate) SetNumberOfChildren(v int64)`
-
-SetNumberOfChildren sets NumberOfChildren field to given value.
-
-### HasNumberOfChildren
-
-`func (o *TenantUpdate) HasNumberOfChildren() bool`
-
-HasNumberOfChildren returns a boolean if a field has been set.
-
+UnsetImage ensures that no value is present for Image, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

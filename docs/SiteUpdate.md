@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **Address** | Pointer to [**NullableSiteAddress**](SiteAddress.md) |  | [optional] 
 **Contact** | Pointer to [**NullableSiteContact**](SiteContact.md) |  | [optional] 
-**Location** | Pointer to [**SiteLocation**](SiteLocation.md) |  | [optional] 
+**Location** | Pointer to [**NullableSiteLocation**](SiteLocation.md) |  | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
 **Attributes** | Pointer to **map[string]string** |  | [optional] 
 
@@ -223,6 +223,16 @@ SetLocation sets Location field to given value.
 
 HasLocation returns a boolean if a field has been set.
 
+### SetLocationNil
+
+`func (o *SiteUpdate) SetLocationNil(b bool)`
+
+ SetLocationNil sets the value for Location to be an explicit nil
+
+### UnsetLocation
+`func (o *SiteUpdate) UnsetLocation()`
+
+UnsetLocation ensures that no value is present for Location, not even an explicit nil
 ### GetImage
 
 `func (o *SiteUpdate) GetImage() string`

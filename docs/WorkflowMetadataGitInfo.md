@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TargetId** | Pointer to **string** |  | [optional] 
-**CommitHash** | Pointer to **string** |  | [optional] 
-**ComittedBy** | Pointer to **string** |  | [optional] 
-**ComittedOn** | Pointer to **string** |  | [optional] 
-**CommitMessage** | Pointer to **string** |  | [optional] 
+**TargetId** | Pointer to **NullableString** |  | [optional] 
+**CommitHash** | Pointer to **NullableString** |  | [optional] 
+**CommittedBy** | Pointer to **NullableString** |  | [optional] 
+**CommittedOn** | Pointer to **NullableString** |  | [optional] 
+**CommitMessage** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -54,6 +54,16 @@ SetTargetId sets TargetId field to given value.
 
 HasTargetId returns a boolean if a field has been set.
 
+### SetTargetIdNil
+
+`func (o *WorkflowMetadataGitInfo) SetTargetIdNil(b bool)`
+
+ SetTargetIdNil sets the value for TargetId to be an explicit nil
+
+### UnsetTargetId
+`func (o *WorkflowMetadataGitInfo) UnsetTargetId()`
+
+UnsetTargetId ensures that no value is present for TargetId, not even an explicit nil
 ### GetCommitHash
 
 `func (o *WorkflowMetadataGitInfo) GetCommitHash() string`
@@ -79,56 +89,86 @@ SetCommitHash sets CommitHash field to given value.
 
 HasCommitHash returns a boolean if a field has been set.
 
-### GetComittedBy
+### SetCommitHashNil
 
-`func (o *WorkflowMetadataGitInfo) GetComittedBy() string`
+`func (o *WorkflowMetadataGitInfo) SetCommitHashNil(b bool)`
 
-GetComittedBy returns the ComittedBy field if non-nil, zero value otherwise.
+ SetCommitHashNil sets the value for CommitHash to be an explicit nil
 
-### GetComittedByOk
+### UnsetCommitHash
+`func (o *WorkflowMetadataGitInfo) UnsetCommitHash()`
 
-`func (o *WorkflowMetadataGitInfo) GetComittedByOk() (*string, bool)`
+UnsetCommitHash ensures that no value is present for CommitHash, not even an explicit nil
+### GetCommittedBy
 
-GetComittedByOk returns a tuple with the ComittedBy field if it's non-nil, zero value otherwise
+`func (o *WorkflowMetadataGitInfo) GetCommittedBy() string`
+
+GetCommittedBy returns the CommittedBy field if non-nil, zero value otherwise.
+
+### GetCommittedByOk
+
+`func (o *WorkflowMetadataGitInfo) GetCommittedByOk() (*string, bool)`
+
+GetCommittedByOk returns a tuple with the CommittedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComittedBy
+### SetCommittedBy
 
-`func (o *WorkflowMetadataGitInfo) SetComittedBy(v string)`
+`func (o *WorkflowMetadataGitInfo) SetCommittedBy(v string)`
 
-SetComittedBy sets ComittedBy field to given value.
+SetCommittedBy sets CommittedBy field to given value.
 
-### HasComittedBy
+### HasCommittedBy
 
-`func (o *WorkflowMetadataGitInfo) HasComittedBy() bool`
+`func (o *WorkflowMetadataGitInfo) HasCommittedBy() bool`
 
-HasComittedBy returns a boolean if a field has been set.
+HasCommittedBy returns a boolean if a field has been set.
 
-### GetComittedOn
+### SetCommittedByNil
 
-`func (o *WorkflowMetadataGitInfo) GetComittedOn() string`
+`func (o *WorkflowMetadataGitInfo) SetCommittedByNil(b bool)`
 
-GetComittedOn returns the ComittedOn field if non-nil, zero value otherwise.
+ SetCommittedByNil sets the value for CommittedBy to be an explicit nil
 
-### GetComittedOnOk
+### UnsetCommittedBy
+`func (o *WorkflowMetadataGitInfo) UnsetCommittedBy()`
 
-`func (o *WorkflowMetadataGitInfo) GetComittedOnOk() (*string, bool)`
+UnsetCommittedBy ensures that no value is present for CommittedBy, not even an explicit nil
+### GetCommittedOn
 
-GetComittedOnOk returns a tuple with the ComittedOn field if it's non-nil, zero value otherwise
+`func (o *WorkflowMetadataGitInfo) GetCommittedOn() string`
+
+GetCommittedOn returns the CommittedOn field if non-nil, zero value otherwise.
+
+### GetCommittedOnOk
+
+`func (o *WorkflowMetadataGitInfo) GetCommittedOnOk() (*string, bool)`
+
+GetCommittedOnOk returns a tuple with the CommittedOn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComittedOn
+### SetCommittedOn
 
-`func (o *WorkflowMetadataGitInfo) SetComittedOn(v string)`
+`func (o *WorkflowMetadataGitInfo) SetCommittedOn(v string)`
 
-SetComittedOn sets ComittedOn field to given value.
+SetCommittedOn sets CommittedOn field to given value.
 
-### HasComittedOn
+### HasCommittedOn
 
-`func (o *WorkflowMetadataGitInfo) HasComittedOn() bool`
+`func (o *WorkflowMetadataGitInfo) HasCommittedOn() bool`
 
-HasComittedOn returns a boolean if a field has been set.
+HasCommittedOn returns a boolean if a field has been set.
 
+### SetCommittedOnNil
+
+`func (o *WorkflowMetadataGitInfo) SetCommittedOnNil(b bool)`
+
+ SetCommittedOnNil sets the value for CommittedOn to be an explicit nil
+
+### UnsetCommittedOn
+`func (o *WorkflowMetadataGitInfo) UnsetCommittedOn()`
+
+UnsetCommittedOn ensures that no value is present for CommittedOn, not even an explicit nil
 ### GetCommitMessage
 
 `func (o *WorkflowMetadataGitInfo) GetCommitMessage() string`
@@ -154,6 +194,16 @@ SetCommitMessage sets CommitMessage field to given value.
 
 HasCommitMessage returns a boolean if a field has been set.
 
+### SetCommitMessageNil
+
+`func (o *WorkflowMetadataGitInfo) SetCommitMessageNil(b bool)`
+
+ SetCommitMessageNil sets the value for CommitMessage to be an explicit nil
+
+### UnsetCommitMessage
+`func (o *WorkflowMetadataGitInfo) UnsetCommitMessage()`
+
+UnsetCommitMessage ensures that no value is present for CommitMessage, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

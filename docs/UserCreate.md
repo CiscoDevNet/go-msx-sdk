@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **RoleIds** | Pointer to **[]string** |  | [optional] 
 **TenantIds** | Pointer to **[]string** |  | [optional] 
 **PasswordPolicyName** | **string** |  | 
+**Locale** | Pointer to **NullableString** |  | [optional] 
 **Username** | Pointer to **string** |  | [optional] 
 **Password** | Pointer to **NullableString** |  | [optional] 
 
@@ -167,6 +168,41 @@ and a boolean to check if the value has been set.
 SetPasswordPolicyName sets PasswordPolicyName field to given value.
 
 
+### GetLocale
+
+`func (o *UserCreate) GetLocale() string`
+
+GetLocale returns the Locale field if non-nil, zero value otherwise.
+
+### GetLocaleOk
+
+`func (o *UserCreate) GetLocaleOk() (*string, bool)`
+
+GetLocaleOk returns a tuple with the Locale field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocale
+
+`func (o *UserCreate) SetLocale(v string)`
+
+SetLocale sets Locale field to given value.
+
+### HasLocale
+
+`func (o *UserCreate) HasLocale() bool`
+
+HasLocale returns a boolean if a field has been set.
+
+### SetLocaleNil
+
+`func (o *UserCreate) SetLocaleNil(b bool)`
+
+ SetLocaleNil sets the value for Locale to be an explicit nil
+
+### UnsetLocale
+`func (o *UserCreate) UnsetLocale()`
+
+UnsetLocale ensures that no value is present for Locale, not even an explicit nil
 ### GetUsername
 
 `func (o *UserCreate) GetUsername() string`

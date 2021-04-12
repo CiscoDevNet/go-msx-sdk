@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **SupportedProperties** | **[]string** |  | 
 **SupportedOptions** | [**[]NameValue**](NameValue.md) |  | 
-**Approvals** | Pointer to **map[string][]string** |  | [optional] 
+**Approvals** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -294,20 +294,20 @@ SetSupportedOptions sets SupportedOptions field to given value.
 
 ### GetApprovals
 
-`func (o *Offer) GetApprovals() map[string][]string`
+`func (o *Offer) GetApprovals() map[string]map[string]interface{}`
 
 GetApprovals returns the Approvals field if non-nil, zero value otherwise.
 
 ### GetApprovalsOk
 
-`func (o *Offer) GetApprovalsOk() (*map[string][]string, bool)`
+`func (o *Offer) GetApprovalsOk() (*map[string]map[string]interface{}, bool)`
 
 GetApprovalsOk returns a tuple with the Approvals field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApprovals
 
-`func (o *Offer) SetApprovals(v map[string][]string)`
+`func (o *Offer) SetApprovals(v map[string]map[string]interface{})`
 
 SetApprovals sets Approvals field to given value.
 
@@ -317,6 +317,16 @@ SetApprovals sets Approvals field to given value.
 
 HasApprovals returns a boolean if a field has been set.
 
+### SetApprovalsNil
+
+`func (o *Offer) SetApprovalsNil(b bool)`
+
+ SetApprovalsNil sets the value for Approvals to be an explicit nil
+
+### UnsetApprovals
+`func (o *Offer) UnsetApprovals()`
+
+UnsetApprovals ensures that no value is present for Approvals, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

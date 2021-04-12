@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **MinValue** | Pointer to **int32** |  | [optional] 
 **MaxValue** | Pointer to **int32** |  | [optional] 
 **StepSize** | Pointer to **int32** |  | [optional] 
-**PricingAtttributes** | Pointer to [**ServiceElementPrice**](ServiceElementPrice.md) |  | [optional] 
+**PricingAtttributes** | Pointer to [**NullableServiceElementPrice**](ServiceElementPrice.md) |  | [optional] 
 **ChildElements** | Pointer to [**[]ServiceElement**](ServiceElement.md) |  | [optional] 
 
 ## Methods
@@ -350,6 +350,16 @@ SetValueList sets ValueList field to given value.
 
 HasValueList returns a boolean if a field has been set.
 
+### SetValueListNil
+
+`func (o *ServiceElement) SetValueListNil(b bool)`
+
+ SetValueListNil sets the value for ValueList to be an explicit nil
+
+### UnsetValueList
+`func (o *ServiceElement) UnsetValueList()`
+
+UnsetValueList ensures that no value is present for ValueList, not even an explicit nil
 ### GetAllowedOptionValues
 
 `func (o *ServiceElement) GetAllowedOptionValues() []string`
@@ -400,6 +410,16 @@ SetAllowedValues sets AllowedValues field to given value.
 
 HasAllowedValues returns a boolean if a field has been set.
 
+### SetAllowedValuesNil
+
+`func (o *ServiceElement) SetAllowedValuesNil(b bool)`
+
+ SetAllowedValuesNil sets the value for AllowedValues to be an explicit nil
+
+### UnsetAllowedValues
+`func (o *ServiceElement) UnsetAllowedValues()`
+
+UnsetAllowedValues ensures that no value is present for AllowedValues, not even an explicit nil
 ### GetMandatory
 
 `func (o *ServiceElement) GetMandatory() bool`
@@ -675,6 +695,16 @@ SetPricingAtttributes sets PricingAtttributes field to given value.
 
 HasPricingAtttributes returns a boolean if a field has been set.
 
+### SetPricingAtttributesNil
+
+`func (o *ServiceElement) SetPricingAtttributesNil(b bool)`
+
+ SetPricingAtttributesNil sets the value for PricingAtttributes to be an explicit nil
+
+### UnsetPricingAtttributes
+`func (o *ServiceElement) UnsetPricingAtttributes()`
+
+UnsetPricingAtttributes ensures that no value is present for PricingAtttributes, not even an explicit nil
 ### GetChildElements
 
 `func (o *ServiceElement) GetChildElements() []ServiceElement`
@@ -700,6 +730,16 @@ SetChildElements sets ChildElements field to given value.
 
 HasChildElements returns a boolean if a field has been set.
 
+### SetChildElementsNil
+
+`func (o *ServiceElement) SetChildElementsNil(b bool)`
+
+ SetChildElementsNil sets the value for ChildElements to be an explicit nil
+
+### UnsetChildElements
+`func (o *ServiceElement) UnsetChildElements()`
+
+UnsetChildElements ensures that no value is present for ChildElements, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

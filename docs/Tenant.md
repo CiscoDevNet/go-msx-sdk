@@ -8,12 +8,12 @@ Name | Type | Description | Notes
 **CreatedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Suspended** | Pointer to **NullableBool** |  | [optional] [readonly] 
+**NumberOfChildren** | Pointer to **NullableInt64** |  | [optional] [readonly] 
+**ParentId** | Pointer to **NullableString** |  | [optional] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Url** | Pointer to **string** |  | [optional] 
 **Image** | Pointer to **NullableString** |  | [optional] 
-**ParentId** | Pointer to **NullableString** |  | [optional] 
-**NumberOfChildren** | Pointer to **NullableInt64** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -144,6 +144,76 @@ HasSuspended returns a boolean if a field has been set.
 `func (o *Tenant) UnsetSuspended()`
 
 UnsetSuspended ensures that no value is present for Suspended, not even an explicit nil
+### GetNumberOfChildren
+
+`func (o *Tenant) GetNumberOfChildren() int64`
+
+GetNumberOfChildren returns the NumberOfChildren field if non-nil, zero value otherwise.
+
+### GetNumberOfChildrenOk
+
+`func (o *Tenant) GetNumberOfChildrenOk() (*int64, bool)`
+
+GetNumberOfChildrenOk returns a tuple with the NumberOfChildren field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNumberOfChildren
+
+`func (o *Tenant) SetNumberOfChildren(v int64)`
+
+SetNumberOfChildren sets NumberOfChildren field to given value.
+
+### HasNumberOfChildren
+
+`func (o *Tenant) HasNumberOfChildren() bool`
+
+HasNumberOfChildren returns a boolean if a field has been set.
+
+### SetNumberOfChildrenNil
+
+`func (o *Tenant) SetNumberOfChildrenNil(b bool)`
+
+ SetNumberOfChildrenNil sets the value for NumberOfChildren to be an explicit nil
+
+### UnsetNumberOfChildren
+`func (o *Tenant) UnsetNumberOfChildren()`
+
+UnsetNumberOfChildren ensures that no value is present for NumberOfChildren, not even an explicit nil
+### GetParentId
+
+`func (o *Tenant) GetParentId() string`
+
+GetParentId returns the ParentId field if non-nil, zero value otherwise.
+
+### GetParentIdOk
+
+`func (o *Tenant) GetParentIdOk() (*string, bool)`
+
+GetParentIdOk returns a tuple with the ParentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentId
+
+`func (o *Tenant) SetParentId(v string)`
+
+SetParentId sets ParentId field to given value.
+
+### HasParentId
+
+`func (o *Tenant) HasParentId() bool`
+
+HasParentId returns a boolean if a field has been set.
+
+### SetParentIdNil
+
+`func (o *Tenant) SetParentIdNil(b bool)`
+
+ SetParentIdNil sets the value for ParentId to be an explicit nil
+
+### UnsetParentId
+`func (o *Tenant) UnsetParentId()`
+
+UnsetParentId ensures that no value is present for ParentId, not even an explicit nil
 ### GetName
 
 `func (o *Tenant) GetName() string`
@@ -249,76 +319,6 @@ HasImage returns a boolean if a field has been set.
 `func (o *Tenant) UnsetImage()`
 
 UnsetImage ensures that no value is present for Image, not even an explicit nil
-### GetParentId
-
-`func (o *Tenant) GetParentId() string`
-
-GetParentId returns the ParentId field if non-nil, zero value otherwise.
-
-### GetParentIdOk
-
-`func (o *Tenant) GetParentIdOk() (*string, bool)`
-
-GetParentIdOk returns a tuple with the ParentId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParentId
-
-`func (o *Tenant) SetParentId(v string)`
-
-SetParentId sets ParentId field to given value.
-
-### HasParentId
-
-`func (o *Tenant) HasParentId() bool`
-
-HasParentId returns a boolean if a field has been set.
-
-### SetParentIdNil
-
-`func (o *Tenant) SetParentIdNil(b bool)`
-
- SetParentIdNil sets the value for ParentId to be an explicit nil
-
-### UnsetParentId
-`func (o *Tenant) UnsetParentId()`
-
-UnsetParentId ensures that no value is present for ParentId, not even an explicit nil
-### GetNumberOfChildren
-
-`func (o *Tenant) GetNumberOfChildren() int64`
-
-GetNumberOfChildren returns the NumberOfChildren field if non-nil, zero value otherwise.
-
-### GetNumberOfChildrenOk
-
-`func (o *Tenant) GetNumberOfChildrenOk() (*int64, bool)`
-
-GetNumberOfChildrenOk returns a tuple with the NumberOfChildren field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNumberOfChildren
-
-`func (o *Tenant) SetNumberOfChildren(v int64)`
-
-SetNumberOfChildren sets NumberOfChildren field to given value.
-
-### HasNumberOfChildren
-
-`func (o *Tenant) HasNumberOfChildren() bool`
-
-HasNumberOfChildren returns a boolean if a field has been set.
-
-### SetNumberOfChildrenNil
-
-`func (o *Tenant) SetNumberOfChildrenNil(b bool)`
-
- SetNumberOfChildrenNil sets the value for NumberOfChildren to be an explicit nil
-
-### UnsetNumberOfChildren
-`func (o *Tenant) UnsetNumberOfChildren()`
-
-UnsetNumberOfChildren ensures that no value is present for NumberOfChildren, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

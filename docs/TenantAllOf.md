@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CreatedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Suspended** | Pointer to **NullableBool** |  | [optional] [readonly] 
+**NumberOfChildren** | Pointer to **NullableInt64** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -138,6 +139,41 @@ HasSuspended returns a boolean if a field has been set.
 `func (o *TenantAllOf) UnsetSuspended()`
 
 UnsetSuspended ensures that no value is present for Suspended, not even an explicit nil
+### GetNumberOfChildren
+
+`func (o *TenantAllOf) GetNumberOfChildren() int64`
+
+GetNumberOfChildren returns the NumberOfChildren field if non-nil, zero value otherwise.
+
+### GetNumberOfChildrenOk
+
+`func (o *TenantAllOf) GetNumberOfChildrenOk() (*int64, bool)`
+
+GetNumberOfChildrenOk returns a tuple with the NumberOfChildren field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNumberOfChildren
+
+`func (o *TenantAllOf) SetNumberOfChildren(v int64)`
+
+SetNumberOfChildren sets NumberOfChildren field to given value.
+
+### HasNumberOfChildren
+
+`func (o *TenantAllOf) HasNumberOfChildren() bool`
+
+HasNumberOfChildren returns a boolean if a field has been set.
+
+### SetNumberOfChildrenNil
+
+`func (o *TenantAllOf) SetNumberOfChildrenNil(b bool)`
+
+ SetNumberOfChildrenNil sets the value for NumberOfChildren to be an explicit nil
+
+### UnsetNumberOfChildren
+`func (o *TenantAllOf) UnsetNumberOfChildren()`
+
+UnsetNumberOfChildren ensures that no value is present for NumberOfChildren, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

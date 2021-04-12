@@ -4,87 +4,15 @@ All URIs are relative to *http://localhost:8765*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddOfferAssignments**](OffersApi.md#AddOfferAssignments) | **Post** /consume/api/v8/offers/{id}/assignments/add | Assigns a product offer to one or more tenants.
 [**CreateOffer**](OffersApi.md#CreateOffer) | **Post** /consume/api/v8/offers | Creates a product offer.
 [**DeleteOffer**](OffersApi.md#DeleteOffer) | **Delete** /consume/api/v8/offers/{id} | Deletes a product offer
 [**GetOffer**](OffersApi.md#GetOffer) | **Get** /consume/api/v8/offers/{id} | Returns a product offer.
 [**GetOfferAssignmentsList**](OffersApi.md#GetOfferAssignmentsList) | **Get** /consume/api/v8/offers/{id}/assignments/list | Returns a list of tenant assignments for a product offer.
 [**GetOffersCount**](OffersApi.md#GetOffersCount) | **Get** /consume/api/v8/offers/count | Returns the number of product offers.
 [**GetOffersPage**](OffersApi.md#GetOffersPage) | **Get** /consume/api/v8/offers | Returns a page of product offers.
-[**RemoveOfferAssignments**](OffersApi.md#RemoveOfferAssignments) | **Post** /consume/api/v8/offers/{id}/assignments/remove | Unassigns a product offer from one or more tenants.
 [**UpdateOffer**](OffersApi.md#UpdateOffer) | **Put** /consume/api/v8/offers/{id} | Updates a product offer.
 [**UpdateOfferAssignments**](OffersApi.md#UpdateOfferAssignments) | **Put** /consume/api/v8/offers/{id}/assignments | Updates the tenant assignemnts for a product offer.
 
-
-
-## AddOfferAssignments
-
-> []CatalogAssignment AddOfferAssignments(ctx, id).RequestBody(requestBody).Execute()
-
-Assigns a product offer to one or more tenants.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := TODO // string | 
-    requestBody := []string{"Property_example"} // []string | 
-
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OffersApi.AddOfferAssignments(context.Background(), id).RequestBody(requestBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OffersApi.AddOfferAssignments``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AddOfferAssignments`: []CatalogAssignment
-    fmt.Fprintf(os.Stdout, "Response from `OffersApi.AddOfferAssignments`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiAddOfferAssignmentsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **requestBody** | **[]string** |  | 
-
-### Return type
-
-[**[]CatalogAssignment**](CatalogAssignment.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
 
 
 ## CreateOffer
@@ -421,7 +349,7 @@ No authorization required
 
 ## GetOffersPage
 
-> OffersPage GetOffersPage(ctx).Page(page).PageSize(pageSize).ProductId(productId).TenantId(tenantId).Execute()
+> OffersPage GetOffersPage(ctx).Page(page).PageSize(pageSize).ProductId(productId).TenantIds(tenantIds).Execute()
 
 Returns a page of product offers.
 
@@ -441,11 +369,11 @@ func main() {
     page := int32(0) // int32 | 
     pageSize := int32(10) // int32 | 
     productId := TODO // string |  (optional)
-    tenantId := TODO // string |  (optional)
+    tenantIds := []string{"Inner_example"} // []string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OffersApi.GetOffersPage(context.Background()).Page(page).PageSize(pageSize).ProductId(productId).TenantId(tenantId).Execute()
+    resp, r, err := api_client.OffersApi.GetOffersPage(context.Background()).Page(page).PageSize(pageSize).ProductId(productId).TenantIds(tenantIds).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OffersApi.GetOffersPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -469,7 +397,7 @@ Name | Type | Description  | Notes
  **page** | **int32** |  | 
  **pageSize** | **int32** |  | 
  **productId** | [**string**](string.md) |  | 
- **tenantId** | [**string**](string.md) |  | 
+ **tenantIds** | **[]string** |  | 
 
 ### Return type
 
@@ -482,76 +410,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## RemoveOfferAssignments
-
-> []CatalogAssignment RemoveOfferAssignments(ctx, id).RequestBody(requestBody).Execute()
-
-Unassigns a product offer from one or more tenants.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := TODO // string | 
-    requestBody := []string{"Property_example"} // []string | 
-
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OffersApi.RemoveOfferAssignments(context.Background(), id).RequestBody(requestBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OffersApi.RemoveOfferAssignments``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RemoveOfferAssignments`: []CatalogAssignment
-    fmt.Fprintf(os.Stdout, "Response from `OffersApi.RemoveOfferAssignments`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiRemoveOfferAssignmentsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **requestBody** | **[]string** |  | 
-
-### Return type
-
-[**[]CatalogAssignment**](CatalogAssignment.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

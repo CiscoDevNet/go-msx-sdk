@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **UserId** | Pointer to **string** |  | [optional] 
 **SubscriptionId** | Pointer to **string** |  | [optional] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
-**ModifiedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
-**ProvisionedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
-**Status** | Pointer to **map[string]string** |  | [optional] 
+**ModifiedOn** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**ProvisionedOn** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**Status** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **DefinitionAttributes** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **Attributes** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 
@@ -210,6 +210,16 @@ SetModifiedOn sets ModifiedOn field to given value.
 
 HasModifiedOn returns a boolean if a field has been set.
 
+### SetModifiedOnNil
+
+`func (o *Service) SetModifiedOnNil(b bool)`
+
+ SetModifiedOnNil sets the value for ModifiedOn to be an explicit nil
+
+### UnsetModifiedOn
+`func (o *Service) UnsetModifiedOn()`
+
+UnsetModifiedOn ensures that no value is present for ModifiedOn, not even an explicit nil
 ### GetProvisionedOn
 
 `func (o *Service) GetProvisionedOn() time.Time`
@@ -235,22 +245,32 @@ SetProvisionedOn sets ProvisionedOn field to given value.
 
 HasProvisionedOn returns a boolean if a field has been set.
 
+### SetProvisionedOnNil
+
+`func (o *Service) SetProvisionedOnNil(b bool)`
+
+ SetProvisionedOnNil sets the value for ProvisionedOn to be an explicit nil
+
+### UnsetProvisionedOn
+`func (o *Service) UnsetProvisionedOn()`
+
+UnsetProvisionedOn ensures that no value is present for ProvisionedOn, not even an explicit nil
 ### GetStatus
 
-`func (o *Service) GetStatus() map[string]string`
+`func (o *Service) GetStatus() map[string]map[string]interface{}`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *Service) GetStatusOk() (*map[string]string, bool)`
+`func (o *Service) GetStatusOk() (*map[string]map[string]interface{}, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *Service) SetStatus(v map[string]string)`
+`func (o *Service) SetStatus(v map[string]map[string]interface{})`
 
 SetStatus sets Status field to given value.
 

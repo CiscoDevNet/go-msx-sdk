@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Page** | Pointer to **int32** |  | [optional] [readonly] 
 **PageSize** | Pointer to **int32** |  | [optional] [readonly] 
-**TotalItems** | Pointer to **int64** |  | [optional] [readonly] 
+**TotalItems** | Pointer to **NullableInt64** |  | [optional] [readonly] 
 **HasNext** | Pointer to **NullableBool** |  | [optional] [readonly] 
 **HasPrevious** | Pointer to **NullableBool** |  | [optional] [readonly] 
-**SortBy** | Pointer to **string** |  | [optional] [readonly] 
-**SortOrder** | Pointer to **string** |  | [optional] [readonly] 
+**SortBy** | Pointer to **NullableString** |  | [optional] [readonly] 
+**SortOrder** | Pointer to **NullableString** |  | [optional] [readonly] 
 **Contents** | Pointer to [**[]Tenant**](Tenant.md) |  | [optional] 
 
 ## Methods
@@ -107,6 +107,16 @@ SetTotalItems sets TotalItems field to given value.
 
 HasTotalItems returns a boolean if a field has been set.
 
+### SetTotalItemsNil
+
+`func (o *TenantsPage) SetTotalItemsNil(b bool)`
+
+ SetTotalItemsNil sets the value for TotalItems to be an explicit nil
+
+### UnsetTotalItems
+`func (o *TenantsPage) UnsetTotalItems()`
+
+UnsetTotalItems ensures that no value is present for TotalItems, not even an explicit nil
 ### GetHasNext
 
 `func (o *TenantsPage) GetHasNext() bool`
@@ -202,6 +212,16 @@ SetSortBy sets SortBy field to given value.
 
 HasSortBy returns a boolean if a field has been set.
 
+### SetSortByNil
+
+`func (o *TenantsPage) SetSortByNil(b bool)`
+
+ SetSortByNil sets the value for SortBy to be an explicit nil
+
+### UnsetSortBy
+`func (o *TenantsPage) UnsetSortBy()`
+
+UnsetSortBy ensures that no value is present for SortBy, not even an explicit nil
 ### GetSortOrder
 
 `func (o *TenantsPage) GetSortOrder() string`
@@ -227,6 +247,16 @@ SetSortOrder sets SortOrder field to given value.
 
 HasSortOrder returns a boolean if a field has been set.
 
+### SetSortOrderNil
+
+`func (o *TenantsPage) SetSortOrderNil(b bool)`
+
+ SetSortOrderNil sets the value for SortOrder to be an explicit nil
+
+### UnsetSortOrder
+`func (o *TenantsPage) UnsetSortOrder()`
+
+UnsetSortOrder ensures that no value is present for SortOrder, not even an explicit nil
 ### GetContents
 
 `func (o *TenantsPage) GetContents() []Tenant`

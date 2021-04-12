@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | 
 **Type** | [**ResourceType**](ResourceType.md) |  | 
 **Status** | [**ResourceStatus**](ResourceStatus.md) |  | 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -113,6 +113,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *ResourceHealth) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ResourceHealth) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

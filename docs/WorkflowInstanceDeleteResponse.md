@@ -50,6 +50,16 @@ SetDeletedChildWorkflowInstanceIds sets DeletedChildWorkflowInstanceIds field to
 
 HasDeletedChildWorkflowInstanceIds returns a boolean if a field has been set.
 
+### SetDeletedChildWorkflowInstanceIdsNil
+
+`func (o *WorkflowInstanceDeleteResponse) SetDeletedChildWorkflowInstanceIdsNil(b bool)`
+
+ SetDeletedChildWorkflowInstanceIdsNil sets the value for DeletedChildWorkflowInstanceIds to be an explicit nil
+
+### UnsetDeletedChildWorkflowInstanceIds
+`func (o *WorkflowInstanceDeleteResponse) UnsetDeletedChildWorkflowInstanceIds()`
+
+UnsetDeletedChildWorkflowInstanceIds ensures that no value is present for DeletedChildWorkflowInstanceIds, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
