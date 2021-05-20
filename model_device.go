@@ -35,8 +35,8 @@ type Device struct {
 	Version string `json:"version"`
 	Managed bool `json:"managed"`
 	OnboardType *string `json:"onboardType,omitempty"`
-	OnboardInformation *map[string]string `json:"onboardInformation,omitempty"`
-	Attributes *map[string]string `json:"attributes,omitempty"`
+	OnboardInformation *map[string]interface{} `json:"onboardInformation,omitempty"`
+	Attributes *map[string]interface{} `json:"attributes,omitempty"`
 	Billing *DeviceBilling `json:"billing,omitempty"`
 }
 

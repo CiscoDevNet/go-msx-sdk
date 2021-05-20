@@ -9259,12 +9259,10 @@ components:
           maxLength: 128
           type: string
         onboardInformation:
-          additionalProperties:
-            type: string
+          additionalProperties: {}
           type: object
         attributes:
-          additionalProperties:
-            type: string
+          additionalProperties: {}
           type: object
         billing:
           $ref: '#/components/schemas/DeviceBilling'
