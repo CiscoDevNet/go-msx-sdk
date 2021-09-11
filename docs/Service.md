@@ -5,16 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] [readonly] 
-**ProviderId** | Pointer to **string** |  | [optional] 
-**TenantId** | Pointer to **string** |  | [optional] 
-**UserId** | Pointer to **string** |  | [optional] 
-**SubscriptionId** | Pointer to **string** |  | [optional] 
+**ProviderId** | Pointer to **string** |  | [optional] [readonly] 
+**TenantId** | Pointer to **string** |  | [optional] [readonly] 
+**UserId** | Pointer to **string** |  | [optional] [readonly] 
+**SubscriptionId** | Pointer to **string** |  | [optional] [readonly] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
 **ModifiedOn** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**ProvisionedOn** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**Status** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**DefinitionAttributes** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**Attributes** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**ProvisionedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
+**Status** | Pointer to **map[string]interface{}** |  | [optional] 
+**DefinitionAttributes** | Pointer to **map[string]interface{}** |  | [optional] 
+**Attributes** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -245,32 +245,22 @@ SetProvisionedOn sets ProvisionedOn field to given value.
 
 HasProvisionedOn returns a boolean if a field has been set.
 
-### SetProvisionedOnNil
-
-`func (o *Service) SetProvisionedOnNil(b bool)`
-
- SetProvisionedOnNil sets the value for ProvisionedOn to be an explicit nil
-
-### UnsetProvisionedOn
-`func (o *Service) UnsetProvisionedOn()`
-
-UnsetProvisionedOn ensures that no value is present for ProvisionedOn, not even an explicit nil
 ### GetStatus
 
-`func (o *Service) GetStatus() map[string]map[string]interface{}`
+`func (o *Service) GetStatus() map[string]interface{}`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *Service) GetStatusOk() (*map[string]map[string]interface{}, bool)`
+`func (o *Service) GetStatusOk() (*map[string]interface{}, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *Service) SetStatus(v map[string]map[string]interface{})`
+`func (o *Service) SetStatus(v map[string]interface{})`
 
 SetStatus sets Status field to given value.
 
@@ -282,20 +272,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetDefinitionAttributes
 
-`func (o *Service) GetDefinitionAttributes() map[string]map[string]interface{}`
+`func (o *Service) GetDefinitionAttributes() map[string]interface{}`
 
 GetDefinitionAttributes returns the DefinitionAttributes field if non-nil, zero value otherwise.
 
 ### GetDefinitionAttributesOk
 
-`func (o *Service) GetDefinitionAttributesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *Service) GetDefinitionAttributesOk() (*map[string]interface{}, bool)`
 
 GetDefinitionAttributesOk returns a tuple with the DefinitionAttributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefinitionAttributes
 
-`func (o *Service) SetDefinitionAttributes(v map[string]map[string]interface{})`
+`func (o *Service) SetDefinitionAttributes(v map[string]interface{})`
 
 SetDefinitionAttributes sets DefinitionAttributes field to given value.
 
@@ -307,20 +297,20 @@ HasDefinitionAttributes returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *Service) GetAttributes() map[string]map[string]interface{}`
+`func (o *Service) GetAttributes() map[string]interface{}`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *Service) GetAttributesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *Service) GetAttributesOk() (*map[string]interface{}, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *Service) SetAttributes(v map[string]map[string]interface{})`
+`func (o *Service) SetAttributes(v map[string]interface{})`
 
 SetAttributes sets Attributes field to given value.
 

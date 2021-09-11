@@ -1,15 +1,60 @@
 openapi: 3.0.0
 info:
-  description: MSX Platform SDK
+  description: MSX SDK client.
   license:
     name: Apache License Version 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: http://www.cisco.com
-  title: KAKAPO - MSX SDK
-  version: 1.0.2
+  title: MSX SDK
+  version: 1.0.5
 servers:
-- url: //localhost:8765
+- url: /
 paths:
+  /auditing/api/v8/genericevents:
+    post:
+      description: Needs CREATE_AUDIT_GENERIC_EVENT_PERMISSION to create a Generic
+        Event.
+      operationId: createGenericEvent
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericEventCreate'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericEvent'
+          description: Created
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Unauthenticated
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal Server Error
+      summary: Create Generic Event
+      tags:
+      - Auditing Generic Events
   /consume/api/v8/products:
     get:
       operationId: getProductsPage
@@ -80,6 +125,7 @@ paths:
                   serviceExtensions: []
                   serviceConfigQueryRootXPaths: []
                   uiConfig: null
+                  tags: []
                 - id: 1a302d7c-5311-4fdf-aa99-ca99dec586b9
                   name: vbranch
                   label: cisco.catalog.service.sdwan.name
@@ -104,6 +150,9 @@ paths:
                   serviceExtensions: []
                   serviceConfigQueryRootXPaths: []
                   uiConfig: null
+                  tags:
+                  - Preview
+                  - EFT
               schema:
                 $ref: '#/components/schemas/ProductsPage'
           description: OK
@@ -163,6 +212,9 @@ paths:
               serviceExtensions: []
               serviceConfigQueryRootXPaths: []
               uiConfig: null
+              tags:
+              - Preview
+              - EFT
             schema:
               $ref: '#/components/schemas/ProductCreate'
         required: true
@@ -195,6 +247,9 @@ paths:
                 serviceExtensions: []
                 serviceConfigQueryRootXPaths: []
                 uiConfig: null
+                tags:
+                - Preview
+                - EFT
               schema:
                 $ref: '#/components/schemas/Product'
           description: Created
@@ -361,6 +416,9 @@ paths:
                 serviceExtensions: []
                 serviceConfigQueryRootXPaths: []
                 uiConfig: null
+                tags:
+                - Preview
+                - EFT
               schema:
                 $ref: '#/components/schemas/Product'
           description: OK
@@ -435,6 +493,9 @@ paths:
               serviceExtensions: []
               serviceConfigQueryRootXPaths: []
               uiConfig: null
+              tags:
+              - Preview
+              - EFT
             schema:
               $ref: '#/components/schemas/ProductUpdate'
         required: true
@@ -467,6 +528,9 @@ paths:
                 serviceExtensions: []
                 serviceConfigQueryRootXPaths: []
                 uiConfig: null
+                tags:
+                - Preview
+                - EFT
               schema:
                 $ref: '#/components/schemas/Product'
           description: OK
@@ -1366,11 +1430,37 @@ paths:
         style: form
       - explode: true
         in: query
+        name: includeSubtenants
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
         name: severities
         required: false
         schema:
           items:
             type: string
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: complianceStates
+        required: false
+        schema:
+          items:
+            $ref: '#/components/schemas/DeviceComplianceState'
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: vulnerabilityStates
+        required: false
+        schema:
+          items:
+            $ref: '#/components/schemas/DeviceVulnerabilityState'
           type: array
         style: form
       - explode: true
@@ -1453,6 +1543,8 @@ paths:
                     original-address: 3.134.83.79
                     username: vmsmd33
                   attributes: null
+                  complianceState: COMPLIANT
+                  vulnerabilityState: VULNERABLE
                   status:
                     value: FAIR
                     severity: "5"
@@ -1516,6 +1608,8 @@ paths:
                     original-address: 3.134.83.79
                     username: vmsmd33
                   attributes: null
+                  complianceState: UNKNOWN
+                  vulnerabilityState: UNKNOWN
                   status:
                     value: FAIR
                     severity: "5"
@@ -1579,6 +1673,8 @@ paths:
                     original-address: 3.134.83.79
                     username: vmsmd33
                   attributes: null
+                  complianceState: NOT_COMPLIANT
+                  vulnerabilityState: VULNERABLE
                   status:
                     value: FAIR
                     severity: "5"
@@ -1708,6 +1804,8 @@ paths:
                   original-address: 3.134.83.79
                   username: vmsmd33
                 attributes: null
+                complianceState: UNKNOWN
+                vulnerabilityState: UNKNOWN
                 status:
                   value: FAIR
                   severity: "5"
@@ -1882,6 +1980,8 @@ paths:
                   model: CISCO CSR 1000v
                   serialKey: 97K7C3YDPY1
                   devicePassword: $8$euuSrkPi/hr71+ujf4Iq608uX0Rqln+82pIXTxDL6d23duMVvkho05DpxYeM/VBT
+                complianceState: UNKNOWN
+                vulnerabilityState: UNKNOWN
                 status:
                   value: GOOD
                   severity: "1"
@@ -1934,6 +2034,118 @@ paths:
       summary: Returns a device.
       tags:
       - Devices
+    patch:
+      operationId: patchDevice
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DevicePatch'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Unauthenticated
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Unauthorized
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal Server Error
+      summary: Update a device.
+      tags:
+      - Devices
+    put:
+      operationId: updateDevice
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceUpdate'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Unauthenticated
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Unauthorized
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal Server Error
+      summary: Update a device.
+      tags:
+      - Devices
   /manage/api/v8/devices/{id}/config:
     get:
       operationId: getDeviceConfig
@@ -1951,6 +2163,7 @@ paths:
             application/json:
               example: |
                 Building configuration...
+
                 Current configuration : 9574 bytes
                 !
                 ! Last configuration change at 20:36:57 UTC Tue Aug 4 2020
@@ -2270,6 +2483,7 @@ paths:
                 pnp profile msx-pnp
                  transport https ipv4 192.171.16.174 port 8443 source GigabitEthernet1
                 end
+
                 CPE-828dcb62-2345-4b8f-b5af-5db230a95cd3#
               schema:
                 type: string
@@ -2689,7 +2903,6 @@ paths:
           application/json:
             example:
               name: name-8d4a2628-06c0-436b-8a90-d90027917405
-              version: v1
               serviceType: manageddevice
               configContent: string
               templateStandard: nso
@@ -2705,6 +2918,7 @@ paths:
               example:
                 name: name-8d4a2628-06c0-436b-8a90-d90027917405
                 version: v1
+                isLatestVersion: true
                 serviceType: manageddevice
                 deviceModels: null
                 configContent: string
@@ -2716,6 +2930,9 @@ paths:
                 id: beaf0bee-bdf9-4ade-993a-de352fa38bc7
                 userId: f1a0f9cc-08c1-4190-98b9-48b0988b9c7f
                 createdOn: 2020-08-06T19:37:55.615Z
+                tags:
+                - manageddevice
+                - compliance
               schema:
                 $ref: '#/components/schemas/DeviceTemplate'
           description: Created
@@ -2744,6 +2961,70 @@ paths:
                 $ref: '#/components/schemas/Error'
           description: Internal Server Error
       summary: Creates a device template.
+      tags:
+      - Device Templates
+  /manage/api/v8/devicetemplates/versions:
+    post:
+      operationId: createDeviceTemplateVersion
+      requestBody:
+        content:
+          application/json:
+            example:
+              name: string
+              configContent: string
+            schema:
+              $ref: '#/components/schemas/DeviceTemplateVersionCreate'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              example:
+                name: name-8d4a2628-06c0-436b-8a90-d90027917405
+                version: v2
+                isLatestVersion: true
+                serviceType: manageddevice
+                deviceModels: null
+                configContent: string
+                resourceProvider: null
+                templateStandard: nso
+                tenantAccess:
+                  tenantIds: null
+                  global: true
+                id: beaf0bee-bdf9-4ade-993a-de352fa38bc7
+                userId: f1a0f9cc-08c1-4190-98b9-48b0988b9c7f
+                createdOn: 2020-08-06T19:37:55.615Z
+                tags:
+                - manageddevice
+                - compliance
+              schema:
+                $ref: '#/components/schemas/DeviceTemplate'
+          description: Created
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Unauthenticated
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal Server Error
+      summary: Creates a new version of an existing device template.
       tags:
       - Device Templates
   /manage/api/v8/devicetemplates/parameters/scan:
@@ -2804,6 +3085,14 @@ paths:
     get:
       operationId: getDeviceTemplatesList
       parameters:
+      - explode: true
+        in: query
+        name: allVersions
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       - example: manageddevice
         explode: true
         in: query
@@ -2828,6 +3117,7 @@ paths:
               example:
               - name: name-8d4a2628-06c0-436b-8a90-d90027917405
                 version: v1
+                isLatestVersion: true
                 serviceType: manageddevice
                 deviceModels: null
                 configContent: null
@@ -2837,8 +3127,12 @@ paths:
                 id: beaf0bee-bdf9-4ade-993a-de352fa38bc7
                 userId: f1a0f9cc-08c1-4190-98b9-48b0988b9c7f
                 createdOn: 2020-08-06T19:37:55.615Z
+                tags:
+                - manageddevice
+                - compliance
               - name: name-5cba2b31-93e7-4968-8a3a-a20552bc527b
                 version: v1
+                isLatestVersion: true
                 serviceType: manageddevice
                 deviceModels: null
                 configContent: null
@@ -2848,8 +3142,12 @@ paths:
                 id: 1f3098f9-884d-485a-b1cb-501067f5142a
                 userId: c0c3cff0-d5d5-11ea-b88a-a7053c652ef4
                 createdOn: 2020-08-06T19:40:41.316Z
+                tags:
+                - manageddevice
+                - compliance
               - name: name-54852468-0eca-4d60-9764-5f207090954d
                 version: v1
+                isLatestVersion: true
                 serviceType: manageddevice
                 deviceModels: null
                 configContent: null
@@ -2861,6 +3159,7 @@ paths:
                 createdOn: 2020-08-06T19:40:41.235Z
               - name: name-c24fe522-ca69-4be1-829b-518478e4d2ee
                 version: v1
+                isLatestVersion: true
                 serviceType: manageddevice
                 deviceModels: null
                 configContent: null
@@ -2872,6 +3171,7 @@ paths:
                 createdOn: 2020-08-06T18:26:28.021Z
               - name: name-42e1aabb-45cf-4209-8de0-250aaaf88715
                 version: v1
+                isLatestVersion: true
                 serviceType: manageddevice
                 deviceModels: null
                 configContent: null
@@ -2881,8 +3181,12 @@ paths:
                 id: f3b096d8-5633-4956-bb2f-1aa8f0f5b122
                 userId: c0c3cff0-d5d5-11ea-b88a-a7053c652ef4
                 createdOn: 2020-08-06T19:40:41.092Z
+                tags:
+                - manageddevice
+                - compliance
               - name: name-38bc5ad4-a94e-4904-a1ff-12addd574efb
                 version: v1
+                isLatestVersion: true
                 serviceType: manageddevice
                 deviceModels: null
                 configContent: null
@@ -2894,6 +3198,7 @@ paths:
                 createdOn: 2020-08-06T18:26:28.131Z
               - name: managed-device-regression-test-template-80f3f736-1692-4128-92f1-b109c1bf12d3
                 version: v1
+                isLatestVersion: true
                 serviceType: manageddevice
                 deviceModels: null
                 configContent: null
@@ -2905,6 +3210,7 @@ paths:
                 createdOn: 2020-08-04T20:30:52.486Z
               - name: name-f3f300c9-94e5-46ac-88d8-f8bb5cbb4b1a
                 version: v1
+                isLatestVersion: true
                 serviceType: manageddevice
                 deviceModels: null
                 configContent: null
@@ -2914,6 +3220,9 @@ paths:
                 id: 5a6e44b7-987c-476f-9b52-b7506dfd0ac4
                 userId: b77fb077-997a-401b-b6c8-08a4b89e383a
                 createdOn: 2020-08-04T21:27:21.467Z
+                tags:
+                - manageddevice
+                - compliance
               schema:
                 items:
                   $ref: '#/components/schemas/DeviceTemplate'
@@ -3012,6 +3321,7 @@ paths:
               example:
                 name: name-de8f846f-199e-48e4-ad85-831f284329bb
                 version: v1
+                isLatestVersion: true
                 serviceType: manageddevice
                 deviceModels: null
                 configContent: string
@@ -3023,6 +3333,9 @@ paths:
                 id: 031c3a01-8419-41ac-b356-5f98eb53f944
                 userId: c0c3cff0-d5d5-11ea-b88a-a7053c652ef4
                 createdOn: 2020-08-06T19:42:17.684Z
+                tags:
+                - manageddevice
+                - compliance
               schema:
                 $ref: '#/components/schemas/DeviceTemplate'
           description: OK
@@ -3606,7 +3919,7 @@ paths:
                   version: "1"
               schema:
                 $ref: '#/components/schemas/Service'
-          description: Success
+          description: OK
         "401":
           content:
             application/json:
@@ -3634,6 +3947,101 @@ paths:
       summary: Returns a service.
       tags:
       - Services
+    put:
+      operationId: updateService
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            example:
+              status:
+                lifeCycleStatus: Provisioned
+              definitionAttributes:
+                name: Managed Device
+                offerName: Managed Device
+                id: 5872e764-c459-11e7-abc4-cec278b6b50a
+                type: manageddevice
+              attributes:
+                template: manageddevice-2.0.ftl
+                orchestrator: ncs
+                platform-service-instance-id: d5c9dc300232-4e8677d462dd49cab5298731a94c2da0-manageddevice
+                devices: '[{"status-message":"Operation ADD on device CPE-828dcb62-2345-4b8f-b5af-5db230a95cd3
+                  with serial number 97K7C3YDPY1 was a SUCCESS","name":"CPE-828dcb62-2345-4b8f-b5af-5db230a95cd3","attributes":[{"attrib-name":"ipaddress","attrib-value":"10.254.0.1"},{"attrib-name":"hostname","attrib-value":"CPE-828dcb62-2345-4b8f-b5af-5db230a95cd3"},{"attrib-name":"subtype","attrib-value":"ISR"},{"attrib-name":"name","attrib-value":"CPE-828dcb62-2345-4b8f-b5af-5db230a95cd3"},{"attrib-name":"ned-id","attrib-value":"cisco-ios-cli-6.37"},{"attrib-name":"model","attrib-value":"CSR1000V"},{"attrib-name":"serialKey","attrib-value":"97K7C3YDPY1"},{"attrib-name":"type","attrib-value":"CPE"},{"attrib-name":"category","attrib-value":"CPE"},{"attrib-name":"version","attrib-value":"16.9.5"}],"operation":"ADD","status":"SUCCESS"}]'
+                name: CPE-828dcb62-2345-4b8f-b5af-5db230a95cd3
+                provisionTimestamp: Tue Aug 04 21:01:47 UTC 2020
+                provisionTimestampNumber: "1596574907112"
+                version: "1"
+            schema:
+              $ref: '#/components/schemas/ServiceUpdate'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                id: d5c9dc300232-4e8677d462dd49cab5298731a94c2da0-manageddevice
+                providerId: fe3ad89c-449f-42f2-b4f8-b10ab7bc0266
+                tenantId: 985b22a2-00a8-4cea-b9ed-50e76b2b5949
+                userId: c0c3cff0-d5d5-11ea-b88a-a7053c652ef4
+                subscriptionId: d5c9dc300232-4e8677d462dd49cab5298731a94c2da0-manageddevice
+                tenantName: d5c9dc30-0232-499b-a8f3-3962c3138159
+                createdOn: 2020-08-04T21:01:47.148Z
+                modifiedOn: 2020-08-04T21:01:47.148Z
+                provisionedOn: 2020-08-04T21:01:47.093Z
+                status:
+                  lifeCycleStatus: Provisioned
+                definitionAttributes:
+                  name: Managed Device
+                  offerName: Managed Device
+                  id: 5872e764-c459-11e7-abc4-cec278b6b50a
+                  type: manageddevice
+                attributes:
+                  template: manageddevice-2.0.ftl
+                  orchestrator: ncs
+                  platform-service-instance-id: d5c9dc300232-4e8677d462dd49cab5298731a94c2da0-manageddevice
+                  devices: '[{"status-message":"Operation ADD on device CPE-828dcb62-2345-4b8f-b5af-5db230a95cd3
+                    with serial number 97K7C3YDPY1 was a SUCCESS","name":"CPE-828dcb62-2345-4b8f-b5af-5db230a95cd3","attributes":[{"attrib-name":"ipaddress","attrib-value":"10.254.0.1"},{"attrib-name":"hostname","attrib-value":"CPE-828dcb62-2345-4b8f-b5af-5db230a95cd3"},{"attrib-name":"subtype","attrib-value":"ISR"},{"attrib-name":"name","attrib-value":"CPE-828dcb62-2345-4b8f-b5af-5db230a95cd3"},{"attrib-name":"ned-id","attrib-value":"cisco-ios-cli-6.37"},{"attrib-name":"model","attrib-value":"CSR1000V"},{"attrib-name":"serialKey","attrib-value":"97K7C3YDPY1"},{"attrib-name":"type","attrib-value":"CPE"},{"attrib-name":"category","attrib-value":"CPE"},{"attrib-name":"version","attrib-value":"16.9.5"}],"operation":"ADD","status":"SUCCESS"}]'
+                  name: CPE-828dcb62-2345-4b8f-b5af-5db230a95cd3
+                  provisionTimestamp: Tue Aug 04 21:01:47 UTC 2020
+                  provisionTimestampNumber: "1596574907112"
+                  version: "1"
+              schema:
+                $ref: '#/components/schemas/Service'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Unauthenticated
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Unauthorized
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal Server Error
+      summary: Updates a service.
+      tags:
+      - Services
   /manage/api/v8/sites:
     get:
       operationId: getSitesPage
@@ -3645,6 +4053,14 @@ paths:
         schema:
           format: uuid
           type: string
+        style: form
+      - explode: true
+        in: query
+        name: includeSubtenants
+        required: false
+        schema:
+          default: false
+          type: boolean
         style: form
       - explode: true
         in: query
@@ -5041,6 +5457,7 @@ paths:
                   image: null
                   parentId: null
                   numberOfChildren: 0
+                  email: noreply@cisco.com
                 - id: b32fc309-1e42-4769-81be-dfda6a249b6f
                   createdOn: 2020-08-06T20:59:52.19Z
                   modifiedOn: 2020-08-06T20:59:52.19Z
@@ -5051,6 +5468,7 @@ paths:
                   image: null
                   parentId: null
                   numberOfChildren: 0
+                  email: noreply@cisco.com
                 - id: 4cc15964-5add-4446-ae3a-6bb4bf46c74d
                   createdOn: 2020-08-04T21:28:03.665Z
                   modifiedOn: 2020-08-04T21:28:03.665Z
@@ -5061,6 +5479,7 @@ paths:
                   image: null
                   parentId: null
                   numberOfChildren: 0
+                  email: noreply@cisco.com
               schema:
                 $ref: '#/components/schemas/TenantsPage'
           description: OK
@@ -5100,6 +5519,7 @@ paths:
               name: Acme Company
               description: An anvil for every roadrunner.
               url: https://cisco.com
+              email: someone@cisco.com
             schema:
               $ref: '#/components/schemas/TenantCreate'
         required: true
@@ -5118,6 +5538,7 @@ paths:
                 image: null
                 parentId: null
                 numberOfChildren: null
+                email: someone@cisco.com
               schema:
                 $ref: '#/components/schemas/Tenant'
           description: Created
@@ -5185,6 +5606,7 @@ paths:
                 image: null
                 parentId: null
                 numberOfChildren: 0
+                email: noreply@cisco.com
               - id: b32fc309-1e42-4769-81be-dfda6a249b6f
                 createdOn: 2020-08-06T20:59:52.19Z
                 modifiedOn: 2020-08-06T20:59:52.19Z
@@ -5195,6 +5617,7 @@ paths:
                 image: null
                 parentId: null
                 numberOfChildren: 0
+                email: noreply@cisco.com
               - id: 4cc15964-5add-4446-ae3a-6bb4bf46c74d
                 createdOn: 2020-08-04T21:28:03.665Z
                 modifiedOn: 2020-08-04T21:28:03.665Z
@@ -5205,6 +5628,7 @@ paths:
                 image: null
                 parentId: null
                 numberOfChildren: 0
+                email: noreply@cisco.com
               schema:
                 items:
                   $ref: '#/components/schemas/Tenant'
@@ -5317,6 +5741,7 @@ paths:
                 image: null
                 parentId: null
                 numberOfChildren: 0
+                email: noreply@cisco.com
               schema:
                 $ref: '#/components/schemas/Tenant'
           description: OK
@@ -5371,6 +5796,7 @@ paths:
               name: Acme Company
               description: We sell rocket powered rollerskates.
               url: https://cisco.com
+              email: noreply@cisco.com
             schema:
               $ref: '#/components/schemas/TenantUpdate'
         required: true
@@ -5389,6 +5815,7 @@ paths:
                 image: null
                 parentId: null
                 numberOfChildren: 0
+                email: noreply@cisco.com
               schema:
                 $ref: '#/components/schemas/Tenant'
           description: OK
@@ -5998,7 +6425,7 @@ paths:
                     port: -1
                     protocol: https
             schema:
-              additionalProperties: true
+              additionalProperties: {}
               type: object
         required: true
       responses:
@@ -6343,7 +6770,7 @@ paths:
         style: simple
       - explode: true
         in: query
-        name: tenantId
+        name: tenantIds
         required: false
         schema:
           items:
@@ -6362,7 +6789,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties: true
+              additionalProperties: {}
               type: object
         required: true
       responses:
@@ -6489,7 +6916,7 @@ paths:
                       port: -1
                       protocol: https
               schema:
-                additionalProperties: true
+                additionalProperties: {}
                 type: object
           description: OK
         "400":
@@ -8501,29 +8928,6 @@ paths:
       - Workflow Targets
 components:
   parameters:
-    workflowPage:
-      explode: true
-      in: query
-      name: page
-      required: true
-      schema:
-        example: 0
-        format: int32
-        minimum: 0
-        type: integer
-      style: form
-    workflowPageSize:
-      explode: true
-      in: query
-      name: pageSize
-      required: true
-      schema:
-        example: 10
-        format: int32
-        maximum: 100
-        minimum: 1
-        type: integer
-      style: form
     page:
       explode: true
       in: query
@@ -8567,6 +8971,29 @@ components:
         - asc
         - desc
         type: string
+      style: form
+    workflowPage:
+      explode: true
+      in: query
+      name: page
+      required: true
+      schema:
+        example: 0
+        format: int32
+        minimum: 0
+        type: integer
+      style: form
+    workflowPageSize:
+      explode: true
+      in: query
+      name: pageSize
+      required: true
+      schema:
+        example: 10
+        format: int32
+        maximum: 100
+        minimum: 1
+        type: integer
       style: form
   requestBodies:
     inline_object:
@@ -8627,6 +9054,176 @@ components:
             $ref: '#/components/schemas/Error'
       description: Internal Server Error
   schemas:
+    Error:
+      properties:
+        code:
+          readOnly: true
+          type: string
+        message:
+          readOnly: true
+          type: string
+      type: object
+    NameValue:
+      example:
+        name: name
+        value: value
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+      type: object
+    PageHeader:
+      properties:
+        page:
+          format: int32
+          readOnly: true
+          type: integer
+        pageSize:
+          format: int32
+          readOnly: true
+          type: integer
+        totalItems:
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+        hasNext:
+          nullable: true
+          readOnly: true
+          type: boolean
+        hasPrevious:
+          nullable: true
+          readOnly: true
+          type: boolean
+        sortBy:
+          nullable: true
+          readOnly: true
+          type: string
+        sortOrder:
+          enum:
+          - asc
+          - desc
+          - null
+          nullable: true
+          readOnly: true
+          type: string
+      type: object
+    GenericEventSeverity:
+      enum:
+      - CRITICAL
+      - POOR
+      - FAIR
+      - GOOD
+      - UNKNOWN
+      type: string
+    GenericEvent:
+      allOf:
+      - $ref: '#/components/schemas/GenericEvent_allOf'
+      - $ref: '#/components/schemas/GenericEventCreate'
+    GenericEventCreate:
+      example:
+        trace:
+          traceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          spanId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          parentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        security:
+          clientId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          tenantName: tenantName
+          providerId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          originalUsername: originalUsername
+          userId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          username: username
+        keywords: keyword_1 keyword_2 keyword_3
+        subtype: subtype
+        service: service
+        description: description
+        details:
+          key: details
+      properties:
+        severity:
+          $ref: '#/components/schemas/GenericEventSeverity'
+        subtype:
+          maxLength: 128
+          minLength: 1
+          nullable: false
+          type: string
+        service:
+          description: Service that generated the event
+          maxLength: 128
+          minLength: 1
+          nullable: false
+          type: string
+        keywords:
+          description: Space separated list of keywords to be used for search
+          example: keyword_1 keyword_2 keyword_3
+          maxLength: 512
+          minLength: 1
+          nullable: false
+          type: string
+        details:
+          additionalProperties:
+            type: string
+          nullable: false
+          type: object
+        trace:
+          $ref: '#/components/schemas/GenericEventTrace'
+        security:
+          $ref: '#/components/schemas/GenericEventSecurity'
+        description:
+          maxLength: 512
+          minLength: 1
+          nullable: false
+          type: string
+      type: object
+    GenericEventSecurity:
+      example:
+        clientId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        tenantName: tenantName
+        providerId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        originalUsername: originalUsername
+        userId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        username: username
+      nullable: false
+      properties:
+        clientId:
+          format: uuid
+          type: string
+        userId:
+          format: uuid
+          type: string
+        username:
+          type: string
+        tenantId:
+          format: uuid
+          type: string
+        tenantName:
+          type: string
+        providerId:
+          format: uuid
+          type: string
+        originalUsername:
+          type: string
+      type: object
+    GenericEventTrace:
+      example:
+        traceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        spanId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        parentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      nullable: false
+      properties:
+        traceId:
+          format: uuid
+          type: string
+        spanId:
+          format: uuid
+          type: string
+        parentId:
+          format: uuid
+          type: string
+      type: object
     Product:
       allOf:
       - $ref: '#/components/schemas/Product_allOf'
@@ -8670,6 +9267,9 @@ components:
         label: label
         version: 0
         parentId: parentId
+        tags:
+        - tags
+        - tags
         price: price
         serviceConfigQueryRootXPaths:
         - serviceConfigQueryRootXPaths
@@ -8699,8 +9299,8 @@ components:
           inputType: inputType
           value: value
           allowedValues:
-          - key: '{}'
-          - key: '{}'
+          - key: ""
+          - key: ""
           maxValue: 5
           minLimit: minLimit
           label: label
@@ -8741,8 +9341,8 @@ components:
           inputType: inputType
           value: value
           allowedValues:
-          - key: '{}'
-          - key: '{}'
+          - key: ""
+          - key: ""
           maxValue: 5
           minLimit: minLimit
           label: label
@@ -8785,8 +9385,8 @@ components:
           inputType: inputType
           value: value
           allowedValues:
-          - key: '{}'
-          - key: '{}'
+          - key: ""
+          - key: ""
           maxValue: 5
           minLimit: minLimit
           label: label
@@ -8827,8 +9427,8 @@ components:
           inputType: inputType
           value: value
           allowedValues:
-          - key: '{}'
-          - key: '{}'
+          - key: ""
+          - key: ""
           maxValue: 5
           minLimit: minLimit
           label: label
@@ -8903,6 +9503,13 @@ components:
           type: array
         uiConfig:
           $ref: '#/components/schemas/ServiceUIConfig'
+        tags:
+          items:
+            maxLength: 64
+            minLength: 1
+            type: string
+          nullable: true
+          type: array
       required:
       - configuration
       - description
@@ -8912,8 +9519,6 @@ components:
       - label
       - name
       - options
-      - price
-      - properties
       - serviceId
       - version
       type: object
@@ -8942,8 +9547,8 @@ components:
         inputType: inputType
         value: value
         allowedValues:
-        - key: '{}'
-        - key: '{}'
+        - key: ""
+        - key: ""
         maxValue: 5
         minLimit: minLimit
         label: label
@@ -8995,7 +9600,7 @@ components:
           type: array
         allowedValues:
           items:
-            additionalProperties: true
+            additionalProperties: {}
             type: object
           nullable: true
           type: array
@@ -9134,7 +9739,7 @@ components:
         productId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         price: price
         approvals:
-          key: '{}'
+          key: ""
         name: name
         displayOrder: 6
         supportedProperties:
@@ -9179,7 +9784,7 @@ components:
             $ref: '#/components/schemas/NameValue'
           type: array
         approvals:
-          additionalProperties: true
+          additionalProperties: {}
           nullable: true
           type: object
       required:
@@ -9219,6 +9824,17 @@ components:
       - $ref: '#/components/schemas/DeviceCreate_allOf'
       - $ref: '#/components/schemas/DeviceUpdate'
     DeviceUpdate:
+      allOf:
+      - $ref: '#/components/schemas/DeviceUpdate_allOf'
+      - $ref: '#/components/schemas/DevicePatch'
+    DevicePatch:
+      example:
+        name: name
+        model: model
+        subType: subType
+        serialKey: serialKey
+        type: type
+        version: version
       properties:
         name:
           maxLength: 128
@@ -9236,74 +9852,31 @@ components:
           maxLength: 128
           nullable: true
           type: string
-        serviceType:
-          maxLength: 128
-          type: string
-        tags:
-          additionalProperties:
-            type: string
-          nullable: true
-          type: object
         serialKey:
           maxLength: 128
-          minLength: 11
+          nullable: true
           type: string
         version:
           maxLength: 128
-          minLength: 1
+          nullable: true
           type: string
-        managed:
-          default: false
-          type: boolean
-        onboardType:
-          maxLength: 128
-          type: string
-        onboardInformation:
-          additionalProperties:
-            type: string
-          type: object
-        attributes:
-          additionalProperties:
-            type: string
-          type: object
-        billing:
-          $ref: '#/components/schemas/DeviceBilling'
-      required:
-      - managed
-      - model
-      - name
-      - serialKey
-      - type
-      - version
+        complianceState:
+          $ref: '#/components/schemas/DeviceComplianceState'
       type: object
-    DeviceBilling:
-      properties:
-        deviceSpeedGrade:
-          minLength: 1
-          type: string
-        deviceVnfSource:
-          minLength: 1
-          type: string
-        vnfFlavor:
-          minLength: 1
-          type: string
-        vnfImage:
-          minLength: 1
-          type: string
-        vnfName:
-          minLength: 1
-          type: string
-        vnfValue:
-          minLength: 1
-          type: string
-      required:
-      - deviceSpeedGrade
-      - deviceVnfSource
-      - vnfFlavor
-      - vnfImage
-      - vnfName
-      - vnfValue
-      type: object
+    DeviceComplianceState:
+      enum:
+      - COMPLIANT
+      - NOT_COMPLIANT
+      - NOT_APPLICABLE
+      - UNKNOWN
+      type: string
+    DeviceVulnerabilityState:
+      enum:
+      - VULNERABLE
+      - NOT_VULNERABLE
+      - NOT_APPLICABLE
+      - UNKNOWN
+      type: string
     DevicesPage:
       allOf:
       - $ref: '#/components/schemas/PageHeader'
@@ -9435,6 +10008,7 @@ components:
     DeviceTemplate:
       example:
         serviceType: serviceType
+        isLatestVersion: true
         configContent: configContent
         deviceModels:
         - deviceModels
@@ -9462,6 +10036,9 @@ components:
         userId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         createdOn: 2000-01-23T04:56:07.000+00:00
         version: version
+        tags:
+        - tags
+        - tags
         templateStandard: templateStandard
         name: name
         tenantAccess:
@@ -9490,6 +10067,9 @@ components:
           type: string
         version:
           type: string
+        isLatestVersion:
+          nullable: true
+          type: boolean
         serviceType:
           type: string
         deviceModels:
@@ -9510,6 +10090,11 @@ components:
         templateParameterValidators:
           items:
             $ref: '#/components/schemas/TemplateParameterValidator'
+          nullable: true
+          type: array
+        tags:
+          items:
+            type: string
           nullable: true
           type: array
       type: object
@@ -9549,6 +10134,9 @@ components:
           type: type
           toolTipText: toolTipText
         version: version
+        tags:
+        - tags
+        - tags
       properties:
         name:
           type: string
@@ -9576,11 +10164,55 @@ components:
           items:
             $ref: '#/components/schemas/TemplateParameterValidator'
           type: array
+        tags:
+          items:
+            maxLength: 128
+            minLength: 1
+            type: string
+          nullable: true
+          type: array
       required:
       - configContent
       - name
       - resourceProvider
       - serviceType
+      type: object
+    DeviceTemplateVersionCreate:
+      example:
+        configContent: configContent
+        name: name
+        templateParameterValidators:
+        - allowedValues:
+          - allowedValues
+          - allowedValues
+          displayType: displayType
+          hintText: hintText
+          name: name
+          label: label
+          type: type
+          toolTipText: toolTipText
+        - allowedValues:
+          - allowedValues
+          - allowedValues
+          displayType: displayType
+          hintText: hintText
+          name: name
+          label: label
+          type: type
+          toolTipText: toolTipText
+      properties:
+        name:
+          type: string
+        configContent:
+          minLength: 1
+          type: string
+        templateParameterValidators:
+          items:
+            $ref: '#/components/schemas/TemplateParameterValidator'
+          type: array
+      required:
+      - configContent
+      - name
       type: object
     DeviceTemplateAccess:
       example:
@@ -9673,58 +10305,26 @@ components:
           type: array
       type: object
     Service:
+      allOf:
+      - $ref: '#/components/schemas/Service_allOf'
+      - $ref: '#/components/schemas/ServiceUpdate'
+    ServiceUpdate:
       example:
-        modifiedOn: 2000-01-23T04:56:07.000+00:00
-        provisionedOn: 2000-01-23T04:56:07.000+00:00
-        providerId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         definitionAttributes:
-          key: '{}'
+          key: ""
         attributes:
-          key: '{}'
-        id: id
-        subscriptionId: subscriptionId
-        userId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        createdOn: 2000-01-23T04:56:07.000+00:00
+          key: ""
         status:
-          key: '{}'
+          key: ""
       properties:
-        id:
-          readOnly: true
-          type: string
-        providerId:
-          format: uuid
-          type: string
-        tenantId:
-          format: uuid
-          type: string
-        userId:
-          format: uuid
-          type: string
-        subscriptionId:
-          type: string
-        createdOn:
-          format: date-time
-          readOnly: true
-          type: string
-        modifiedOn:
-          format: date-time
-          nullable: true
-          readOnly: true
-          type: string
-        provisionedOn:
-          format: date-time
-          nullable: true
-          readOnly: true
-          type: string
         status:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         definitionAttributes:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         attributes:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
       type: object
     ServicesPage:
@@ -9747,7 +10347,7 @@ components:
           cost:
             key: cost
           serviceDowngrade:
-            key: '{}'
+            key: ""
           provider:
             key: provider
           service:
@@ -9758,13 +10358,13 @@ components:
             key: user
           subscriptionDetail:
             offerSelection:
-              key: '{}'
+              key: ""
             siteCount: '{}'
             dealerCode: dealerCode
             configuration:
               key: configuration
             priceDetail:
-              key: '{}'
+              key: ""
             termsAndConditionId: termsAndConditionId
             sites:
             - operationalStatus: operationalStatus
@@ -9782,7 +10382,7 @@ components:
               - deviceOnboarding:
                   deviceInstanceId: deviceInstanceId
                   deviceOnboardInformation:
-                    key: '{}'
+                    key: ""
                   managed: true
                   tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
                   deviceModel: deviceModel
@@ -9792,13 +10392,13 @@ components:
                 model: model
                 type: type
                 deviceAttributes:
-                  key: '{}'
+                  key: ""
                 deviceId: deviceId
                 delete: true
               - deviceOnboarding:
                   deviceInstanceId: deviceInstanceId
                   deviceOnboardInformation:
-                    key: '{}'
+                    key: ""
                   managed: true
                   tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
                   deviceModel: deviceModel
@@ -9808,12 +10408,12 @@ components:
                 model: model
                 type: type
                 deviceAttributes:
-                  key: '{}'
+                  key: ""
                 deviceId: deviceId
                 delete: true
               displayName: displayName
               siteAttributes:
-                key: '{}'
+                key: ""
               siteId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
               siteName: siteName
               delete: true
@@ -9832,7 +10432,7 @@ components:
               - deviceOnboarding:
                   deviceInstanceId: deviceInstanceId
                   deviceOnboardInformation:
-                    key: '{}'
+                    key: ""
                   managed: true
                   tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
                   deviceModel: deviceModel
@@ -9842,13 +10442,13 @@ components:
                 model: model
                 type: type
                 deviceAttributes:
-                  key: '{}'
+                  key: ""
                 deviceId: deviceId
                 delete: true
               - deviceOnboarding:
                   deviceInstanceId: deviceInstanceId
                   deviceOnboardInformation:
-                    key: '{}'
+                    key: ""
                   managed: true
                   tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
                   deviceModel: deviceModel
@@ -9858,17 +10458,17 @@ components:
                 model: model
                 type: type
                 deviceAttributes:
-                  key: '{}'
+                  key: ""
                 deviceId: deviceId
                 delete: true
               displayName: displayName
               siteAttributes:
-                key: '{}'
+                key: ""
               siteId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
               siteName: siteName
               delete: true
             serviceInstanceDetail:
-              key: '{}'
+              key: ""
             pricePlanId: pricePlanId
           tenant:
             key: tenant
@@ -9934,7 +10534,7 @@ components:
         cost:
           key: cost
         serviceDowngrade:
-          key: '{}'
+          key: ""
         provider:
           key: provider
         service:
@@ -9945,13 +10545,13 @@ components:
           key: user
         subscriptionDetail:
           offerSelection:
-            key: '{}'
+            key: ""
           siteCount: '{}'
           dealerCode: dealerCode
           configuration:
             key: configuration
           priceDetail:
-            key: '{}'
+            key: ""
           termsAndConditionId: termsAndConditionId
           sites:
           - operationalStatus: operationalStatus
@@ -9969,7 +10569,7 @@ components:
             - deviceOnboarding:
                 deviceInstanceId: deviceInstanceId
                 deviceOnboardInformation:
-                  key: '{}'
+                  key: ""
                 managed: true
                 tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
                 deviceModel: deviceModel
@@ -9979,13 +10579,13 @@ components:
               model: model
               type: type
               deviceAttributes:
-                key: '{}'
+                key: ""
               deviceId: deviceId
               delete: true
             - deviceOnboarding:
                 deviceInstanceId: deviceInstanceId
                 deviceOnboardInformation:
-                  key: '{}'
+                  key: ""
                 managed: true
                 tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
                 deviceModel: deviceModel
@@ -9995,12 +10595,12 @@ components:
               model: model
               type: type
               deviceAttributes:
-                key: '{}'
+                key: ""
               deviceId: deviceId
               delete: true
             displayName: displayName
             siteAttributes:
-              key: '{}'
+              key: ""
             siteId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
             siteName: siteName
             delete: true
@@ -10019,7 +10619,7 @@ components:
             - deviceOnboarding:
                 deviceInstanceId: deviceInstanceId
                 deviceOnboardInformation:
-                  key: '{}'
+                  key: ""
                 managed: true
                 tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
                 deviceModel: deviceModel
@@ -10029,13 +10629,13 @@ components:
               model: model
               type: type
               deviceAttributes:
-                key: '{}'
+                key: ""
               deviceId: deviceId
               delete: true
             - deviceOnboarding:
                 deviceInstanceId: deviceInstanceId
                 deviceOnboardInformation:
-                  key: '{}'
+                  key: ""
                 managed: true
                 tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
                 deviceModel: deviceModel
@@ -10045,17 +10645,17 @@ components:
               model: model
               type: type
               deviceAttributes:
-                key: '{}'
+                key: ""
               deviceId: deviceId
               delete: true
             displayName: displayName
             siteAttributes:
-              key: '{}'
+              key: ""
             siteId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
             siteName: siteName
             delete: true
           serviceInstanceDetail:
-            key: '{}'
+            key: ""
           pricePlanId: pricePlanId
         tenant:
           key: tenant
@@ -10095,7 +10695,7 @@ components:
         subscriptionDetail:
           $ref: '#/components/schemas/LegacySubscriptionDetail'
         serviceDowngrade:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         nsoResponseTypes:
           $ref: '#/components/schemas/LegacyNsoResponseTypes'
@@ -10103,13 +10703,13 @@ components:
     LegacySubscriptionDetail:
       example:
         offerSelection:
-          key: '{}'
+          key: ""
         siteCount: '{}'
         dealerCode: dealerCode
         configuration:
           key: configuration
         priceDetail:
-          key: '{}'
+          key: ""
         termsAndConditionId: termsAndConditionId
         sites:
         - operationalStatus: operationalStatus
@@ -10127,7 +10727,7 @@ components:
           - deviceOnboarding:
               deviceInstanceId: deviceInstanceId
               deviceOnboardInformation:
-                key: '{}'
+                key: ""
               managed: true
               tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
               deviceModel: deviceModel
@@ -10137,13 +10737,13 @@ components:
             model: model
             type: type
             deviceAttributes:
-              key: '{}'
+              key: ""
             deviceId: deviceId
             delete: true
           - deviceOnboarding:
               deviceInstanceId: deviceInstanceId
               deviceOnboardInformation:
-                key: '{}'
+                key: ""
               managed: true
               tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
               deviceModel: deviceModel
@@ -10153,12 +10753,12 @@ components:
             model: model
             type: type
             deviceAttributes:
-              key: '{}'
+              key: ""
             deviceId: deviceId
             delete: true
           displayName: displayName
           siteAttributes:
-            key: '{}'
+            key: ""
           siteId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           siteName: siteName
           delete: true
@@ -10177,7 +10777,7 @@ components:
           - deviceOnboarding:
               deviceInstanceId: deviceInstanceId
               deviceOnboardInformation:
-                key: '{}'
+                key: ""
               managed: true
               tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
               deviceModel: deviceModel
@@ -10187,13 +10787,13 @@ components:
             model: model
             type: type
             deviceAttributes:
-              key: '{}'
+              key: ""
             deviceId: deviceId
             delete: true
           - deviceOnboarding:
               deviceInstanceId: deviceInstanceId
               deviceOnboardInformation:
-                key: '{}'
+                key: ""
               managed: true
               tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
               deviceModel: deviceModel
@@ -10203,17 +10803,17 @@ components:
             model: model
             type: type
             deviceAttributes:
-              key: '{}'
+              key: ""
             deviceId: deviceId
             delete: true
           displayName: displayName
           siteAttributes:
-            key: '{}'
+            key: ""
           siteId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           siteName: siteName
           delete: true
         serviceInstanceDetail:
-          key: '{}'
+          key: ""
         pricePlanId: pricePlanId
       properties:
         siteCount:
@@ -10223,13 +10823,13 @@ components:
             $ref: '#/components/schemas/LegacySite'
           type: array
         offerSelection:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         serviceInstanceDetail:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         priceDetail:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         dealerCode:
           type: string
@@ -10272,7 +10872,7 @@ components:
         - deviceOnboarding:
             deviceInstanceId: deviceInstanceId
             deviceOnboardInformation:
-              key: '{}'
+              key: ""
             managed: true
             tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
             deviceModel: deviceModel
@@ -10282,13 +10882,13 @@ components:
           model: model
           type: type
           deviceAttributes:
-            key: '{}'
+            key: ""
           deviceId: deviceId
           delete: true
         - deviceOnboarding:
             deviceInstanceId: deviceInstanceId
             deviceOnboardInformation:
-              key: '{}'
+              key: ""
             managed: true
             tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
             deviceModel: deviceModel
@@ -10298,12 +10898,12 @@ components:
           model: model
           type: type
           deviceAttributes:
-            key: '{}'
+            key: ""
           deviceId: deviceId
           delete: true
         displayName: displayName
         siteAttributes:
-          key: '{}'
+          key: ""
         siteId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         siteName: siteName
         delete: true
@@ -10322,7 +10922,7 @@ components:
             $ref: '#/components/schemas/LegacySiteDevice'
           type: array
         siteAttributes:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         delete:
           type: boolean
@@ -10369,7 +10969,7 @@ components:
         deviceOnboarding:
           deviceInstanceId: deviceInstanceId
           deviceOnboardInformation:
-            key: '{}'
+            key: ""
           managed: true
           tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           deviceModel: deviceModel
@@ -10379,7 +10979,7 @@ components:
         model: model
         type: type
         deviceAttributes:
-          key: '{}'
+          key: ""
         deviceId: deviceId
         delete: true
       properties:
@@ -10392,7 +10992,7 @@ components:
         type:
           type: string
         deviceAttributes:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         deviceOnboarding:
           $ref: '#/components/schemas/LegacySiteDeviceOnboard'
@@ -10405,7 +11005,7 @@ components:
       example:
         deviceInstanceId: deviceInstanceId
         deviceOnboardInformation:
-          key: '{}'
+          key: ""
         managed: true
         tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         deviceModel: deviceModel
@@ -10428,7 +11028,7 @@ components:
         deviceOnboardingType:
           type: string
         deviceOnboardInformation:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
       type: object
     LegacyServiceOrderResponse:
@@ -10544,6 +11144,7 @@ components:
           type: string
         description:
           maxLength: 256
+          nullable: true
           type: string
         address:
           $ref: '#/components/schemas/SiteAddress'
@@ -10579,6 +11180,7 @@ components:
           type: string
         modifiedOn:
           format: date-time
+          nullable: true
           readOnly: true
           type: string
         modifiedBy:
@@ -10680,6 +11282,7 @@ components:
           type: string
         description:
           maxLength: 256
+          nullable: true
           type: string
         type:
           maxLength: 128
@@ -10916,6 +11519,7 @@ components:
         name: name
         description: description
         url: url
+        email: email
       properties:
         name:
           maxLength: 128
@@ -10923,12 +11527,18 @@ components:
           type: string
         description:
           maxLength: 512
-          minLength: 1
+          nullable: true
           type: string
         url:
+          nullable: true
           type: string
         image:
           maxLength: 40000
+          nullable: true
+          type: string
+        email:
+          format: email
+          maxLength: 254
           nullable: true
           type: string
       required:
@@ -10980,6 +11590,8 @@ components:
         passwordPolicyName:
           type: string
         locale:
+          maxLength: 16
+          minLength: 2
           nullable: true
           type: string
       required:
@@ -11019,10 +11631,13 @@ components:
         updated_on:
           type: string
         updated_by:
+          nullable: true
           type: string
         owner:
+          nullable: true
           type: string
         unique_name:
+          nullable: true
           type: string
       type: object
     StartWorkflowResponse:
@@ -11036,7 +11651,7 @@ components:
         version: version
         created_by: created_by
         status:
-          key: '{}'
+          key: ""
       properties:
         id:
           format: ksuid
@@ -11050,7 +11665,7 @@ components:
         base_type:
           type: string
         status:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         version:
           type: string
@@ -11116,7 +11731,7 @@ components:
           - null
           - null
           properties:
-            key: '{}'
+            key: ""
         - unique_name: unique_name
           workflow_id: workflow_id
           base_type: base_type
@@ -11131,12 +11746,12 @@ components:
           - null
           - null
           properties:
-            key: '{}'
+            key: ""
         description: description
         title: title
         type: type
         output:
-          key: '{}'
+          key: ""
         definition_id: definition_id
         unique_name: unique_name
         base_type: base_type
@@ -11147,22 +11762,27 @@ components:
         id: id
         started_by: started_by
         properties:
-          key: '{}'
+          key: ""
         status:
-          key: '{}'
+          key: ""
       properties:
         id:
           format: ksuid
           type: string
         workflow_id:
+          nullable: true
           type: string
         definition_id:
+          nullable: true
           type: string
         schema_id:
+          nullable: true
           type: string
         adapter_id:
+          nullable: true
           type: string
         unique_name:
+          nullable: true
           type: string
         name:
           type: string
@@ -11173,27 +11793,36 @@ components:
         base_type:
           type: string
         properties:
-          additionalProperties: true
+          additionalProperties: {}
+          nullable: true
           type: object
         object_type:
+          nullable: true
           type: string
         started_by:
+          nullable: true
           type: string
         blocks:
           items:
             $ref: '#/components/schemas/WorkflowActionBlock'
+          nullable: true
           type: array
         status:
-          additionalProperties: true
+          additionalProperties: {}
+          nullable: true
           type: object
         description:
+          nullable: true
           type: string
         output:
-          additionalProperties: true
+          additionalProperties: {}
+          nullable: true
           type: object
         started_on:
+          nullable: true
           type: string
         ended_on:
+          nullable: true
           type: string
       type: object
     WorkflowActionBlock:
@@ -11212,7 +11841,7 @@ components:
         - null
         - null
         properties:
-          key: '{}'
+          key: ""
       properties:
         unique_name:
           type: string
@@ -11227,7 +11856,7 @@ components:
         base_type:
           type: string
         properties:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         object_type:
           type: string
@@ -11285,8 +11914,10 @@ components:
             $ref: '#/components/schemas/WorkflowVariable'
           type: array
         type_of_target_needed:
+          nullable: true
           type: string
         target_id:
+          nullable: true
           type: string
       type: object
     WorkflowCategory:
@@ -11367,7 +11998,7 @@ components:
         target_id: target_id
         title: title
         properties:
-          key: '{}'
+          key: ""
       properties:
         title:
           type: string
@@ -11378,7 +12009,7 @@ components:
         schema_id:
           type: string
         properties:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
       required:
       - properties
@@ -11407,6 +12038,7 @@ components:
       allOf:
       - $ref: '#/components/schemas/WorkflowSchema_allOf'
       - $ref: '#/components/schemas/WorkflowFooter'
+      nullable: true
     WorkflowAccessMeta:
       properties:
         adapter:
@@ -11448,6 +12080,7 @@ components:
     WorkflowDefAccessMeta:
       properties:
         is_integration:
+          nullable: true
           type: boolean
         is_internal:
           type: boolean
@@ -11464,7 +12097,7 @@ components:
         title: title
         type: type
         properties:
-          key: '{}'
+          key: ""
       properties:
         name:
           pattern: ^[^<>]+$
@@ -11479,7 +12112,7 @@ components:
         type:
           type: string
         properties:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         unique_name:
           type: string
@@ -11487,66 +12120,19 @@ components:
       - name
       - properties
       type: object
-    Error:
-      properties:
-        code:
-          readOnly: true
-          type: string
-        message:
-          readOnly: true
-          type: string
-      type: object
-    NameValue:
-      example:
-        name: name
-        value: value
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-      type: object
-    PageHeader:
-      properties:
-        page:
-          format: int32
-          readOnly: true
-          type: integer
-        pageSize:
-          format: int32
-          readOnly: true
-          type: integer
-        totalItems:
-          format: int64
-          nullable: true
-          readOnly: true
-          type: integer
-        hasNext:
-          nullable: true
-          readOnly: true
-          type: boolean
-        hasPrevious:
-          nullable: true
-          readOnly: true
-          type: boolean
-        sortBy:
-          nullable: true
-          readOnly: true
-          type: string
-        sortOrder:
-          enum:
-          - asc
-          - desc
-          - null
-          nullable: true
-          readOnly: true
-          type: string
-      type: object
     inline_object:
       properties:
         file:
           description: The XML template file of a device template
           format: binary
+          type: string
+      type: object
+    GenericEvent_allOf:
+      properties:
+        type:
+          type: string
+        time:
+          format: date-time
           type: string
       type: object
     Product_allOf:
@@ -11586,11 +12172,14 @@ components:
         providerId:
           format: uuid
           type: string
+        vulnerabilityState:
+          $ref: '#/components/schemas/DeviceVulnerabilityState'
         createdOn:
           format: date-time
           type: string
         modifiedOn:
           format: date-time
+          nullable: true
           type: string
       type: object
     DeviceCreate_allOf:
@@ -11605,12 +12194,78 @@ components:
       required:
       - tenantId
       type: object
+    DeviceUpdate_allOf:
+      properties:
+        serviceType:
+          maxLength: 128
+          nullable: true
+          type: string
+        tags:
+          additionalProperties:
+            type: string
+          nullable: true
+          type: object
+        managed:
+          default: false
+          type: boolean
+        onboardType:
+          maxLength: 128
+          type: string
+        onboardInformation:
+          additionalProperties: {}
+          nullable: true
+          type: object
+        attributes:
+          additionalProperties: {}
+          nullable: true
+          type: object
+      required:
+      - managed
+      - model
+      - name
+      - onboardType
+      - type
+      type: object
     DevicesPage_allOf:
       properties:
         contents:
           items:
             $ref: '#/components/schemas/Device'
           type: array
+      type: object
+    Service_allOf:
+      properties:
+        id:
+          readOnly: true
+          type: string
+        providerId:
+          format: uuid
+          readOnly: true
+          type: string
+        tenantId:
+          format: uuid
+          readOnly: true
+          type: string
+        userId:
+          format: uuid
+          readOnly: true
+          type: string
+        subscriptionId:
+          readOnly: true
+          type: string
+        createdOn:
+          format: date-time
+          readOnly: true
+          type: string
+        modifiedOn:
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+        provisionedOn:
+          format: date-time
+          readOnly: true
+          type: string
       type: object
     ServicesPage_allOf:
       properties:
@@ -11672,6 +12327,9 @@ components:
           format: uuid
           nullable: true
           type: string
+        externalId:
+          nullable: true
+          type: string
       type: object
     TenantsPage_allOf:
       properties:
@@ -11723,9 +12381,10 @@ components:
         base_type:
           type: string
         object_type:
+          nullable: true
           type: string
         properties:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         valid:
           type: boolean
@@ -11738,7 +12397,7 @@ components:
         metadata:
           $ref: '#/components/schemas/WorkflowMetadata'
         status:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         permissions:
           items:
@@ -11751,6 +12410,7 @@ components:
         actions:
           items:
             $ref: '#/components/schemas/WorkflowAction'
+          nullable: true
           type: array
       type: object
     WorkflowMetadata_git_info:
@@ -11764,10 +12424,16 @@ components:
         committed_by:
           nullable: true
           type: string
+        commited_on:
+          nullable: true
+          type: string
         committed_on:
           nullable: true
           type: string
         commit_message:
+          nullable: true
+          type: string
+        file_name:
           nullable: true
           type: string
       type: object
@@ -11776,19 +12442,23 @@ components:
         id:
           type: string
         type:
+          nullable: true
           type: string
         base_type:
+          nullable: true
           type: string
         schema_id:
           type: string
         object_type:
           type: string
         properties:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         data_type:
+          nullable: true
           type: string
         scope:
+          nullable: true
           type: string
       type: object
     WorkflowCategory_allOf:
@@ -11810,6 +12480,7 @@ components:
         category_type:
           type: string
         object_type:
+          nullable: true
           type: string
       type: object
     WorkflowEvent_allOf:
@@ -11828,7 +12499,7 @@ components:
         schema_id:
           type: string
         properties:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
       type: object
     WorkflowInstance_allOf:
@@ -11849,18 +12520,20 @@ components:
         base_type:
           type: string
         properties:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         actions:
           items:
             $ref: '#/components/schemas/WorkflowAction'
+          nullable: true
           type: array
         variables:
           items:
             $ref: '#/components/schemas/WorkflowVariable'
+          nullable: true
           type: array
         status:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         started_on:
           type: string
@@ -11871,6 +12544,7 @@ components:
       properties:
         id:
           format: ksuid
+          nullable: true
           type: string
         schema_id:
           type: string
@@ -11893,19 +12567,19 @@ components:
         access_meta:
           $ref: '#/components/schemas/WorkflowAccessMeta'
         variable_schema:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         property_schema:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         output_schema:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         view_config:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
         attributes:
-          additionalProperties: true
+          additionalProperties: {}
           type: object
       type: object
     WorkflowTarget_allOf:
@@ -11920,13 +12594,15 @@ components:
         name:
           type: string
         title:
+          nullable: true
           type: string
         type:
           type: string
         base_type:
           type: string
         properties:
-          additionalProperties: true
+          additionalProperties: {}
+          nullable: true
           type: object
         valid:
           type: boolean

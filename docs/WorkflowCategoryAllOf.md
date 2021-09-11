@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **BaseType** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **CategoryType** | Pointer to **string** |  | [optional] 
-**ObjectType** | Pointer to **string** |  | [optional] 
+**ObjectType** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -258,6 +258,16 @@ SetObjectType sets ObjectType field to given value.
 
 HasObjectType returns a boolean if a field has been set.
 
+### SetObjectTypeNil
+
+`func (o *WorkflowCategoryAllOf) SetObjectTypeNil(b bool)`
+
+ SetObjectTypeNil sets the value for ObjectType to be an explicit nil
+
+### UnsetObjectType
+`func (o *WorkflowCategoryAllOf) UnsetObjectType()`
+
+UnsetObjectType ensures that no value is present for ObjectType, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -12,13 +12,13 @@ Name | Type | Description | Notes
 **BaseType** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **CategoryType** | Pointer to **string** |  | [optional] 
-**ObjectType** | Pointer to **string** |  | [optional] 
+**ObjectType** | Pointer to **NullableString** |  | [optional] 
 **CreatedOn** | Pointer to **string** |  | [optional] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
 **UpdatedOn** | Pointer to **string** |  | [optional] 
-**UpdatedBy** | Pointer to **string** |  | [optional] 
-**Owner** | Pointer to **string** |  | [optional] 
-**UniqueName** | Pointer to **string** |  | [optional] 
+**UpdatedBy** | Pointer to **NullableString** |  | [optional] 
+**Owner** | Pointer to **NullableString** |  | [optional] 
+**UniqueName** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -264,6 +264,16 @@ SetObjectType sets ObjectType field to given value.
 
 HasObjectType returns a boolean if a field has been set.
 
+### SetObjectTypeNil
+
+`func (o *WorkflowCategory) SetObjectTypeNil(b bool)`
+
+ SetObjectTypeNil sets the value for ObjectType to be an explicit nil
+
+### UnsetObjectType
+`func (o *WorkflowCategory) UnsetObjectType()`
+
+UnsetObjectType ensures that no value is present for ObjectType, not even an explicit nil
 ### GetCreatedOn
 
 `func (o *WorkflowCategory) GetCreatedOn() string`
@@ -364,6 +374,16 @@ SetUpdatedBy sets UpdatedBy field to given value.
 
 HasUpdatedBy returns a boolean if a field has been set.
 
+### SetUpdatedByNil
+
+`func (o *WorkflowCategory) SetUpdatedByNil(b bool)`
+
+ SetUpdatedByNil sets the value for UpdatedBy to be an explicit nil
+
+### UnsetUpdatedBy
+`func (o *WorkflowCategory) UnsetUpdatedBy()`
+
+UnsetUpdatedBy ensures that no value is present for UpdatedBy, not even an explicit nil
 ### GetOwner
 
 `func (o *WorkflowCategory) GetOwner() string`
@@ -389,6 +409,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *WorkflowCategory) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *WorkflowCategory) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetUniqueName
 
 `func (o *WorkflowCategory) GetUniqueName() string`
@@ -414,6 +444,16 @@ SetUniqueName sets UniqueName field to given value.
 
 HasUniqueName returns a boolean if a field has been set.
 
+### SetUniqueNameNil
+
+`func (o *WorkflowCategory) SetUniqueNameNil(b bool)`
+
+ SetUniqueNameNil sets the value for UniqueName to be an explicit nil
+
+### UnsetUniqueName
+`func (o *WorkflowCategory) UnsetUniqueName()`
+
+UnsetUniqueName ensures that no value is present for UniqueName, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

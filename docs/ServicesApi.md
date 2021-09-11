@@ -1,6 +1,6 @@
 # \ServicesApi
 
-All URIs are relative to *http://localhost:8765*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**GetServicesPage**](ServicesApi.md#GetServicesPage) | **Get** /manage/api/v8/services | Returns a page of services.
 [**SubmitOrder**](ServicesApi.md#SubmitOrder) | **Post** /manage/api/v8/services | Submits an order.
 [**UpdateOrder**](ServicesApi.md#UpdateOrder) | **Put** /manage/api/v8/services | Updates an order.
+[**UpdateService**](ServicesApi.md#UpdateService) | **Put** /manage/api/v8/services/{id} | Updates a service.
 
 
 
@@ -335,6 +336,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LegacyServiceOrderResponse**](LegacyServiceOrderResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateService
+
+> Service UpdateService(ctx, id).ServiceUpdate(serviceUpdate).Execute()
+
+Updates a service.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | 
+    serviceUpdate := *openapiclient.NewServiceUpdate() // ServiceUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ServicesApi.UpdateService(context.Background(), id).ServiceUpdate(serviceUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServicesApi.UpdateService``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateService`: Service
+    fmt.Fprintf(os.Stdout, "Response from `ServicesApi.UpdateService`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateServiceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **serviceUpdate** | [**ServiceUpdate**](ServiceUpdate.md) |  | 
+
+### Return type
+
+[**Service**](Service.md)
 
 ### Authorization
 

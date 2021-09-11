@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Managed** | Pointer to **bool** |  | [optional] [default to true]
 **DeviceModel** | Pointer to **string** |  | [optional] 
 **DeviceOnboardingType** | Pointer to **string** |  | [optional] 
-**DeviceOnboardInformation** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**DeviceOnboardInformation** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -183,20 +183,20 @@ HasDeviceOnboardingType returns a boolean if a field has been set.
 
 ### GetDeviceOnboardInformation
 
-`func (o *LegacySiteDeviceOnboard) GetDeviceOnboardInformation() map[string]map[string]interface{}`
+`func (o *LegacySiteDeviceOnboard) GetDeviceOnboardInformation() map[string]interface{}`
 
 GetDeviceOnboardInformation returns the DeviceOnboardInformation field if non-nil, zero value otherwise.
 
 ### GetDeviceOnboardInformationOk
 
-`func (o *LegacySiteDeviceOnboard) GetDeviceOnboardInformationOk() (*map[string]map[string]interface{}, bool)`
+`func (o *LegacySiteDeviceOnboard) GetDeviceOnboardInformationOk() (*map[string]interface{}, bool)`
 
 GetDeviceOnboardInformationOk returns a tuple with the DeviceOnboardInformation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceOnboardInformation
 
-`func (o *LegacySiteDeviceOnboard) SetDeviceOnboardInformation(v map[string]map[string]interface{})`
+`func (o *LegacySiteDeviceOnboard) SetDeviceOnboardInformation(v map[string]interface{})`
 
 SetDeviceOnboardInformation sets DeviceOnboardInformation field to given value.
 

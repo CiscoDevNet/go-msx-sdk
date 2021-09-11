@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **DisplayName** | Pointer to **string** |  | [optional] 
 **Address** | [**LegacyAddress**](LegacyAddress.md) |  | 
 **Devices** | Pointer to [**[]LegacySiteDevice**](LegacySiteDevice.md) |  | [optional] 
-**SiteAttributes** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**SiteAttributes** | Pointer to **map[string]interface{}** |  | [optional] 
 **Delete** | Pointer to **bool** |  | [optional] 
 **OperationalStatus** | Pointer to **string** |  | [optional] 
 
@@ -144,20 +144,20 @@ HasDevices returns a boolean if a field has been set.
 
 ### GetSiteAttributes
 
-`func (o *LegacySite) GetSiteAttributes() map[string]map[string]interface{}`
+`func (o *LegacySite) GetSiteAttributes() map[string]interface{}`
 
 GetSiteAttributes returns the SiteAttributes field if non-nil, zero value otherwise.
 
 ### GetSiteAttributesOk
 
-`func (o *LegacySite) GetSiteAttributesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *LegacySite) GetSiteAttributesOk() (*map[string]interface{}, bool)`
 
 GetSiteAttributesOk returns a tuple with the SiteAttributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSiteAttributes
 
-`func (o *LegacySite) SetSiteAttributes(v map[string]map[string]interface{})`
+`func (o *LegacySite) SetSiteAttributes(v map[string]interface{})`
 
 SetSiteAttributes sets SiteAttributes field to given value.
 

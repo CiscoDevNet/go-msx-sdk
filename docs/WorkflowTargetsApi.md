@@ -1,6 +1,6 @@
 # \WorkflowTargetsApi
 
-All URIs are relative to *http://localhost:8765*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ import (
 )
 
 func main() {
-    workflowTargetCreate := *openapiclient.NewWorkflowTargetCreate("Name_example", map[string]map[string]interface{}{"key": map[string]interface{}(123)}) // WorkflowTargetCreate | 
+    workflowTargetCreate := *openapiclient.NewWorkflowTargetCreate("Name_example", map[string]interface{}{"key": interface{}(123)}) // WorkflowTargetCreate | 
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -296,7 +296,7 @@ import (
 
 func main() {
     id := "id_example" // string | 
-    workflowTargetUpdate := *openapiclient.NewWorkflowTargetUpdate("Name_example", map[string]map[string]interface{}{"key": map[string]interface{}(123)}) // WorkflowTargetUpdate | 
+    workflowTargetUpdate := *openapiclient.NewWorkflowTargetUpdate("Name_example", map[string]interface{}{"key": interface{}(123)}) // WorkflowTargetUpdate | 
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)

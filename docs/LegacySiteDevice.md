@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Model** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**DeviceAttributes** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**DeviceAttributes** | Pointer to **map[string]interface{}** |  | [optional] 
 **DeviceOnboarding** | Pointer to [**LegacySiteDeviceOnboard**](LegacySiteDeviceOnboard.md) |  | [optional] 
 **Delete** | Pointer to **bool** |  | [optional] 
 
@@ -128,20 +128,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetDeviceAttributes
 
-`func (o *LegacySiteDevice) GetDeviceAttributes() map[string]map[string]interface{}`
+`func (o *LegacySiteDevice) GetDeviceAttributes() map[string]interface{}`
 
 GetDeviceAttributes returns the DeviceAttributes field if non-nil, zero value otherwise.
 
 ### GetDeviceAttributesOk
 
-`func (o *LegacySiteDevice) GetDeviceAttributesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *LegacySiteDevice) GetDeviceAttributesOk() (*map[string]interface{}, bool)`
 
 GetDeviceAttributesOk returns a tuple with the DeviceAttributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceAttributes
 
-`func (o *LegacySiteDevice) SetDeviceAttributes(v map[string]map[string]interface{})`
+`func (o *LegacySiteDevice) SetDeviceAttributes(v map[string]interface{})`
 
 SetDeviceAttributes sets DeviceAttributes field to given value.
 

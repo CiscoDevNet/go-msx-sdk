@@ -4,25 +4,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ServiceType** | Pointer to **NullableString** |  | [optional] 
+**Tags** | Pointer to **map[string]string** |  | [optional] 
+**Managed** | **bool** |  | [default to false]
+**OnboardType** | **string** |  | 
+**OnboardInformation** | Pointer to **map[string]interface{}** |  | [optional] 
+**Attributes** | Pointer to **map[string]interface{}** |  | [optional] 
 **Name** | **string** |  | 
 **Model** | **string** |  | 
 **Type** | **string** |  | 
 **SubType** | Pointer to **NullableString** |  | [optional] 
-**ServiceType** | Pointer to **string** |  | [optional] 
-**Tags** | Pointer to **map[string]string** |  | [optional] 
-**SerialKey** | **string** |  | 
-**Version** | **string** |  | 
-**Managed** | **bool** |  | [default to false]
-**OnboardType** | Pointer to **string** |  | [optional] 
-**OnboardInformation** | Pointer to **map[string]string** |  | [optional] 
-**Attributes** | Pointer to **map[string]string** |  | [optional] 
-**Billing** | Pointer to [**DeviceBilling**](DeviceBilling.md) |  | [optional] 
+**SerialKey** | Pointer to **NullableString** |  | [optional] 
+**Version** | Pointer to **NullableString** |  | [optional] 
+**ComplianceState** | Pointer to [**DeviceComplianceState**](DeviceComplianceState.md) |  | [optional] 
 
 ## Methods
 
 ### NewDeviceUpdate
 
-`func NewDeviceUpdate(name string, model string, type_ string, serialKey string, version string, managed bool, ) *DeviceUpdate`
+`func NewDeviceUpdate(managed bool, onboardType string, name string, model string, type_ string, ) *DeviceUpdate`
 
 NewDeviceUpdate instantiates a new DeviceUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -37,6 +37,186 @@ NewDeviceUpdateWithDefaults instantiates a new DeviceUpdate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetServiceType
+
+`func (o *DeviceUpdate) GetServiceType() string`
+
+GetServiceType returns the ServiceType field if non-nil, zero value otherwise.
+
+### GetServiceTypeOk
+
+`func (o *DeviceUpdate) GetServiceTypeOk() (*string, bool)`
+
+GetServiceTypeOk returns a tuple with the ServiceType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceType
+
+`func (o *DeviceUpdate) SetServiceType(v string)`
+
+SetServiceType sets ServiceType field to given value.
+
+### HasServiceType
+
+`func (o *DeviceUpdate) HasServiceType() bool`
+
+HasServiceType returns a boolean if a field has been set.
+
+### SetServiceTypeNil
+
+`func (o *DeviceUpdate) SetServiceTypeNil(b bool)`
+
+ SetServiceTypeNil sets the value for ServiceType to be an explicit nil
+
+### UnsetServiceType
+`func (o *DeviceUpdate) UnsetServiceType()`
+
+UnsetServiceType ensures that no value is present for ServiceType, not even an explicit nil
+### GetTags
+
+`func (o *DeviceUpdate) GetTags() map[string]string`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *DeviceUpdate) GetTagsOk() (*map[string]string, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *DeviceUpdate) SetTags(v map[string]string)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *DeviceUpdate) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### SetTagsNil
+
+`func (o *DeviceUpdate) SetTagsNil(b bool)`
+
+ SetTagsNil sets the value for Tags to be an explicit nil
+
+### UnsetTags
+`func (o *DeviceUpdate) UnsetTags()`
+
+UnsetTags ensures that no value is present for Tags, not even an explicit nil
+### GetManaged
+
+`func (o *DeviceUpdate) GetManaged() bool`
+
+GetManaged returns the Managed field if non-nil, zero value otherwise.
+
+### GetManagedOk
+
+`func (o *DeviceUpdate) GetManagedOk() (*bool, bool)`
+
+GetManagedOk returns a tuple with the Managed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManaged
+
+`func (o *DeviceUpdate) SetManaged(v bool)`
+
+SetManaged sets Managed field to given value.
+
+
+### GetOnboardType
+
+`func (o *DeviceUpdate) GetOnboardType() string`
+
+GetOnboardType returns the OnboardType field if non-nil, zero value otherwise.
+
+### GetOnboardTypeOk
+
+`func (o *DeviceUpdate) GetOnboardTypeOk() (*string, bool)`
+
+GetOnboardTypeOk returns a tuple with the OnboardType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnboardType
+
+`func (o *DeviceUpdate) SetOnboardType(v string)`
+
+SetOnboardType sets OnboardType field to given value.
+
+
+### GetOnboardInformation
+
+`func (o *DeviceUpdate) GetOnboardInformation() map[string]interface{}`
+
+GetOnboardInformation returns the OnboardInformation field if non-nil, zero value otherwise.
+
+### GetOnboardInformationOk
+
+`func (o *DeviceUpdate) GetOnboardInformationOk() (*map[string]interface{}, bool)`
+
+GetOnboardInformationOk returns a tuple with the OnboardInformation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnboardInformation
+
+`func (o *DeviceUpdate) SetOnboardInformation(v map[string]interface{})`
+
+SetOnboardInformation sets OnboardInformation field to given value.
+
+### HasOnboardInformation
+
+`func (o *DeviceUpdate) HasOnboardInformation() bool`
+
+HasOnboardInformation returns a boolean if a field has been set.
+
+### SetOnboardInformationNil
+
+`func (o *DeviceUpdate) SetOnboardInformationNil(b bool)`
+
+ SetOnboardInformationNil sets the value for OnboardInformation to be an explicit nil
+
+### UnsetOnboardInformation
+`func (o *DeviceUpdate) UnsetOnboardInformation()`
+
+UnsetOnboardInformation ensures that no value is present for OnboardInformation, not even an explicit nil
+### GetAttributes
+
+`func (o *DeviceUpdate) GetAttributes() map[string]interface{}`
+
+GetAttributes returns the Attributes field if non-nil, zero value otherwise.
+
+### GetAttributesOk
+
+`func (o *DeviceUpdate) GetAttributesOk() (*map[string]interface{}, bool)`
+
+GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributes
+
+`func (o *DeviceUpdate) SetAttributes(v map[string]interface{})`
+
+SetAttributes sets Attributes field to given value.
+
+### HasAttributes
+
+`func (o *DeviceUpdate) HasAttributes() bool`
+
+HasAttributes returns a boolean if a field has been set.
+
+### SetAttributesNil
+
+`func (o *DeviceUpdate) SetAttributesNil(b bool)`
+
+ SetAttributesNil sets the value for Attributes to be an explicit nil
+
+### UnsetAttributes
+`func (o *DeviceUpdate) UnsetAttributes()`
+
+UnsetAttributes ensures that no value is present for Attributes, not even an explicit nil
 ### GetName
 
 `func (o *DeviceUpdate) GetName() string`
@@ -132,66 +312,6 @@ HasSubType returns a boolean if a field has been set.
 `func (o *DeviceUpdate) UnsetSubType()`
 
 UnsetSubType ensures that no value is present for SubType, not even an explicit nil
-### GetServiceType
-
-`func (o *DeviceUpdate) GetServiceType() string`
-
-GetServiceType returns the ServiceType field if non-nil, zero value otherwise.
-
-### GetServiceTypeOk
-
-`func (o *DeviceUpdate) GetServiceTypeOk() (*string, bool)`
-
-GetServiceTypeOk returns a tuple with the ServiceType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceType
-
-`func (o *DeviceUpdate) SetServiceType(v string)`
-
-SetServiceType sets ServiceType field to given value.
-
-### HasServiceType
-
-`func (o *DeviceUpdate) HasServiceType() bool`
-
-HasServiceType returns a boolean if a field has been set.
-
-### GetTags
-
-`func (o *DeviceUpdate) GetTags() map[string]string`
-
-GetTags returns the Tags field if non-nil, zero value otherwise.
-
-### GetTagsOk
-
-`func (o *DeviceUpdate) GetTagsOk() (*map[string]string, bool)`
-
-GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTags
-
-`func (o *DeviceUpdate) SetTags(v map[string]string)`
-
-SetTags sets Tags field to given value.
-
-### HasTags
-
-`func (o *DeviceUpdate) HasTags() bool`
-
-HasTags returns a boolean if a field has been set.
-
-### SetTagsNil
-
-`func (o *DeviceUpdate) SetTagsNil(b bool)`
-
- SetTagsNil sets the value for Tags to be an explicit nil
-
-### UnsetTags
-`func (o *DeviceUpdate) UnsetTags()`
-
-UnsetTags ensures that no value is present for Tags, not even an explicit nil
 ### GetSerialKey
 
 `func (o *DeviceUpdate) GetSerialKey() string`
@@ -211,7 +331,22 @@ and a boolean to check if the value has been set.
 
 SetSerialKey sets SerialKey field to given value.
 
+### HasSerialKey
 
+`func (o *DeviceUpdate) HasSerialKey() bool`
+
+HasSerialKey returns a boolean if a field has been set.
+
+### SetSerialKeyNil
+
+`func (o *DeviceUpdate) SetSerialKeyNil(b bool)`
+
+ SetSerialKeyNil sets the value for SerialKey to be an explicit nil
+
+### UnsetSerialKey
+`func (o *DeviceUpdate) UnsetSerialKey()`
+
+UnsetSerialKey ensures that no value is present for SerialKey, not even an explicit nil
 ### GetVersion
 
 `func (o *DeviceUpdate) GetVersion() string`
@@ -231,126 +366,46 @@ and a boolean to check if the value has been set.
 
 SetVersion sets Version field to given value.
 
+### HasVersion
 
-### GetManaged
+`func (o *DeviceUpdate) HasVersion() bool`
 
-`func (o *DeviceUpdate) GetManaged() bool`
+HasVersion returns a boolean if a field has been set.
 
-GetManaged returns the Managed field if non-nil, zero value otherwise.
+### SetVersionNil
 
-### GetManagedOk
+`func (o *DeviceUpdate) SetVersionNil(b bool)`
 
-`func (o *DeviceUpdate) GetManagedOk() (*bool, bool)`
+ SetVersionNil sets the value for Version to be an explicit nil
 
-GetManagedOk returns a tuple with the Managed field if it's non-nil, zero value otherwise
+### UnsetVersion
+`func (o *DeviceUpdate) UnsetVersion()`
+
+UnsetVersion ensures that no value is present for Version, not even an explicit nil
+### GetComplianceState
+
+`func (o *DeviceUpdate) GetComplianceState() DeviceComplianceState`
+
+GetComplianceState returns the ComplianceState field if non-nil, zero value otherwise.
+
+### GetComplianceStateOk
+
+`func (o *DeviceUpdate) GetComplianceStateOk() (*DeviceComplianceState, bool)`
+
+GetComplianceStateOk returns a tuple with the ComplianceState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetManaged
+### SetComplianceState
 
-`func (o *DeviceUpdate) SetManaged(v bool)`
+`func (o *DeviceUpdate) SetComplianceState(v DeviceComplianceState)`
 
-SetManaged sets Managed field to given value.
+SetComplianceState sets ComplianceState field to given value.
 
+### HasComplianceState
 
-### GetOnboardType
+`func (o *DeviceUpdate) HasComplianceState() bool`
 
-`func (o *DeviceUpdate) GetOnboardType() string`
-
-GetOnboardType returns the OnboardType field if non-nil, zero value otherwise.
-
-### GetOnboardTypeOk
-
-`func (o *DeviceUpdate) GetOnboardTypeOk() (*string, bool)`
-
-GetOnboardTypeOk returns a tuple with the OnboardType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOnboardType
-
-`func (o *DeviceUpdate) SetOnboardType(v string)`
-
-SetOnboardType sets OnboardType field to given value.
-
-### HasOnboardType
-
-`func (o *DeviceUpdate) HasOnboardType() bool`
-
-HasOnboardType returns a boolean if a field has been set.
-
-### GetOnboardInformation
-
-`func (o *DeviceUpdate) GetOnboardInformation() map[string]string`
-
-GetOnboardInformation returns the OnboardInformation field if non-nil, zero value otherwise.
-
-### GetOnboardInformationOk
-
-`func (o *DeviceUpdate) GetOnboardInformationOk() (*map[string]string, bool)`
-
-GetOnboardInformationOk returns a tuple with the OnboardInformation field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOnboardInformation
-
-`func (o *DeviceUpdate) SetOnboardInformation(v map[string]string)`
-
-SetOnboardInformation sets OnboardInformation field to given value.
-
-### HasOnboardInformation
-
-`func (o *DeviceUpdate) HasOnboardInformation() bool`
-
-HasOnboardInformation returns a boolean if a field has been set.
-
-### GetAttributes
-
-`func (o *DeviceUpdate) GetAttributes() map[string]string`
-
-GetAttributes returns the Attributes field if non-nil, zero value otherwise.
-
-### GetAttributesOk
-
-`func (o *DeviceUpdate) GetAttributesOk() (*map[string]string, bool)`
-
-GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributes
-
-`func (o *DeviceUpdate) SetAttributes(v map[string]string)`
-
-SetAttributes sets Attributes field to given value.
-
-### HasAttributes
-
-`func (o *DeviceUpdate) HasAttributes() bool`
-
-HasAttributes returns a boolean if a field has been set.
-
-### GetBilling
-
-`func (o *DeviceUpdate) GetBilling() DeviceBilling`
-
-GetBilling returns the Billing field if non-nil, zero value otherwise.
-
-### GetBillingOk
-
-`func (o *DeviceUpdate) GetBillingOk() (*DeviceBilling, bool)`
-
-GetBillingOk returns a tuple with the Billing field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBilling
-
-`func (o *DeviceUpdate) SetBilling(v DeviceBilling)`
-
-SetBilling sets Billing field to given value.
-
-### HasBilling
-
-`func (o *DeviceUpdate) HasBilling() bool`
-
-HasBilling returns a boolean if a field has been set.
+HasComplianceState returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

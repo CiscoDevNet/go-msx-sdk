@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IsIntegration** | Pointer to **bool** |  | [optional] 
+**IsIntegration** | Pointer to **NullableBool** |  | [optional] 
 **IsInternal** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -51,6 +51,16 @@ SetIsIntegration sets IsIntegration field to given value.
 
 HasIsIntegration returns a boolean if a field has been set.
 
+### SetIsIntegrationNil
+
+`func (o *WorkflowDefAccessMeta) SetIsIntegrationNil(b bool)`
+
+ SetIsIntegrationNil sets the value for IsIntegration to be an explicit nil
+
+### UnsetIsIntegration
+`func (o *WorkflowDefAccessMeta) UnsetIsIntegration()`
+
+UnsetIsIntegration ensures that no value is present for IsIntegration, not even an explicit nil
 ### GetIsInternal
 
 `func (o *WorkflowDefAccessMeta) GetIsInternal() bool`

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **Version** | Pointer to **string** |  | [optional] 
 **BaseType** | Pointer to **string** |  | [optional] 
-**Properties** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Properties** | Pointer to **map[string]interface{}** |  | [optional] 
 **ObjectType** | Pointer to **string** |  | [optional] 
 **Actions** | Pointer to [**[]WorkflowAction**](WorkflowAction.md) |  | [optional] 
 **SubworkflowId** | Pointer to **string** |  | [optional] 
@@ -188,20 +188,20 @@ HasBaseType returns a boolean if a field has been set.
 
 ### GetProperties
 
-`func (o *WorkflowActionBlock) GetProperties() map[string]map[string]interface{}`
+`func (o *WorkflowActionBlock) GetProperties() map[string]interface{}`
 
 GetProperties returns the Properties field if non-nil, zero value otherwise.
 
 ### GetPropertiesOk
 
-`func (o *WorkflowActionBlock) GetPropertiesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowActionBlock) GetPropertiesOk() (*map[string]interface{}, bool)`
 
 GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProperties
 
-`func (o *WorkflowActionBlock) SetProperties(v map[string]map[string]interface{})`
+`func (o *WorkflowActionBlock) SetProperties(v map[string]interface{})`
 
 SetProperties sets Properties field to given value.
 

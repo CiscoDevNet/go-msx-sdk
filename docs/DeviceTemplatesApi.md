@@ -1,10 +1,11 @@
 # \DeviceTemplatesApi
 
-All URIs are relative to *http://localhost:8765*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateDeviceTemplate**](DeviceTemplatesApi.md#CreateDeviceTemplate) | **Post** /manage/api/v8/devicetemplates | Creates a device template.
+[**CreateDeviceTemplateVersion**](DeviceTemplatesApi.md#CreateDeviceTemplateVersion) | **Post** /manage/api/v8/devicetemplates/versions | Creates a new version of an existing device template.
 [**DeleteDeviceTemplate**](DeviceTemplatesApi.md#DeleteDeviceTemplate) | **Delete** /manage/api/v8/devicetemplates/{id} | Deletes a device template.
 [**GetDeviceTemplate**](DeviceTemplatesApi.md#GetDeviceTemplate) | **Get** /manage/api/v8/devicetemplates/{id} | Returns a device template.
 [**GetDeviceTemplatesList**](DeviceTemplatesApi.md#GetDeviceTemplatesList) | **Get** /manage/api/v8/devicetemplates/list | Returns a list of device templates.
@@ -58,6 +59,70 @@ Other parameters are passed through a pointer to a apiCreateDeviceTemplateReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deviceTemplateCreate** | [**DeviceTemplateCreate**](DeviceTemplateCreate.md) |  | 
+
+### Return type
+
+[**DeviceTemplate**](DeviceTemplate.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateDeviceTemplateVersion
+
+> DeviceTemplate CreateDeviceTemplateVersion(ctx).DeviceTemplateVersionCreate(deviceTemplateVersionCreate).Execute()
+
+Creates a new version of an existing device template.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    deviceTemplateVersionCreate := *openapiclient.NewDeviceTemplateVersionCreate("Name_example", "ConfigContent_example") // DeviceTemplateVersionCreate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DeviceTemplatesApi.CreateDeviceTemplateVersion(context.Background()).DeviceTemplateVersionCreate(deviceTemplateVersionCreate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DeviceTemplatesApi.CreateDeviceTemplateVersion``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateDeviceTemplateVersion`: DeviceTemplate
+    fmt.Fprintf(os.Stdout, "Response from `DeviceTemplatesApi.CreateDeviceTemplateVersion`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateDeviceTemplateVersionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **deviceTemplateVersionCreate** | [**DeviceTemplateVersionCreate**](DeviceTemplateVersionCreate.md) |  | 
 
 ### Return type
 
@@ -213,7 +278,7 @@ No authorization required
 
 ## GetDeviceTemplatesList
 
-> []DeviceTemplate GetDeviceTemplatesList(ctx).ServiceType(serviceType).TenantId(tenantId).Execute()
+> []DeviceTemplate GetDeviceTemplatesList(ctx).AllVersions(allVersions).ServiceType(serviceType).TenantId(tenantId).Execute()
 
 Returns a list of device templates.
 
@@ -230,12 +295,13 @@ import (
 )
 
 func main() {
+    allVersions := true // bool |  (optional) (default to false)
     serviceType := "manageddevice" // string |  (optional)
     tenantId := TODO // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DeviceTemplatesApi.GetDeviceTemplatesList(context.Background()).ServiceType(serviceType).TenantId(tenantId).Execute()
+    resp, r, err := api_client.DeviceTemplatesApi.GetDeviceTemplatesList(context.Background()).AllVersions(allVersions).ServiceType(serviceType).TenantId(tenantId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DeviceTemplatesApi.GetDeviceTemplatesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -256,6 +322,7 @@ Other parameters are passed through a pointer to a apiGetDeviceTemplatesListRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **allVersions** | **bool** |  | [default to false]
  **serviceType** | **string** |  | 
  **tenantId** | [**string**](string.md) |  | 
 

@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
-**BaseType** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **NullableString** |  | [optional] 
+**BaseType** | Pointer to **NullableString** |  | [optional] 
 **SchemaId** | Pointer to **string** |  | [optional] 
 **ObjectType** | Pointer to **string** |  | [optional] 
-**Properties** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**DataType** | Pointer to **string** |  | [optional] 
-**Scope** | Pointer to **string** |  | [optional] 
+**Properties** | Pointer to **map[string]interface{}** |  | [optional] 
+**DataType** | Pointer to **NullableString** |  | [optional] 
+**Scope** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -82,6 +82,16 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *WorkflowVariableAllOf) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *WorkflowVariableAllOf) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetBaseType
 
 `func (o *WorkflowVariableAllOf) GetBaseType() string`
@@ -107,6 +117,16 @@ SetBaseType sets BaseType field to given value.
 
 HasBaseType returns a boolean if a field has been set.
 
+### SetBaseTypeNil
+
+`func (o *WorkflowVariableAllOf) SetBaseTypeNil(b bool)`
+
+ SetBaseTypeNil sets the value for BaseType to be an explicit nil
+
+### UnsetBaseType
+`func (o *WorkflowVariableAllOf) UnsetBaseType()`
+
+UnsetBaseType ensures that no value is present for BaseType, not even an explicit nil
 ### GetSchemaId
 
 `func (o *WorkflowVariableAllOf) GetSchemaId() string`
@@ -159,20 +179,20 @@ HasObjectType returns a boolean if a field has been set.
 
 ### GetProperties
 
-`func (o *WorkflowVariableAllOf) GetProperties() map[string]map[string]interface{}`
+`func (o *WorkflowVariableAllOf) GetProperties() map[string]interface{}`
 
 GetProperties returns the Properties field if non-nil, zero value otherwise.
 
 ### GetPropertiesOk
 
-`func (o *WorkflowVariableAllOf) GetPropertiesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowVariableAllOf) GetPropertiesOk() (*map[string]interface{}, bool)`
 
 GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProperties
 
-`func (o *WorkflowVariableAllOf) SetProperties(v map[string]map[string]interface{})`
+`func (o *WorkflowVariableAllOf) SetProperties(v map[string]interface{})`
 
 SetProperties sets Properties field to given value.
 
@@ -207,6 +227,16 @@ SetDataType sets DataType field to given value.
 
 HasDataType returns a boolean if a field has been set.
 
+### SetDataTypeNil
+
+`func (o *WorkflowVariableAllOf) SetDataTypeNil(b bool)`
+
+ SetDataTypeNil sets the value for DataType to be an explicit nil
+
+### UnsetDataType
+`func (o *WorkflowVariableAllOf) UnsetDataType()`
+
+UnsetDataType ensures that no value is present for DataType, not even an explicit nil
 ### GetScope
 
 `func (o *WorkflowVariableAllOf) GetScope() string`
@@ -232,6 +262,16 @@ SetScope sets Scope field to given value.
 
 HasScope returns a boolean if a field has been set.
 
+### SetScopeNil
+
+`func (o *WorkflowVariableAllOf) SetScopeNil(b bool)`
+
+ SetScopeNil sets the value for Scope to be an explicit nil
+
+### UnsetScope
+`func (o *WorkflowVariableAllOf) UnsetScope()`
+
+UnsetScope ensures that no value is present for Scope, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

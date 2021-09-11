@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
+**Id** | Pointer to **NullableString** |  | [optional] 
 **SchemaId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Title** | Pointer to **string** |  | [optional] 
@@ -15,11 +15,11 @@ Name | Type | Description | Notes
 **Invisible** | Pointer to **bool** |  | [optional] 
 **Inherits** | Pointer to **string** |  | [optional] 
 **AccessMeta** | Pointer to [**WorkflowAccessMeta**](WorkflowAccessMeta.md) |  | [optional] 
-**VariableSchema** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**PropertySchema** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**OutputSchema** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**ViewConfig** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**Attributes** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**VariableSchema** | Pointer to **map[string]interface{}** |  | [optional] 
+**PropertySchema** | Pointer to **map[string]interface{}** |  | [optional] 
+**OutputSchema** | Pointer to **map[string]interface{}** |  | [optional] 
+**ViewConfig** | Pointer to **map[string]interface{}** |  | [optional] 
+**Attributes** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -65,6 +65,16 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### SetIdNil
+
+`func (o *WorkflowSchemaAllOf) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *WorkflowSchemaAllOf) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetSchemaId
 
 `func (o *WorkflowSchemaAllOf) GetSchemaId() string`
@@ -317,20 +327,20 @@ HasAccessMeta returns a boolean if a field has been set.
 
 ### GetVariableSchema
 
-`func (o *WorkflowSchemaAllOf) GetVariableSchema() map[string]map[string]interface{}`
+`func (o *WorkflowSchemaAllOf) GetVariableSchema() map[string]interface{}`
 
 GetVariableSchema returns the VariableSchema field if non-nil, zero value otherwise.
 
 ### GetVariableSchemaOk
 
-`func (o *WorkflowSchemaAllOf) GetVariableSchemaOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowSchemaAllOf) GetVariableSchemaOk() (*map[string]interface{}, bool)`
 
 GetVariableSchemaOk returns a tuple with the VariableSchema field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVariableSchema
 
-`func (o *WorkflowSchemaAllOf) SetVariableSchema(v map[string]map[string]interface{})`
+`func (o *WorkflowSchemaAllOf) SetVariableSchema(v map[string]interface{})`
 
 SetVariableSchema sets VariableSchema field to given value.
 
@@ -342,20 +352,20 @@ HasVariableSchema returns a boolean if a field has been set.
 
 ### GetPropertySchema
 
-`func (o *WorkflowSchemaAllOf) GetPropertySchema() map[string]map[string]interface{}`
+`func (o *WorkflowSchemaAllOf) GetPropertySchema() map[string]interface{}`
 
 GetPropertySchema returns the PropertySchema field if non-nil, zero value otherwise.
 
 ### GetPropertySchemaOk
 
-`func (o *WorkflowSchemaAllOf) GetPropertySchemaOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowSchemaAllOf) GetPropertySchemaOk() (*map[string]interface{}, bool)`
 
 GetPropertySchemaOk returns a tuple with the PropertySchema field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPropertySchema
 
-`func (o *WorkflowSchemaAllOf) SetPropertySchema(v map[string]map[string]interface{})`
+`func (o *WorkflowSchemaAllOf) SetPropertySchema(v map[string]interface{})`
 
 SetPropertySchema sets PropertySchema field to given value.
 
@@ -367,20 +377,20 @@ HasPropertySchema returns a boolean if a field has been set.
 
 ### GetOutputSchema
 
-`func (o *WorkflowSchemaAllOf) GetOutputSchema() map[string]map[string]interface{}`
+`func (o *WorkflowSchemaAllOf) GetOutputSchema() map[string]interface{}`
 
 GetOutputSchema returns the OutputSchema field if non-nil, zero value otherwise.
 
 ### GetOutputSchemaOk
 
-`func (o *WorkflowSchemaAllOf) GetOutputSchemaOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowSchemaAllOf) GetOutputSchemaOk() (*map[string]interface{}, bool)`
 
 GetOutputSchemaOk returns a tuple with the OutputSchema field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOutputSchema
 
-`func (o *WorkflowSchemaAllOf) SetOutputSchema(v map[string]map[string]interface{})`
+`func (o *WorkflowSchemaAllOf) SetOutputSchema(v map[string]interface{})`
 
 SetOutputSchema sets OutputSchema field to given value.
 
@@ -392,20 +402,20 @@ HasOutputSchema returns a boolean if a field has been set.
 
 ### GetViewConfig
 
-`func (o *WorkflowSchemaAllOf) GetViewConfig() map[string]map[string]interface{}`
+`func (o *WorkflowSchemaAllOf) GetViewConfig() map[string]interface{}`
 
 GetViewConfig returns the ViewConfig field if non-nil, zero value otherwise.
 
 ### GetViewConfigOk
 
-`func (o *WorkflowSchemaAllOf) GetViewConfigOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowSchemaAllOf) GetViewConfigOk() (*map[string]interface{}, bool)`
 
 GetViewConfigOk returns a tuple with the ViewConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetViewConfig
 
-`func (o *WorkflowSchemaAllOf) SetViewConfig(v map[string]map[string]interface{})`
+`func (o *WorkflowSchemaAllOf) SetViewConfig(v map[string]interface{})`
 
 SetViewConfig sets ViewConfig field to given value.
 
@@ -417,20 +427,20 @@ HasViewConfig returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *WorkflowSchemaAllOf) GetAttributes() map[string]map[string]interface{}`
+`func (o *WorkflowSchemaAllOf) GetAttributes() map[string]interface{}`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *WorkflowSchemaAllOf) GetAttributesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowSchemaAllOf) GetAttributesOk() (*map[string]interface{}, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *WorkflowSchemaAllOf) SetAttributes(v map[string]map[string]interface{})`
+`func (o *WorkflowSchemaAllOf) SetAttributes(v map[string]interface{})`
 
 SetAttributes sets Attributes field to given value.
 

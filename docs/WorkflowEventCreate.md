@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **TargetId** | **string** |  | 
 **SchemaId** | **string** |  | 
-**Properties** | **map[string]map[string]interface{}** |  | 
+**Properties** | **map[string]interface{}** |  | 
 
 ## Methods
 
 ### NewWorkflowEventCreate
 
-`func NewWorkflowEventCreate(title string, targetId string, schemaId string, properties map[string]map[string]interface{}, ) *WorkflowEventCreate`
+`func NewWorkflowEventCreate(title string, targetId string, schemaId string, properties map[string]interface{}, ) *WorkflowEventCreate`
 
 NewWorkflowEventCreate instantiates a new WorkflowEventCreate object
 This constructor will assign default values to properties that have it defined,
@@ -116,20 +116,20 @@ SetSchemaId sets SchemaId field to given value.
 
 ### GetProperties
 
-`func (o *WorkflowEventCreate) GetProperties() map[string]map[string]interface{}`
+`func (o *WorkflowEventCreate) GetProperties() map[string]interface{}`
 
 GetProperties returns the Properties field if non-nil, zero value otherwise.
 
 ### GetPropertiesOk
 
-`func (o *WorkflowEventCreate) GetPropertiesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowEventCreate) GetPropertiesOk() (*map[string]interface{}, bool)`
 
 GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProperties
 
-`func (o *WorkflowEventCreate) SetProperties(v map[string]map[string]interface{})`
+`func (o *WorkflowEventCreate) SetProperties(v map[string]interface{})`
 
 SetProperties sets Properties field to given value.
 

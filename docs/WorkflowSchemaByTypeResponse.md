@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ViewSchema** | Pointer to [**WorkflowSchema**](WorkflowSchema.md) |  | [optional] 
-**DataSchema** | Pointer to [**WorkflowSchema**](WorkflowSchema.md) |  | [optional] 
+**ViewSchema** | Pointer to [**NullableWorkflowSchema**](WorkflowSchema.md) |  | [optional] 
+**DataSchema** | Pointer to [**NullableWorkflowSchema**](WorkflowSchema.md) |  | [optional] 
 
 ## Methods
 
@@ -51,6 +51,16 @@ SetViewSchema sets ViewSchema field to given value.
 
 HasViewSchema returns a boolean if a field has been set.
 
+### SetViewSchemaNil
+
+`func (o *WorkflowSchemaByTypeResponse) SetViewSchemaNil(b bool)`
+
+ SetViewSchemaNil sets the value for ViewSchema to be an explicit nil
+
+### UnsetViewSchema
+`func (o *WorkflowSchemaByTypeResponse) UnsetViewSchema()`
+
+UnsetViewSchema ensures that no value is present for ViewSchema, not even an explicit nil
 ### GetDataSchema
 
 `func (o *WorkflowSchemaByTypeResponse) GetDataSchema() WorkflowSchema`
@@ -76,6 +86,16 @@ SetDataSchema sets DataSchema field to given value.
 
 HasDataSchema returns a boolean if a field has been set.
 
+### SetDataSchemaNil
+
+`func (o *WorkflowSchemaByTypeResponse) SetDataSchemaNil(b bool)`
+
+ SetDataSchemaNil sets the value for DataSchema to be an explicit nil
+
+### UnsetDataSchema
+`func (o *WorkflowSchemaByTypeResponse) UnsetDataSchema()`
+
+UnsetDataSchema ensures that no value is present for DataSchema, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

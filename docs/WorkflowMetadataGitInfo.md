@@ -7,8 +7,10 @@ Name | Type | Description | Notes
 **TargetId** | Pointer to **NullableString** |  | [optional] 
 **CommitHash** | Pointer to **NullableString** |  | [optional] 
 **CommittedBy** | Pointer to **NullableString** |  | [optional] 
+**CommitedOn** | Pointer to **NullableString** |  | [optional] 
 **CommittedOn** | Pointer to **NullableString** |  | [optional] 
 **CommitMessage** | Pointer to **NullableString** |  | [optional] 
+**FileName** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -134,6 +136,41 @@ HasCommittedBy returns a boolean if a field has been set.
 `func (o *WorkflowMetadataGitInfo) UnsetCommittedBy()`
 
 UnsetCommittedBy ensures that no value is present for CommittedBy, not even an explicit nil
+### GetCommitedOn
+
+`func (o *WorkflowMetadataGitInfo) GetCommitedOn() string`
+
+GetCommitedOn returns the CommitedOn field if non-nil, zero value otherwise.
+
+### GetCommitedOnOk
+
+`func (o *WorkflowMetadataGitInfo) GetCommitedOnOk() (*string, bool)`
+
+GetCommitedOnOk returns a tuple with the CommitedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCommitedOn
+
+`func (o *WorkflowMetadataGitInfo) SetCommitedOn(v string)`
+
+SetCommitedOn sets CommitedOn field to given value.
+
+### HasCommitedOn
+
+`func (o *WorkflowMetadataGitInfo) HasCommitedOn() bool`
+
+HasCommitedOn returns a boolean if a field has been set.
+
+### SetCommitedOnNil
+
+`func (o *WorkflowMetadataGitInfo) SetCommitedOnNil(b bool)`
+
+ SetCommitedOnNil sets the value for CommitedOn to be an explicit nil
+
+### UnsetCommitedOn
+`func (o *WorkflowMetadataGitInfo) UnsetCommitedOn()`
+
+UnsetCommitedOn ensures that no value is present for CommitedOn, not even an explicit nil
 ### GetCommittedOn
 
 `func (o *WorkflowMetadataGitInfo) GetCommittedOn() string`
@@ -204,6 +241,41 @@ HasCommitMessage returns a boolean if a field has been set.
 `func (o *WorkflowMetadataGitInfo) UnsetCommitMessage()`
 
 UnsetCommitMessage ensures that no value is present for CommitMessage, not even an explicit nil
+### GetFileName
+
+`func (o *WorkflowMetadataGitInfo) GetFileName() string`
+
+GetFileName returns the FileName field if non-nil, zero value otherwise.
+
+### GetFileNameOk
+
+`func (o *WorkflowMetadataGitInfo) GetFileNameOk() (*string, bool)`
+
+GetFileNameOk returns a tuple with the FileName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFileName
+
+`func (o *WorkflowMetadataGitInfo) SetFileName(v string)`
+
+SetFileName sets FileName field to given value.
+
+### HasFileName
+
+`func (o *WorkflowMetadataGitInfo) HasFileName() bool`
+
+HasFileName returns a boolean if a field has been set.
+
+### SetFileNameNil
+
+`func (o *WorkflowMetadataGitInfo) SetFileNameNil(b bool)`
+
+ SetFileNameNil sets the value for FileName to be an explicit nil
+
+### UnsetFileName
+`func (o *WorkflowMetadataGitInfo) UnsetFileName()`
+
+UnsetFileName ensures that no value is present for FileName, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

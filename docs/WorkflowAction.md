@@ -5,24 +5,24 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
-**WorkflowId** | Pointer to **string** |  | [optional] 
-**DefinitionId** | Pointer to **string** |  | [optional] 
-**SchemaId** | Pointer to **string** |  | [optional] 
-**AdapterId** | Pointer to **string** |  | [optional] 
-**UniqueName** | Pointer to **string** |  | [optional] 
+**WorkflowId** | Pointer to **NullableString** |  | [optional] 
+**DefinitionId** | Pointer to **NullableString** |  | [optional] 
+**SchemaId** | Pointer to **NullableString** |  | [optional] 
+**AdapterId** | Pointer to **NullableString** |  | [optional] 
+**UniqueName** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Title** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **BaseType** | Pointer to **string** |  | [optional] 
-**Properties** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**ObjectType** | Pointer to **string** |  | [optional] 
-**StartedBy** | Pointer to **string** |  | [optional] 
+**Properties** | Pointer to **map[string]interface{}** |  | [optional] 
+**ObjectType** | Pointer to **NullableString** |  | [optional] 
+**StartedBy** | Pointer to **NullableString** |  | [optional] 
 **Blocks** | Pointer to [**[]WorkflowActionBlock**](WorkflowActionBlock.md) |  | [optional] 
-**Status** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
-**Output** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**StartedOn** | Pointer to **string** |  | [optional] 
-**EndedOn** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to **map[string]interface{}** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**Output** | Pointer to **map[string]interface{}** |  | [optional] 
+**StartedOn** | Pointer to **NullableString** |  | [optional] 
+**EndedOn** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -93,6 +93,16 @@ SetWorkflowId sets WorkflowId field to given value.
 
 HasWorkflowId returns a boolean if a field has been set.
 
+### SetWorkflowIdNil
+
+`func (o *WorkflowAction) SetWorkflowIdNil(b bool)`
+
+ SetWorkflowIdNil sets the value for WorkflowId to be an explicit nil
+
+### UnsetWorkflowId
+`func (o *WorkflowAction) UnsetWorkflowId()`
+
+UnsetWorkflowId ensures that no value is present for WorkflowId, not even an explicit nil
 ### GetDefinitionId
 
 `func (o *WorkflowAction) GetDefinitionId() string`
@@ -118,6 +128,16 @@ SetDefinitionId sets DefinitionId field to given value.
 
 HasDefinitionId returns a boolean if a field has been set.
 
+### SetDefinitionIdNil
+
+`func (o *WorkflowAction) SetDefinitionIdNil(b bool)`
+
+ SetDefinitionIdNil sets the value for DefinitionId to be an explicit nil
+
+### UnsetDefinitionId
+`func (o *WorkflowAction) UnsetDefinitionId()`
+
+UnsetDefinitionId ensures that no value is present for DefinitionId, not even an explicit nil
 ### GetSchemaId
 
 `func (o *WorkflowAction) GetSchemaId() string`
@@ -143,6 +163,16 @@ SetSchemaId sets SchemaId field to given value.
 
 HasSchemaId returns a boolean if a field has been set.
 
+### SetSchemaIdNil
+
+`func (o *WorkflowAction) SetSchemaIdNil(b bool)`
+
+ SetSchemaIdNil sets the value for SchemaId to be an explicit nil
+
+### UnsetSchemaId
+`func (o *WorkflowAction) UnsetSchemaId()`
+
+UnsetSchemaId ensures that no value is present for SchemaId, not even an explicit nil
 ### GetAdapterId
 
 `func (o *WorkflowAction) GetAdapterId() string`
@@ -168,6 +198,16 @@ SetAdapterId sets AdapterId field to given value.
 
 HasAdapterId returns a boolean if a field has been set.
 
+### SetAdapterIdNil
+
+`func (o *WorkflowAction) SetAdapterIdNil(b bool)`
+
+ SetAdapterIdNil sets the value for AdapterId to be an explicit nil
+
+### UnsetAdapterId
+`func (o *WorkflowAction) UnsetAdapterId()`
+
+UnsetAdapterId ensures that no value is present for AdapterId, not even an explicit nil
 ### GetUniqueName
 
 `func (o *WorkflowAction) GetUniqueName() string`
@@ -193,6 +233,16 @@ SetUniqueName sets UniqueName field to given value.
 
 HasUniqueName returns a boolean if a field has been set.
 
+### SetUniqueNameNil
+
+`func (o *WorkflowAction) SetUniqueNameNil(b bool)`
+
+ SetUniqueNameNil sets the value for UniqueName to be an explicit nil
+
+### UnsetUniqueName
+`func (o *WorkflowAction) UnsetUniqueName()`
+
+UnsetUniqueName ensures that no value is present for UniqueName, not even an explicit nil
 ### GetName
 
 `func (o *WorkflowAction) GetName() string`
@@ -295,20 +345,20 @@ HasBaseType returns a boolean if a field has been set.
 
 ### GetProperties
 
-`func (o *WorkflowAction) GetProperties() map[string]map[string]interface{}`
+`func (o *WorkflowAction) GetProperties() map[string]interface{}`
 
 GetProperties returns the Properties field if non-nil, zero value otherwise.
 
 ### GetPropertiesOk
 
-`func (o *WorkflowAction) GetPropertiesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowAction) GetPropertiesOk() (*map[string]interface{}, bool)`
 
 GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProperties
 
-`func (o *WorkflowAction) SetProperties(v map[string]map[string]interface{})`
+`func (o *WorkflowAction) SetProperties(v map[string]interface{})`
 
 SetProperties sets Properties field to given value.
 
@@ -318,6 +368,16 @@ SetProperties sets Properties field to given value.
 
 HasProperties returns a boolean if a field has been set.
 
+### SetPropertiesNil
+
+`func (o *WorkflowAction) SetPropertiesNil(b bool)`
+
+ SetPropertiesNil sets the value for Properties to be an explicit nil
+
+### UnsetProperties
+`func (o *WorkflowAction) UnsetProperties()`
+
+UnsetProperties ensures that no value is present for Properties, not even an explicit nil
 ### GetObjectType
 
 `func (o *WorkflowAction) GetObjectType() string`
@@ -343,6 +403,16 @@ SetObjectType sets ObjectType field to given value.
 
 HasObjectType returns a boolean if a field has been set.
 
+### SetObjectTypeNil
+
+`func (o *WorkflowAction) SetObjectTypeNil(b bool)`
+
+ SetObjectTypeNil sets the value for ObjectType to be an explicit nil
+
+### UnsetObjectType
+`func (o *WorkflowAction) UnsetObjectType()`
+
+UnsetObjectType ensures that no value is present for ObjectType, not even an explicit nil
 ### GetStartedBy
 
 `func (o *WorkflowAction) GetStartedBy() string`
@@ -368,6 +438,16 @@ SetStartedBy sets StartedBy field to given value.
 
 HasStartedBy returns a boolean if a field has been set.
 
+### SetStartedByNil
+
+`func (o *WorkflowAction) SetStartedByNil(b bool)`
+
+ SetStartedByNil sets the value for StartedBy to be an explicit nil
+
+### UnsetStartedBy
+`func (o *WorkflowAction) UnsetStartedBy()`
+
+UnsetStartedBy ensures that no value is present for StartedBy, not even an explicit nil
 ### GetBlocks
 
 `func (o *WorkflowAction) GetBlocks() []WorkflowActionBlock`
@@ -393,22 +473,32 @@ SetBlocks sets Blocks field to given value.
 
 HasBlocks returns a boolean if a field has been set.
 
+### SetBlocksNil
+
+`func (o *WorkflowAction) SetBlocksNil(b bool)`
+
+ SetBlocksNil sets the value for Blocks to be an explicit nil
+
+### UnsetBlocks
+`func (o *WorkflowAction) UnsetBlocks()`
+
+UnsetBlocks ensures that no value is present for Blocks, not even an explicit nil
 ### GetStatus
 
-`func (o *WorkflowAction) GetStatus() map[string]map[string]interface{}`
+`func (o *WorkflowAction) GetStatus() map[string]interface{}`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WorkflowAction) GetStatusOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowAction) GetStatusOk() (*map[string]interface{}, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WorkflowAction) SetStatus(v map[string]map[string]interface{})`
+`func (o *WorkflowAction) SetStatus(v map[string]interface{})`
 
 SetStatus sets Status field to given value.
 
@@ -418,6 +508,16 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
+### SetStatusNil
+
+`func (o *WorkflowAction) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *WorkflowAction) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
 ### GetDescription
 
 `func (o *WorkflowAction) GetDescription() string`
@@ -443,22 +543,32 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *WorkflowAction) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *WorkflowAction) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetOutput
 
-`func (o *WorkflowAction) GetOutput() map[string]map[string]interface{}`
+`func (o *WorkflowAction) GetOutput() map[string]interface{}`
 
 GetOutput returns the Output field if non-nil, zero value otherwise.
 
 ### GetOutputOk
 
-`func (o *WorkflowAction) GetOutputOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowAction) GetOutputOk() (*map[string]interface{}, bool)`
 
 GetOutputOk returns a tuple with the Output field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOutput
 
-`func (o *WorkflowAction) SetOutput(v map[string]map[string]interface{})`
+`func (o *WorkflowAction) SetOutput(v map[string]interface{})`
 
 SetOutput sets Output field to given value.
 
@@ -468,6 +578,16 @@ SetOutput sets Output field to given value.
 
 HasOutput returns a boolean if a field has been set.
 
+### SetOutputNil
+
+`func (o *WorkflowAction) SetOutputNil(b bool)`
+
+ SetOutputNil sets the value for Output to be an explicit nil
+
+### UnsetOutput
+`func (o *WorkflowAction) UnsetOutput()`
+
+UnsetOutput ensures that no value is present for Output, not even an explicit nil
 ### GetStartedOn
 
 `func (o *WorkflowAction) GetStartedOn() string`
@@ -493,6 +613,16 @@ SetStartedOn sets StartedOn field to given value.
 
 HasStartedOn returns a boolean if a field has been set.
 
+### SetStartedOnNil
+
+`func (o *WorkflowAction) SetStartedOnNil(b bool)`
+
+ SetStartedOnNil sets the value for StartedOn to be an explicit nil
+
+### UnsetStartedOn
+`func (o *WorkflowAction) UnsetStartedOn()`
+
+UnsetStartedOn ensures that no value is present for StartedOn, not even an explicit nil
 ### GetEndedOn
 
 `func (o *WorkflowAction) GetEndedOn() string`
@@ -518,6 +648,16 @@ SetEndedOn sets EndedOn field to given value.
 
 HasEndedOn returns a boolean if a field has been set.
 
+### SetEndedOnNil
+
+`func (o *WorkflowAction) SetEndedOnNil(b bool)`
+
+ SetEndedOnNil sets the value for EndedOn to be an explicit nil
+
+### UnsetEndedOn
+`func (o *WorkflowAction) UnsetEndedOn()`
+
+UnsetEndedOn ensures that no value is present for EndedOn, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

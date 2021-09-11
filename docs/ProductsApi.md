@@ -1,6 +1,6 @@
 # \ProductsApi
 
-All URIs are relative to *http://localhost:8765*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -34,7 +34,7 @@ import (
 )
 
 func main() {
-    productCreate := *openapiclient.NewProductCreate("Name_example", "Label_example", int32(123), "Description_example", "Image_example", "Price_example", []openapiclient.ServiceElement{*openapiclient.NewServiceElement()}, []openapiclient.ServiceElement{*openapiclient.NewServiceElement()}, map[string]string{"key": "Inner_example"}, false, false) // ProductCreate | 
+    productCreate := *openapiclient.NewProductCreate("Name_example", "Label_example", int32(123), "Description_example", "Image_example", []openapiclient.ServiceElement{*openapiclient.NewServiceElement()}, map[string]string{"key": "Inner_example"}, false, false) // ProductCreate | 
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -433,7 +433,7 @@ import (
 
 func main() {
     id := TODO // string | 
-    productUpdate := *openapiclient.NewProductUpdate("Name_example", "Label_example", int32(123), "Description_example", "Image_example", "Price_example", []openapiclient.ServiceElement{*openapiclient.NewServiceElement()}, []openapiclient.ServiceElement{*openapiclient.NewServiceElement()}, map[string]string{"key": "Inner_example"}, false, false) // ProductUpdate | 
+    productUpdate := *openapiclient.NewProductUpdate("Name_example", "Label_example", int32(123), "Description_example", "Image_example", []openapiclient.ServiceElement{*openapiclient.NewServiceElement()}, map[string]string{"key": "Inner_example"}, false, false) // ProductUpdate | 
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
