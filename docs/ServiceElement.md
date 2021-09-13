@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Value** | Pointer to **string** |  | [optional] 
 **ValueList** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **AllowedOptionValues** | Pointer to **[]string** |  | [optional] 
-**AllowedValues** | Pointer to **[]map[string]map[string]interface{}** |  | [optional] 
+**AllowedValues** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Mandatory** | Pointer to **bool** |  | [optional] 
 **Section** | Pointer to **string** |  | [optional] 
 **Billable** | Pointer to **bool** |  | [optional] 
@@ -387,20 +387,20 @@ HasAllowedOptionValues returns a boolean if a field has been set.
 
 ### GetAllowedValues
 
-`func (o *ServiceElement) GetAllowedValues() []map[string]map[string]interface{}`
+`func (o *ServiceElement) GetAllowedValues() []map[string]interface{}`
 
 GetAllowedValues returns the AllowedValues field if non-nil, zero value otherwise.
 
 ### GetAllowedValuesOk
 
-`func (o *ServiceElement) GetAllowedValuesOk() (*[]map[string]map[string]interface{}, bool)`
+`func (o *ServiceElement) GetAllowedValuesOk() (*[]map[string]interface{}, bool)`
 
 GetAllowedValuesOk returns a tuple with the AllowedValues field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedValues
 
-`func (o *ServiceElement) SetAllowedValues(v []map[string]map[string]interface{})`
+`func (o *ServiceElement) SetAllowedValues(v []map[string]interface{})`
 
 SetAllowedValues sets AllowedValues field to given value.
 

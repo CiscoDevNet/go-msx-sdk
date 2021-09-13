@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **ParentId** | Pointer to **NullableString** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **NullableString** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Address** | Pointer to [**NullableSiteAddress**](SiteAddress.md) |  | [optional] 
 **Contact** | Pointer to [**NullableSiteContact**](SiteContact.md) |  | [optional] 
 **Image** | Pointer to **NullableString** |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to [**SiteStatus**](SiteStatus.md) |  | [optional] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
 **CreatedBy** | Pointer to **string** |  | [optional] [readonly] 
-**ModifiedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
+**ModifiedOn** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **ModifiedBy** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
@@ -212,6 +212,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *Site) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *Site) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetAddress
 
 `func (o *Site) GetAddress() SiteAddress`
@@ -537,6 +547,16 @@ SetModifiedOn sets ModifiedOn field to given value.
 
 HasModifiedOn returns a boolean if a field has been set.
 
+### SetModifiedOnNil
+
+`func (o *Site) SetModifiedOnNil(b bool)`
+
+ SetModifiedOnNil sets the value for ModifiedOn to be an explicit nil
+
+### UnsetModifiedOn
+`func (o *Site) UnsetModifiedOn()`
+
+UnsetModifiedOn ensures that no value is present for ModifiedOn, not even an explicit nil
 ### GetModifiedBy
 
 `func (o *Site) GetModifiedBy() string`

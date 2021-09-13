@@ -9,14 +9,14 @@ Name | Type | Description | Notes
 **Title** | Pointer to **string** |  | [optional] 
 **SchemaId** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**Properties** | **map[string]map[string]interface{}** |  | 
+**Properties** | **map[string]interface{}** |  | 
 **UniqueName** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewWorkflowTargetCreate
 
-`func NewWorkflowTargetCreate(name string, properties map[string]map[string]interface{}, ) *WorkflowTargetCreate`
+`func NewWorkflowTargetCreate(name string, properties map[string]interface{}, ) *WorkflowTargetCreate`
 
 NewWorkflowTargetCreate instantiates a new WorkflowTargetCreate object
 This constructor will assign default values to properties that have it defined,
@@ -153,20 +153,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetProperties
 
-`func (o *WorkflowTargetCreate) GetProperties() map[string]map[string]interface{}`
+`func (o *WorkflowTargetCreate) GetProperties() map[string]interface{}`
 
 GetProperties returns the Properties field if non-nil, zero value otherwise.
 
 ### GetPropertiesOk
 
-`func (o *WorkflowTargetCreate) GetPropertiesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowTargetCreate) GetPropertiesOk() (*map[string]interface{}, bool)`
 
 GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProperties
 
-`func (o *WorkflowTargetCreate) SetProperties(v map[string]map[string]interface{})`
+`func (o *WorkflowTargetCreate) SetProperties(v map[string]interface{})`
 
 SetProperties sets Properties field to given value.
 

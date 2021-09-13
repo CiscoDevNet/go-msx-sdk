@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **SupportedProperties** | **[]string** |  | 
 **SupportedOptions** | [**[]NameValue**](NameValue.md) |  | 
-**Approvals** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Approvals** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -294,20 +294,20 @@ SetSupportedOptions sets SupportedOptions field to given value.
 
 ### GetApprovals
 
-`func (o *Offer) GetApprovals() map[string]map[string]interface{}`
+`func (o *Offer) GetApprovals() map[string]interface{}`
 
 GetApprovals returns the Approvals field if non-nil, zero value otherwise.
 
 ### GetApprovalsOk
 
-`func (o *Offer) GetApprovalsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *Offer) GetApprovalsOk() (*map[string]interface{}, bool)`
 
 GetApprovalsOk returns a tuple with the Approvals field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApprovals
 
-`func (o *Offer) SetApprovals(v map[string]map[string]interface{})`
+`func (o *Offer) SetApprovals(v map[string]interface{})`
 
 SetApprovals sets Approvals field to given value.
 

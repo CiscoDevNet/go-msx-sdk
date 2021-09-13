@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
+**Id** | Pointer to **NullableString** |  | [optional] 
 **SchemaId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Title** | Pointer to **string** |  | [optional] 
@@ -15,17 +15,17 @@ Name | Type | Description | Notes
 **Invisible** | Pointer to **bool** |  | [optional] 
 **Inherits** | Pointer to **string** |  | [optional] 
 **AccessMeta** | Pointer to [**WorkflowAccessMeta**](WorkflowAccessMeta.md) |  | [optional] 
-**VariableSchema** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**PropertySchema** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**OutputSchema** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**ViewConfig** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**Attributes** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**VariableSchema** | Pointer to **map[string]interface{}** |  | [optional] 
+**PropertySchema** | Pointer to **map[string]interface{}** |  | [optional] 
+**OutputSchema** | Pointer to **map[string]interface{}** |  | [optional] 
+**ViewConfig** | Pointer to **map[string]interface{}** |  | [optional] 
+**Attributes** | Pointer to **map[string]interface{}** |  | [optional] 
 **CreatedOn** | Pointer to **string** |  | [optional] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
 **UpdatedOn** | Pointer to **string** |  | [optional] 
-**UpdatedBy** | Pointer to **string** |  | [optional] 
-**Owner** | Pointer to **string** |  | [optional] 
-**UniqueName** | Pointer to **string** |  | [optional] 
+**UpdatedBy** | Pointer to **NullableString** |  | [optional] 
+**Owner** | Pointer to **NullableString** |  | [optional] 
+**UniqueName** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -71,6 +71,16 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### SetIdNil
+
+`func (o *WorkflowSchema) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *WorkflowSchema) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetSchemaId
 
 `func (o *WorkflowSchema) GetSchemaId() string`
@@ -323,20 +333,20 @@ HasAccessMeta returns a boolean if a field has been set.
 
 ### GetVariableSchema
 
-`func (o *WorkflowSchema) GetVariableSchema() map[string]map[string]interface{}`
+`func (o *WorkflowSchema) GetVariableSchema() map[string]interface{}`
 
 GetVariableSchema returns the VariableSchema field if non-nil, zero value otherwise.
 
 ### GetVariableSchemaOk
 
-`func (o *WorkflowSchema) GetVariableSchemaOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowSchema) GetVariableSchemaOk() (*map[string]interface{}, bool)`
 
 GetVariableSchemaOk returns a tuple with the VariableSchema field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVariableSchema
 
-`func (o *WorkflowSchema) SetVariableSchema(v map[string]map[string]interface{})`
+`func (o *WorkflowSchema) SetVariableSchema(v map[string]interface{})`
 
 SetVariableSchema sets VariableSchema field to given value.
 
@@ -348,20 +358,20 @@ HasVariableSchema returns a boolean if a field has been set.
 
 ### GetPropertySchema
 
-`func (o *WorkflowSchema) GetPropertySchema() map[string]map[string]interface{}`
+`func (o *WorkflowSchema) GetPropertySchema() map[string]interface{}`
 
 GetPropertySchema returns the PropertySchema field if non-nil, zero value otherwise.
 
 ### GetPropertySchemaOk
 
-`func (o *WorkflowSchema) GetPropertySchemaOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowSchema) GetPropertySchemaOk() (*map[string]interface{}, bool)`
 
 GetPropertySchemaOk returns a tuple with the PropertySchema field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPropertySchema
 
-`func (o *WorkflowSchema) SetPropertySchema(v map[string]map[string]interface{})`
+`func (o *WorkflowSchema) SetPropertySchema(v map[string]interface{})`
 
 SetPropertySchema sets PropertySchema field to given value.
 
@@ -373,20 +383,20 @@ HasPropertySchema returns a boolean if a field has been set.
 
 ### GetOutputSchema
 
-`func (o *WorkflowSchema) GetOutputSchema() map[string]map[string]interface{}`
+`func (o *WorkflowSchema) GetOutputSchema() map[string]interface{}`
 
 GetOutputSchema returns the OutputSchema field if non-nil, zero value otherwise.
 
 ### GetOutputSchemaOk
 
-`func (o *WorkflowSchema) GetOutputSchemaOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowSchema) GetOutputSchemaOk() (*map[string]interface{}, bool)`
 
 GetOutputSchemaOk returns a tuple with the OutputSchema field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOutputSchema
 
-`func (o *WorkflowSchema) SetOutputSchema(v map[string]map[string]interface{})`
+`func (o *WorkflowSchema) SetOutputSchema(v map[string]interface{})`
 
 SetOutputSchema sets OutputSchema field to given value.
 
@@ -398,20 +408,20 @@ HasOutputSchema returns a boolean if a field has been set.
 
 ### GetViewConfig
 
-`func (o *WorkflowSchema) GetViewConfig() map[string]map[string]interface{}`
+`func (o *WorkflowSchema) GetViewConfig() map[string]interface{}`
 
 GetViewConfig returns the ViewConfig field if non-nil, zero value otherwise.
 
 ### GetViewConfigOk
 
-`func (o *WorkflowSchema) GetViewConfigOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowSchema) GetViewConfigOk() (*map[string]interface{}, bool)`
 
 GetViewConfigOk returns a tuple with the ViewConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetViewConfig
 
-`func (o *WorkflowSchema) SetViewConfig(v map[string]map[string]interface{})`
+`func (o *WorkflowSchema) SetViewConfig(v map[string]interface{})`
 
 SetViewConfig sets ViewConfig field to given value.
 
@@ -423,20 +433,20 @@ HasViewConfig returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *WorkflowSchema) GetAttributes() map[string]map[string]interface{}`
+`func (o *WorkflowSchema) GetAttributes() map[string]interface{}`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *WorkflowSchema) GetAttributesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowSchema) GetAttributesOk() (*map[string]interface{}, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *WorkflowSchema) SetAttributes(v map[string]map[string]interface{})`
+`func (o *WorkflowSchema) SetAttributes(v map[string]interface{})`
 
 SetAttributes sets Attributes field to given value.
 
@@ -546,6 +556,16 @@ SetUpdatedBy sets UpdatedBy field to given value.
 
 HasUpdatedBy returns a boolean if a field has been set.
 
+### SetUpdatedByNil
+
+`func (o *WorkflowSchema) SetUpdatedByNil(b bool)`
+
+ SetUpdatedByNil sets the value for UpdatedBy to be an explicit nil
+
+### UnsetUpdatedBy
+`func (o *WorkflowSchema) UnsetUpdatedBy()`
+
+UnsetUpdatedBy ensures that no value is present for UpdatedBy, not even an explicit nil
 ### GetOwner
 
 `func (o *WorkflowSchema) GetOwner() string`
@@ -571,6 +591,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *WorkflowSchema) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *WorkflowSchema) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetUniqueName
 
 `func (o *WorkflowSchema) GetUniqueName() string`
@@ -596,6 +626,16 @@ SetUniqueName sets UniqueName field to given value.
 
 HasUniqueName returns a boolean if a field has been set.
 
+### SetUniqueNameNil
+
+`func (o *WorkflowSchema) SetUniqueNameNil(b bool)`
+
+ SetUniqueNameNil sets the value for UniqueName to be an explicit nil
+
+### UnsetUniqueName
+`func (o *WorkflowSchema) UnsetUniqueName()`
+
+UnsetUniqueName ensures that no value is present for UniqueName, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

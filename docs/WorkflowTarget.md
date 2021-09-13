@@ -8,18 +8,18 @@ Name | Type | Description | Notes
 **SchemaId** | Pointer to **string** |  | [optional] 
 **AdapterId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Title** | Pointer to **string** |  | [optional] 
+**Title** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **BaseType** | Pointer to **string** |  | [optional] 
-**Properties** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Properties** | Pointer to **map[string]interface{}** |  | [optional] 
 **Valid** | Pointer to **bool** |  | [optional] 
 **DefAccessMeta** | Pointer to [**WorkflowDefAccessMeta**](WorkflowDefAccessMeta.md) |  | [optional] 
 **CreatedOn** | Pointer to **string** |  | [optional] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
 **UpdatedOn** | Pointer to **string** |  | [optional] 
-**UpdatedBy** | Pointer to **string** |  | [optional] 
-**Owner** | Pointer to **string** |  | [optional] 
-**UniqueName** | Pointer to **string** |  | [optional] 
+**UpdatedBy** | Pointer to **NullableString** |  | [optional] 
+**Owner** | Pointer to **NullableString** |  | [optional] 
+**UniqueName** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -165,6 +165,16 @@ SetTitle sets Title field to given value.
 
 HasTitle returns a boolean if a field has been set.
 
+### SetTitleNil
+
+`func (o *WorkflowTarget) SetTitleNil(b bool)`
+
+ SetTitleNil sets the value for Title to be an explicit nil
+
+### UnsetTitle
+`func (o *WorkflowTarget) UnsetTitle()`
+
+UnsetTitle ensures that no value is present for Title, not even an explicit nil
 ### GetType
 
 `func (o *WorkflowTarget) GetType() string`
@@ -217,20 +227,20 @@ HasBaseType returns a boolean if a field has been set.
 
 ### GetProperties
 
-`func (o *WorkflowTarget) GetProperties() map[string]map[string]interface{}`
+`func (o *WorkflowTarget) GetProperties() map[string]interface{}`
 
 GetProperties returns the Properties field if non-nil, zero value otherwise.
 
 ### GetPropertiesOk
 
-`func (o *WorkflowTarget) GetPropertiesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowTarget) GetPropertiesOk() (*map[string]interface{}, bool)`
 
 GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProperties
 
-`func (o *WorkflowTarget) SetProperties(v map[string]map[string]interface{})`
+`func (o *WorkflowTarget) SetProperties(v map[string]interface{})`
 
 SetProperties sets Properties field to given value.
 
@@ -240,6 +250,16 @@ SetProperties sets Properties field to given value.
 
 HasProperties returns a boolean if a field has been set.
 
+### SetPropertiesNil
+
+`func (o *WorkflowTarget) SetPropertiesNil(b bool)`
+
+ SetPropertiesNil sets the value for Properties to be an explicit nil
+
+### UnsetProperties
+`func (o *WorkflowTarget) UnsetProperties()`
+
+UnsetProperties ensures that no value is present for Properties, not even an explicit nil
 ### GetValid
 
 `func (o *WorkflowTarget) GetValid() bool`
@@ -390,6 +410,16 @@ SetUpdatedBy sets UpdatedBy field to given value.
 
 HasUpdatedBy returns a boolean if a field has been set.
 
+### SetUpdatedByNil
+
+`func (o *WorkflowTarget) SetUpdatedByNil(b bool)`
+
+ SetUpdatedByNil sets the value for UpdatedBy to be an explicit nil
+
+### UnsetUpdatedBy
+`func (o *WorkflowTarget) UnsetUpdatedBy()`
+
+UnsetUpdatedBy ensures that no value is present for UpdatedBy, not even an explicit nil
 ### GetOwner
 
 `func (o *WorkflowTarget) GetOwner() string`
@@ -415,6 +445,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *WorkflowTarget) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *WorkflowTarget) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetUniqueName
 
 `func (o *WorkflowTarget) GetUniqueName() string`
@@ -440,6 +480,16 @@ SetUniqueName sets UniqueName field to given value.
 
 HasUniqueName returns a boolean if a field has been set.
 
+### SetUniqueNameNil
+
+`func (o *WorkflowTarget) SetUniqueNameNil(b bool)`
+
+ SetUniqueNameNil sets the value for UniqueName to be an explicit nil
+
+### UnsetUniqueName
+`func (o *WorkflowTarget) UnsetUniqueName()`
+
+UnsetUniqueName ensures that no value is present for UniqueName, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

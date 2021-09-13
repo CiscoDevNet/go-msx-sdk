@@ -10,10 +10,12 @@ Name | Type | Description | Notes
 **Suspended** | Pointer to **NullableBool** |  | [optional] [readonly] 
 **NumberOfChildren** | Pointer to **NullableInt64** |  | [optional] [readonly] 
 **ParentId** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
 **Name** | **string** |  | 
-**Description** | Pointer to **string** |  | [optional] 
-**Url** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**Url** | Pointer to **NullableString** |  | [optional] 
 **Image** | Pointer to **NullableString** |  | [optional] 
+**Email** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -214,6 +216,41 @@ HasParentId returns a boolean if a field has been set.
 `func (o *Tenant) UnsetParentId()`
 
 UnsetParentId ensures that no value is present for ParentId, not even an explicit nil
+### GetExternalId
+
+`func (o *Tenant) GetExternalId() string`
+
+GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
+
+### GetExternalIdOk
+
+`func (o *Tenant) GetExternalIdOk() (*string, bool)`
+
+GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalId
+
+`func (o *Tenant) SetExternalId(v string)`
+
+SetExternalId sets ExternalId field to given value.
+
+### HasExternalId
+
+`func (o *Tenant) HasExternalId() bool`
+
+HasExternalId returns a boolean if a field has been set.
+
+### SetExternalIdNil
+
+`func (o *Tenant) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *Tenant) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetName
 
 `func (o *Tenant) GetName() string`
@@ -259,6 +296,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *Tenant) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *Tenant) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetUrl
 
 `func (o *Tenant) GetUrl() string`
@@ -284,6 +331,16 @@ SetUrl sets Url field to given value.
 
 HasUrl returns a boolean if a field has been set.
 
+### SetUrlNil
+
+`func (o *Tenant) SetUrlNil(b bool)`
+
+ SetUrlNil sets the value for Url to be an explicit nil
+
+### UnsetUrl
+`func (o *Tenant) UnsetUrl()`
+
+UnsetUrl ensures that no value is present for Url, not even an explicit nil
 ### GetImage
 
 `func (o *Tenant) GetImage() string`
@@ -319,6 +376,41 @@ HasImage returns a boolean if a field has been set.
 `func (o *Tenant) UnsetImage()`
 
 UnsetImage ensures that no value is present for Image, not even an explicit nil
+### GetEmail
+
+`func (o *Tenant) GetEmail() string`
+
+GetEmail returns the Email field if non-nil, zero value otherwise.
+
+### GetEmailOk
+
+`func (o *Tenant) GetEmailOk() (*string, bool)`
+
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmail
+
+`func (o *Tenant) SetEmail(v string)`
+
+SetEmail sets Email field to given value.
+
+### HasEmail
+
+`func (o *Tenant) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
+
+### SetEmailNil
+
+`func (o *Tenant) SetEmailNil(b bool)`
+
+ SetEmailNil sets the value for Email to be an explicit nil
+
+### UnsetEmail
+`func (o *Tenant) UnsetEmail()`
+
+UnsetEmail ensures that no value is present for Email, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

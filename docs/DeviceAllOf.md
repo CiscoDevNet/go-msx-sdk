@@ -7,8 +7,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **UserId** | Pointer to **string** |  | [optional] 
 **ProviderId** | Pointer to **string** |  | [optional] 
+**VulnerabilityState** | Pointer to [**DeviceVulnerabilityState**](DeviceVulnerabilityState.md) |  | [optional] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] 
-**ModifiedOn** | Pointer to **time.Time** |  | [optional] 
+**ModifiedOn** | Pointer to **NullableTime** |  | [optional] 
 
 ## Methods
 
@@ -104,6 +105,31 @@ SetProviderId sets ProviderId field to given value.
 
 HasProviderId returns a boolean if a field has been set.
 
+### GetVulnerabilityState
+
+`func (o *DeviceAllOf) GetVulnerabilityState() DeviceVulnerabilityState`
+
+GetVulnerabilityState returns the VulnerabilityState field if non-nil, zero value otherwise.
+
+### GetVulnerabilityStateOk
+
+`func (o *DeviceAllOf) GetVulnerabilityStateOk() (*DeviceVulnerabilityState, bool)`
+
+GetVulnerabilityStateOk returns a tuple with the VulnerabilityState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVulnerabilityState
+
+`func (o *DeviceAllOf) SetVulnerabilityState(v DeviceVulnerabilityState)`
+
+SetVulnerabilityState sets VulnerabilityState field to given value.
+
+### HasVulnerabilityState
+
+`func (o *DeviceAllOf) HasVulnerabilityState() bool`
+
+HasVulnerabilityState returns a boolean if a field has been set.
+
 ### GetCreatedOn
 
 `func (o *DeviceAllOf) GetCreatedOn() time.Time`
@@ -154,6 +180,16 @@ SetModifiedOn sets ModifiedOn field to given value.
 
 HasModifiedOn returns a boolean if a field has been set.
 
+### SetModifiedOnNil
+
+`func (o *DeviceAllOf) SetModifiedOnNil(b bool)`
+
+ SetModifiedOnNil sets the value for ModifiedOn to be an explicit nil
+
+### UnsetModifiedOn
+`func (o *DeviceAllOf) UnsetModifiedOn()`
+
+UnsetModifiedOn ensures that no value is present for ModifiedOn, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

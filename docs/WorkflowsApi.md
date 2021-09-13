@@ -1,6 +1,6 @@
 # \WorkflowsApi
 
-All URIs are relative to *http://localhost:8765*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -84,7 +84,7 @@ No authorization required
 
 ## ExportWorkflow
 
-> map[string]map[string]interface{} ExportWorkflow(ctx, id).Execute()
+> map[string]interface{} ExportWorkflow(ctx, id).Execute()
 
 Exports a workflow.
 
@@ -110,7 +110,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowsApi.ExportWorkflow``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ExportWorkflow`: map[string]map[string]interface{}
+    // response from `ExportWorkflow`: map[string]interface{}
     fmt.Fprintf(os.Stdout, "Response from `WorkflowsApi.ExportWorkflow`: %v\n", resp)
 }
 ```
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]map[string]interface{}**
+**map[string]interface{}**
 
 ### Authorization
 
@@ -371,7 +371,7 @@ import (
 )
 
 func main() {
-    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} | 
+    requestBody := map[string]interface{}{"key": interface{}(123)} // map[string]interface{} | 
     tenantIds := []string{"Inner_example"} // []string |  (optional)
     global := true // bool |  (optional)
 
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiImportWorkflowRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]interface{}** |  | 
+ **requestBody** | **map[string]interface{}** |  | 
  **tenantIds** | **[]string** |  | 
  **global** | **bool** |  | 
 
@@ -494,7 +494,7 @@ No authorization required
 
 ## UpdateWorkflow
 
-> WorkflowMapping UpdateWorkflow(ctx, id).RequestBody(requestBody).TenantId(tenantId).Global(global).Execute()
+> WorkflowMapping UpdateWorkflow(ctx, id).RequestBody(requestBody).TenantIds(tenantIds).Global(global).Execute()
 
 Updates a workflow.
 
@@ -512,13 +512,13 @@ import (
 
 func main() {
     id := "id_example" // string | 
-    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} | 
-    tenantId := []string{"Inner_example"} // []string |  (optional)
+    requestBody := map[string]interface{}{"key": interface{}(123)} // map[string]interface{} | 
+    tenantIds := []string{"Inner_example"} // []string |  (optional)
     global := true // bool |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowsApi.UpdateWorkflow(context.Background(), id).RequestBody(requestBody).TenantId(tenantId).Global(global).Execute()
+    resp, r, err := api_client.WorkflowsApi.UpdateWorkflow(context.Background(), id).RequestBody(requestBody).TenantIds(tenantIds).Global(global).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowsApi.UpdateWorkflow``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -544,8 +544,8 @@ Other parameters are passed through a pointer to a apiUpdateWorkflowRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **requestBody** | **map[string]map[string]interface{}** |  | 
- **tenantId** | **[]string** |  | 
+ **requestBody** | **map[string]interface{}** |  | 
+ **tenantIds** | **[]string** |  | 
  **global** | **bool** |  | 
 
 ### Return type

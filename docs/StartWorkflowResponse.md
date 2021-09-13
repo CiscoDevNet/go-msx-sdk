@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **SchemaId** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **BaseType** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Status** | Pointer to **map[string]interface{}** |  | [optional] 
 **Version** | Pointer to **string** |  | [optional] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
 **CreatedOn** | Pointer to **string** |  | [optional] 
@@ -160,20 +160,20 @@ HasBaseType returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *StartWorkflowResponse) GetStatus() map[string]map[string]interface{}`
+`func (o *StartWorkflowResponse) GetStatus() map[string]interface{}`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *StartWorkflowResponse) GetStatusOk() (*map[string]map[string]interface{}, bool)`
+`func (o *StartWorkflowResponse) GetStatusOk() (*map[string]interface{}, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *StartWorkflowResponse) SetStatus(v map[string]map[string]interface{})`
+`func (o *StartWorkflowResponse) SetStatus(v map[string]interface{})`
 
 SetStatus sets Status field to given value.
 

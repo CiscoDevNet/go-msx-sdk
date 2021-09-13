@@ -1,6 +1,6 @@
 # \SitesApi
 
-All URIs are relative to *http://localhost:8765*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -358,7 +358,7 @@ No authorization required
 
 ## GetSitesPage
 
-> SitesPage GetSitesPage(ctx).Page(page).PageSize(pageSize).TenantId(tenantId).ServiceId(serviceId).ServiceType(serviceType).DeviceId(deviceId).ParentId(parentId).Type_(type_).ManagingControlPlaneId(managingControlPlaneId).ShowImage(showImage).Execute()
+> SitesPage GetSitesPage(ctx).Page(page).PageSize(pageSize).TenantId(tenantId).IncludeSubtenants(includeSubtenants).ServiceId(serviceId).ServiceType(serviceType).DeviceId(deviceId).ParentId(parentId).Type_(type_).ManagingControlPlaneId(managingControlPlaneId).ShowImage(showImage).Execute()
 
 Returns a page of Sites. Only one filter is supported at a time.
 
@@ -378,6 +378,7 @@ func main() {
     page := int32(0) // int32 | 
     pageSize := int32(10) // int32 | 
     tenantId := TODO // string |  (optional)
+    includeSubtenants := true // bool |  (optional) (default to false)
     serviceId := "serviceId_example" // string |  (optional)
     serviceType := "serviceType_example" // string |  (optional)
     deviceId := "deviceId_example" // string |  (optional)
@@ -388,7 +389,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SitesApi.GetSitesPage(context.Background()).Page(page).PageSize(pageSize).TenantId(tenantId).ServiceId(serviceId).ServiceType(serviceType).DeviceId(deviceId).ParentId(parentId).Type_(type_).ManagingControlPlaneId(managingControlPlaneId).ShowImage(showImage).Execute()
+    resp, r, err := api_client.SitesApi.GetSitesPage(context.Background()).Page(page).PageSize(pageSize).TenantId(tenantId).IncludeSubtenants(includeSubtenants).ServiceId(serviceId).ServiceType(serviceType).DeviceId(deviceId).ParentId(parentId).Type_(type_).ManagingControlPlaneId(managingControlPlaneId).ShowImage(showImage).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SitesApi.GetSitesPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -412,6 +413,7 @@ Name | Type | Description  | Notes
  **page** | **int32** |  | 
  **pageSize** | **int32** |  | 
  **tenantId** | [**string**](string.md) |  | 
+ **includeSubtenants** | **bool** |  | [default to false]
  **serviceId** | **string** |  | 
  **serviceType** | **string** |  | 
  **deviceId** | **string** |  | 

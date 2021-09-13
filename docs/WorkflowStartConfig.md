@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **InputVariables** | Pointer to [**[]WorkflowVariable**](WorkflowVariable.md) |  | [optional] 
-**TypeOfTargetNeeded** | Pointer to **string** |  | [optional] 
-**TargetId** | Pointer to **string** |  | [optional] 
+**TypeOfTargetNeeded** | Pointer to **NullableString** |  | [optional] 
+**TargetId** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -77,6 +77,16 @@ SetTypeOfTargetNeeded sets TypeOfTargetNeeded field to given value.
 
 HasTypeOfTargetNeeded returns a boolean if a field has been set.
 
+### SetTypeOfTargetNeededNil
+
+`func (o *WorkflowStartConfig) SetTypeOfTargetNeededNil(b bool)`
+
+ SetTypeOfTargetNeededNil sets the value for TypeOfTargetNeeded to be an explicit nil
+
+### UnsetTypeOfTargetNeeded
+`func (o *WorkflowStartConfig) UnsetTypeOfTargetNeeded()`
+
+UnsetTypeOfTargetNeeded ensures that no value is present for TypeOfTargetNeeded, not even an explicit nil
 ### GetTargetId
 
 `func (o *WorkflowStartConfig) GetTargetId() string`
@@ -102,6 +112,16 @@ SetTargetId sets TargetId field to given value.
 
 HasTargetId returns a boolean if a field has been set.
 
+### SetTargetIdNil
+
+`func (o *WorkflowStartConfig) SetTargetIdNil(b bool)`
+
+ SetTargetIdNil sets the value for TargetId to be an explicit nil
+
+### UnsetTargetId
+`func (o *WorkflowStartConfig) UnsetTargetId()`
+
+UnsetTargetId ensures that no value is present for TargetId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

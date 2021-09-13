@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **SchemaId** | Pointer to **string** |  | [optional] 
 **AdapterId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Title** | Pointer to **string** |  | [optional] 
+**Title** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **BaseType** | Pointer to **string** |  | [optional] 
-**Properties** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Properties** | Pointer to **map[string]interface{}** |  | [optional] 
 **Valid** | Pointer to **bool** |  | [optional] 
 **DefAccessMeta** | Pointer to [**WorkflowDefAccessMeta**](WorkflowDefAccessMeta.md) |  | [optional] 
 
@@ -159,6 +159,16 @@ SetTitle sets Title field to given value.
 
 HasTitle returns a boolean if a field has been set.
 
+### SetTitleNil
+
+`func (o *WorkflowTargetAllOf) SetTitleNil(b bool)`
+
+ SetTitleNil sets the value for Title to be an explicit nil
+
+### UnsetTitle
+`func (o *WorkflowTargetAllOf) UnsetTitle()`
+
+UnsetTitle ensures that no value is present for Title, not even an explicit nil
 ### GetType
 
 `func (o *WorkflowTargetAllOf) GetType() string`
@@ -211,20 +221,20 @@ HasBaseType returns a boolean if a field has been set.
 
 ### GetProperties
 
-`func (o *WorkflowTargetAllOf) GetProperties() map[string]map[string]interface{}`
+`func (o *WorkflowTargetAllOf) GetProperties() map[string]interface{}`
 
 GetProperties returns the Properties field if non-nil, zero value otherwise.
 
 ### GetPropertiesOk
 
-`func (o *WorkflowTargetAllOf) GetPropertiesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowTargetAllOf) GetPropertiesOk() (*map[string]interface{}, bool)`
 
 GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProperties
 
-`func (o *WorkflowTargetAllOf) SetProperties(v map[string]map[string]interface{})`
+`func (o *WorkflowTargetAllOf) SetProperties(v map[string]interface{})`
 
 SetProperties sets Properties field to given value.
 
@@ -234,6 +244,16 @@ SetProperties sets Properties field to given value.
 
 HasProperties returns a boolean if a field has been set.
 
+### SetPropertiesNil
+
+`func (o *WorkflowTargetAllOf) SetPropertiesNil(b bool)`
+
+ SetPropertiesNil sets the value for Properties to be an explicit nil
+
+### UnsetProperties
+`func (o *WorkflowTargetAllOf) UnsetProperties()`
+
+UnsetProperties ensures that no value is present for Properties, not even an explicit nil
 ### GetValid
 
 `func (o *WorkflowTargetAllOf) GetValid() bool`

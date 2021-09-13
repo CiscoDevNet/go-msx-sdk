@@ -11,18 +11,18 @@ Name | Type | Description | Notes
 **Version** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **BaseType** | Pointer to **string** |  | [optional] 
-**Properties** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Properties** | Pointer to **map[string]interface{}** |  | [optional] 
 **Actions** | Pointer to [**[]WorkflowAction**](WorkflowAction.md) |  | [optional] 
 **Variables** | Pointer to [**[]WorkflowVariable**](WorkflowVariable.md) |  | [optional] 
-**Status** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Status** | Pointer to **map[string]interface{}** |  | [optional] 
 **StartedOn** | Pointer to **string** |  | [optional] 
 **EndedOn** | Pointer to **string** |  | [optional] 
 **CreatedOn** | Pointer to **string** |  | [optional] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
 **UpdatedOn** | Pointer to **string** |  | [optional] 
-**UpdatedBy** | Pointer to **string** |  | [optional] 
-**Owner** | Pointer to **string** |  | [optional] 
-**UniqueName** | Pointer to **string** |  | [optional] 
+**UpdatedBy** | Pointer to **NullableString** |  | [optional] 
+**Owner** | Pointer to **NullableString** |  | [optional] 
+**UniqueName** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -220,20 +220,20 @@ HasBaseType returns a boolean if a field has been set.
 
 ### GetProperties
 
-`func (o *WorkflowInstance) GetProperties() map[string]map[string]interface{}`
+`func (o *WorkflowInstance) GetProperties() map[string]interface{}`
 
 GetProperties returns the Properties field if non-nil, zero value otherwise.
 
 ### GetPropertiesOk
 
-`func (o *WorkflowInstance) GetPropertiesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowInstance) GetPropertiesOk() (*map[string]interface{}, bool)`
 
 GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProperties
 
-`func (o *WorkflowInstance) SetProperties(v map[string]map[string]interface{})`
+`func (o *WorkflowInstance) SetProperties(v map[string]interface{})`
 
 SetProperties sets Properties field to given value.
 
@@ -268,6 +268,16 @@ SetActions sets Actions field to given value.
 
 HasActions returns a boolean if a field has been set.
 
+### SetActionsNil
+
+`func (o *WorkflowInstance) SetActionsNil(b bool)`
+
+ SetActionsNil sets the value for Actions to be an explicit nil
+
+### UnsetActions
+`func (o *WorkflowInstance) UnsetActions()`
+
+UnsetActions ensures that no value is present for Actions, not even an explicit nil
 ### GetVariables
 
 `func (o *WorkflowInstance) GetVariables() []WorkflowVariable`
@@ -293,22 +303,32 @@ SetVariables sets Variables field to given value.
 
 HasVariables returns a boolean if a field has been set.
 
+### SetVariablesNil
+
+`func (o *WorkflowInstance) SetVariablesNil(b bool)`
+
+ SetVariablesNil sets the value for Variables to be an explicit nil
+
+### UnsetVariables
+`func (o *WorkflowInstance) UnsetVariables()`
+
+UnsetVariables ensures that no value is present for Variables, not even an explicit nil
 ### GetStatus
 
-`func (o *WorkflowInstance) GetStatus() map[string]map[string]interface{}`
+`func (o *WorkflowInstance) GetStatus() map[string]interface{}`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WorkflowInstance) GetStatusOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowInstance) GetStatusOk() (*map[string]interface{}, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WorkflowInstance) SetStatus(v map[string]map[string]interface{})`
+`func (o *WorkflowInstance) SetStatus(v map[string]interface{})`
 
 SetStatus sets Status field to given value.
 
@@ -468,6 +488,16 @@ SetUpdatedBy sets UpdatedBy field to given value.
 
 HasUpdatedBy returns a boolean if a field has been set.
 
+### SetUpdatedByNil
+
+`func (o *WorkflowInstance) SetUpdatedByNil(b bool)`
+
+ SetUpdatedByNil sets the value for UpdatedBy to be an explicit nil
+
+### UnsetUpdatedBy
+`func (o *WorkflowInstance) UnsetUpdatedBy()`
+
+UnsetUpdatedBy ensures that no value is present for UpdatedBy, not even an explicit nil
 ### GetOwner
 
 `func (o *WorkflowInstance) GetOwner() string`
@@ -493,6 +523,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *WorkflowInstance) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *WorkflowInstance) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetUniqueName
 
 `func (o *WorkflowInstance) GetUniqueName() string`
@@ -518,6 +558,16 @@ SetUniqueName sets UniqueName field to given value.
 
 HasUniqueName returns a boolean if a field has been set.
 
+### SetUniqueNameNil
+
+`func (o *WorkflowInstance) SetUniqueNameNil(b bool)`
+
+ SetUniqueNameNil sets the value for UniqueName to be an explicit nil
+
+### UnsetUniqueName
+`func (o *WorkflowInstance) UnsetUniqueName()`
+
+UnsetUniqueName ensures that no value is present for UniqueName, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

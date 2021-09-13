@@ -7,25 +7,25 @@ Name | Type | Description | Notes
 **ServiceInstanceId** | Pointer to **string** |  | [optional] 
 **SubscriptionId** | Pointer to **string** |  | [optional] 
 **TenantId** | **string** |  | 
+**ServiceType** | Pointer to **NullableString** |  | [optional] 
+**Tags** | Pointer to **map[string]string** |  | [optional] 
+**Managed** | **bool** |  | [default to false]
+**OnboardType** | **string** |  | 
+**OnboardInformation** | Pointer to **map[string]interface{}** |  | [optional] 
+**Attributes** | Pointer to **map[string]interface{}** |  | [optional] 
 **Name** | **string** |  | 
 **Model** | **string** |  | 
 **Type** | **string** |  | 
 **SubType** | Pointer to **NullableString** |  | [optional] 
-**ServiceType** | Pointer to **string** |  | [optional] 
-**Tags** | Pointer to **map[string]string** |  | [optional] 
-**SerialKey** | **string** |  | 
-**Version** | **string** |  | 
-**Managed** | **bool** |  | [default to false]
-**OnboardType** | Pointer to **string** |  | [optional] 
-**OnboardInformation** | Pointer to **map[string]string** |  | [optional] 
-**Attributes** | Pointer to **map[string]string** |  | [optional] 
-**Billing** | Pointer to [**DeviceBilling**](DeviceBilling.md) |  | [optional] 
+**SerialKey** | Pointer to **NullableString** |  | [optional] 
+**Version** | Pointer to **NullableString** |  | [optional] 
+**ComplianceState** | Pointer to [**DeviceComplianceState**](DeviceComplianceState.md) |  | [optional] 
 
 ## Methods
 
 ### NewDeviceCreate
 
-`func NewDeviceCreate(tenantId string, name string, model string, type_ string, serialKey string, version string, managed bool, ) *DeviceCreate`
+`func NewDeviceCreate(tenantId string, managed bool, onboardType string, name string, model string, type_ string, ) *DeviceCreate`
 
 NewDeviceCreate instantiates a new DeviceCreate object
 This constructor will assign default values to properties that have it defined,
@@ -110,6 +110,186 @@ and a boolean to check if the value has been set.
 SetTenantId sets TenantId field to given value.
 
 
+### GetServiceType
+
+`func (o *DeviceCreate) GetServiceType() string`
+
+GetServiceType returns the ServiceType field if non-nil, zero value otherwise.
+
+### GetServiceTypeOk
+
+`func (o *DeviceCreate) GetServiceTypeOk() (*string, bool)`
+
+GetServiceTypeOk returns a tuple with the ServiceType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceType
+
+`func (o *DeviceCreate) SetServiceType(v string)`
+
+SetServiceType sets ServiceType field to given value.
+
+### HasServiceType
+
+`func (o *DeviceCreate) HasServiceType() bool`
+
+HasServiceType returns a boolean if a field has been set.
+
+### SetServiceTypeNil
+
+`func (o *DeviceCreate) SetServiceTypeNil(b bool)`
+
+ SetServiceTypeNil sets the value for ServiceType to be an explicit nil
+
+### UnsetServiceType
+`func (o *DeviceCreate) UnsetServiceType()`
+
+UnsetServiceType ensures that no value is present for ServiceType, not even an explicit nil
+### GetTags
+
+`func (o *DeviceCreate) GetTags() map[string]string`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *DeviceCreate) GetTagsOk() (*map[string]string, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *DeviceCreate) SetTags(v map[string]string)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *DeviceCreate) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### SetTagsNil
+
+`func (o *DeviceCreate) SetTagsNil(b bool)`
+
+ SetTagsNil sets the value for Tags to be an explicit nil
+
+### UnsetTags
+`func (o *DeviceCreate) UnsetTags()`
+
+UnsetTags ensures that no value is present for Tags, not even an explicit nil
+### GetManaged
+
+`func (o *DeviceCreate) GetManaged() bool`
+
+GetManaged returns the Managed field if non-nil, zero value otherwise.
+
+### GetManagedOk
+
+`func (o *DeviceCreate) GetManagedOk() (*bool, bool)`
+
+GetManagedOk returns a tuple with the Managed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManaged
+
+`func (o *DeviceCreate) SetManaged(v bool)`
+
+SetManaged sets Managed field to given value.
+
+
+### GetOnboardType
+
+`func (o *DeviceCreate) GetOnboardType() string`
+
+GetOnboardType returns the OnboardType field if non-nil, zero value otherwise.
+
+### GetOnboardTypeOk
+
+`func (o *DeviceCreate) GetOnboardTypeOk() (*string, bool)`
+
+GetOnboardTypeOk returns a tuple with the OnboardType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnboardType
+
+`func (o *DeviceCreate) SetOnboardType(v string)`
+
+SetOnboardType sets OnboardType field to given value.
+
+
+### GetOnboardInformation
+
+`func (o *DeviceCreate) GetOnboardInformation() map[string]interface{}`
+
+GetOnboardInformation returns the OnboardInformation field if non-nil, zero value otherwise.
+
+### GetOnboardInformationOk
+
+`func (o *DeviceCreate) GetOnboardInformationOk() (*map[string]interface{}, bool)`
+
+GetOnboardInformationOk returns a tuple with the OnboardInformation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnboardInformation
+
+`func (o *DeviceCreate) SetOnboardInformation(v map[string]interface{})`
+
+SetOnboardInformation sets OnboardInformation field to given value.
+
+### HasOnboardInformation
+
+`func (o *DeviceCreate) HasOnboardInformation() bool`
+
+HasOnboardInformation returns a boolean if a field has been set.
+
+### SetOnboardInformationNil
+
+`func (o *DeviceCreate) SetOnboardInformationNil(b bool)`
+
+ SetOnboardInformationNil sets the value for OnboardInformation to be an explicit nil
+
+### UnsetOnboardInformation
+`func (o *DeviceCreate) UnsetOnboardInformation()`
+
+UnsetOnboardInformation ensures that no value is present for OnboardInformation, not even an explicit nil
+### GetAttributes
+
+`func (o *DeviceCreate) GetAttributes() map[string]interface{}`
+
+GetAttributes returns the Attributes field if non-nil, zero value otherwise.
+
+### GetAttributesOk
+
+`func (o *DeviceCreate) GetAttributesOk() (*map[string]interface{}, bool)`
+
+GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributes
+
+`func (o *DeviceCreate) SetAttributes(v map[string]interface{})`
+
+SetAttributes sets Attributes field to given value.
+
+### HasAttributes
+
+`func (o *DeviceCreate) HasAttributes() bool`
+
+HasAttributes returns a boolean if a field has been set.
+
+### SetAttributesNil
+
+`func (o *DeviceCreate) SetAttributesNil(b bool)`
+
+ SetAttributesNil sets the value for Attributes to be an explicit nil
+
+### UnsetAttributes
+`func (o *DeviceCreate) UnsetAttributes()`
+
+UnsetAttributes ensures that no value is present for Attributes, not even an explicit nil
 ### GetName
 
 `func (o *DeviceCreate) GetName() string`
@@ -205,66 +385,6 @@ HasSubType returns a boolean if a field has been set.
 `func (o *DeviceCreate) UnsetSubType()`
 
 UnsetSubType ensures that no value is present for SubType, not even an explicit nil
-### GetServiceType
-
-`func (o *DeviceCreate) GetServiceType() string`
-
-GetServiceType returns the ServiceType field if non-nil, zero value otherwise.
-
-### GetServiceTypeOk
-
-`func (o *DeviceCreate) GetServiceTypeOk() (*string, bool)`
-
-GetServiceTypeOk returns a tuple with the ServiceType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceType
-
-`func (o *DeviceCreate) SetServiceType(v string)`
-
-SetServiceType sets ServiceType field to given value.
-
-### HasServiceType
-
-`func (o *DeviceCreate) HasServiceType() bool`
-
-HasServiceType returns a boolean if a field has been set.
-
-### GetTags
-
-`func (o *DeviceCreate) GetTags() map[string]string`
-
-GetTags returns the Tags field if non-nil, zero value otherwise.
-
-### GetTagsOk
-
-`func (o *DeviceCreate) GetTagsOk() (*map[string]string, bool)`
-
-GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTags
-
-`func (o *DeviceCreate) SetTags(v map[string]string)`
-
-SetTags sets Tags field to given value.
-
-### HasTags
-
-`func (o *DeviceCreate) HasTags() bool`
-
-HasTags returns a boolean if a field has been set.
-
-### SetTagsNil
-
-`func (o *DeviceCreate) SetTagsNil(b bool)`
-
- SetTagsNil sets the value for Tags to be an explicit nil
-
-### UnsetTags
-`func (o *DeviceCreate) UnsetTags()`
-
-UnsetTags ensures that no value is present for Tags, not even an explicit nil
 ### GetSerialKey
 
 `func (o *DeviceCreate) GetSerialKey() string`
@@ -284,7 +404,22 @@ and a boolean to check if the value has been set.
 
 SetSerialKey sets SerialKey field to given value.
 
+### HasSerialKey
 
+`func (o *DeviceCreate) HasSerialKey() bool`
+
+HasSerialKey returns a boolean if a field has been set.
+
+### SetSerialKeyNil
+
+`func (o *DeviceCreate) SetSerialKeyNil(b bool)`
+
+ SetSerialKeyNil sets the value for SerialKey to be an explicit nil
+
+### UnsetSerialKey
+`func (o *DeviceCreate) UnsetSerialKey()`
+
+UnsetSerialKey ensures that no value is present for SerialKey, not even an explicit nil
 ### GetVersion
 
 `func (o *DeviceCreate) GetVersion() string`
@@ -304,126 +439,46 @@ and a boolean to check if the value has been set.
 
 SetVersion sets Version field to given value.
 
+### HasVersion
 
-### GetManaged
+`func (o *DeviceCreate) HasVersion() bool`
 
-`func (o *DeviceCreate) GetManaged() bool`
+HasVersion returns a boolean if a field has been set.
 
-GetManaged returns the Managed field if non-nil, zero value otherwise.
+### SetVersionNil
 
-### GetManagedOk
+`func (o *DeviceCreate) SetVersionNil(b bool)`
 
-`func (o *DeviceCreate) GetManagedOk() (*bool, bool)`
+ SetVersionNil sets the value for Version to be an explicit nil
 
-GetManagedOk returns a tuple with the Managed field if it's non-nil, zero value otherwise
+### UnsetVersion
+`func (o *DeviceCreate) UnsetVersion()`
+
+UnsetVersion ensures that no value is present for Version, not even an explicit nil
+### GetComplianceState
+
+`func (o *DeviceCreate) GetComplianceState() DeviceComplianceState`
+
+GetComplianceState returns the ComplianceState field if non-nil, zero value otherwise.
+
+### GetComplianceStateOk
+
+`func (o *DeviceCreate) GetComplianceStateOk() (*DeviceComplianceState, bool)`
+
+GetComplianceStateOk returns a tuple with the ComplianceState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetManaged
+### SetComplianceState
 
-`func (o *DeviceCreate) SetManaged(v bool)`
+`func (o *DeviceCreate) SetComplianceState(v DeviceComplianceState)`
 
-SetManaged sets Managed field to given value.
+SetComplianceState sets ComplianceState field to given value.
 
+### HasComplianceState
 
-### GetOnboardType
+`func (o *DeviceCreate) HasComplianceState() bool`
 
-`func (o *DeviceCreate) GetOnboardType() string`
-
-GetOnboardType returns the OnboardType field if non-nil, zero value otherwise.
-
-### GetOnboardTypeOk
-
-`func (o *DeviceCreate) GetOnboardTypeOk() (*string, bool)`
-
-GetOnboardTypeOk returns a tuple with the OnboardType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOnboardType
-
-`func (o *DeviceCreate) SetOnboardType(v string)`
-
-SetOnboardType sets OnboardType field to given value.
-
-### HasOnboardType
-
-`func (o *DeviceCreate) HasOnboardType() bool`
-
-HasOnboardType returns a boolean if a field has been set.
-
-### GetOnboardInformation
-
-`func (o *DeviceCreate) GetOnboardInformation() map[string]string`
-
-GetOnboardInformation returns the OnboardInformation field if non-nil, zero value otherwise.
-
-### GetOnboardInformationOk
-
-`func (o *DeviceCreate) GetOnboardInformationOk() (*map[string]string, bool)`
-
-GetOnboardInformationOk returns a tuple with the OnboardInformation field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOnboardInformation
-
-`func (o *DeviceCreate) SetOnboardInformation(v map[string]string)`
-
-SetOnboardInformation sets OnboardInformation field to given value.
-
-### HasOnboardInformation
-
-`func (o *DeviceCreate) HasOnboardInformation() bool`
-
-HasOnboardInformation returns a boolean if a field has been set.
-
-### GetAttributes
-
-`func (o *DeviceCreate) GetAttributes() map[string]string`
-
-GetAttributes returns the Attributes field if non-nil, zero value otherwise.
-
-### GetAttributesOk
-
-`func (o *DeviceCreate) GetAttributesOk() (*map[string]string, bool)`
-
-GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributes
-
-`func (o *DeviceCreate) SetAttributes(v map[string]string)`
-
-SetAttributes sets Attributes field to given value.
-
-### HasAttributes
-
-`func (o *DeviceCreate) HasAttributes() bool`
-
-HasAttributes returns a boolean if a field has been set.
-
-### GetBilling
-
-`func (o *DeviceCreate) GetBilling() DeviceBilling`
-
-GetBilling returns the Billing field if non-nil, zero value otherwise.
-
-### GetBillingOk
-
-`func (o *DeviceCreate) GetBillingOk() (*DeviceBilling, bool)`
-
-GetBillingOk returns a tuple with the Billing field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBilling
-
-`func (o *DeviceCreate) SetBilling(v DeviceBilling)`
-
-SetBilling sets Billing field to given value.
-
-### HasBilling
-
-`func (o *DeviceCreate) HasBilling() bool`
-
-HasBilling returns a boolean if a field has been set.
+HasComplianceState returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

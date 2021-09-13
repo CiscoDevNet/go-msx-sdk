@@ -10,13 +10,13 @@ Name | Type | Description | Notes
 **Title** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **BaseType** | Pointer to **string** |  | [optional] 
-**ObjectType** | Pointer to **string** |  | [optional] 
-**Properties** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**ObjectType** | Pointer to **NullableString** |  | [optional] 
+**Properties** | Pointer to **map[string]interface{}** |  | [optional] 
 **Valid** | Pointer to **bool** |  | [optional] 
 **WorkflowValid** | Pointer to **bool** |  | [optional] 
 **Categories** | Pointer to **[]string** |  | [optional] 
 **Metadata** | Pointer to [**WorkflowMetadata**](WorkflowMetadata.md) |  | [optional] 
-**Status** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Status** | Pointer to **map[string]interface{}** |  | [optional] 
 **Permissions** | Pointer to **[]string** |  | [optional] 
 **Variables** | Pointer to [**[]WorkflowVariable**](WorkflowVariable.md) |  | [optional] 
 **Actions** | Pointer to [**[]WorkflowAction**](WorkflowAction.md) |  | [optional] 
@@ -215,22 +215,32 @@ SetObjectType sets ObjectType field to given value.
 
 HasObjectType returns a boolean if a field has been set.
 
+### SetObjectTypeNil
+
+`func (o *WorkflowAllOf) SetObjectTypeNil(b bool)`
+
+ SetObjectTypeNil sets the value for ObjectType to be an explicit nil
+
+### UnsetObjectType
+`func (o *WorkflowAllOf) UnsetObjectType()`
+
+UnsetObjectType ensures that no value is present for ObjectType, not even an explicit nil
 ### GetProperties
 
-`func (o *WorkflowAllOf) GetProperties() map[string]map[string]interface{}`
+`func (o *WorkflowAllOf) GetProperties() map[string]interface{}`
 
 GetProperties returns the Properties field if non-nil, zero value otherwise.
 
 ### GetPropertiesOk
 
-`func (o *WorkflowAllOf) GetPropertiesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowAllOf) GetPropertiesOk() (*map[string]interface{}, bool)`
 
 GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProperties
 
-`func (o *WorkflowAllOf) SetProperties(v map[string]map[string]interface{})`
+`func (o *WorkflowAllOf) SetProperties(v map[string]interface{})`
 
 SetProperties sets Properties field to given value.
 
@@ -342,20 +352,20 @@ HasMetadata returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *WorkflowAllOf) GetStatus() map[string]map[string]interface{}`
+`func (o *WorkflowAllOf) GetStatus() map[string]interface{}`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WorkflowAllOf) GetStatusOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowAllOf) GetStatusOk() (*map[string]interface{}, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WorkflowAllOf) SetStatus(v map[string]map[string]interface{})`
+`func (o *WorkflowAllOf) SetStatus(v map[string]interface{})`
 
 SetStatus sets Status field to given value.
 
@@ -440,6 +450,16 @@ SetActions sets Actions field to given value.
 
 HasActions returns a boolean if a field has been set.
 
+### SetActionsNil
+
+`func (o *WorkflowAllOf) SetActionsNil(b bool)`
+
+ SetActionsNil sets the value for Actions to be an explicit nil
+
+### UnsetActions
+`func (o *WorkflowAllOf) UnsetActions()`
+
+UnsetActions ensures that no value is present for Actions, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

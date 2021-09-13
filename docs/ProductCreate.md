@@ -10,12 +10,12 @@ Name | Type | Description | Notes
 **Description** | **string** |  | 
 **Image** | **string** |  | 
 **MultipleInstanceAllowed** | Pointer to **bool** |  | [optional] 
-**Price** | **string** |  | 
+**Price** | Pointer to **string** |  | [optional] 
 **DisplayOrder** | Pointer to **int32** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **OrderLimit** | Pointer to **int32** |  | [optional] 
 **Options** | [**[]ServiceElement**](ServiceElement.md) |  | 
-**Properties** | [**[]ServiceElement**](ServiceElement.md) |  | 
+**Properties** | Pointer to [**[]ServiceElement**](ServiceElement.md) |  | [optional] 
 **Configuration** | **map[string]string** |  | 
 **IsResource** | **bool** |  | 
 **HasChildren** | **bool** |  | 
@@ -23,12 +23,13 @@ Name | Type | Description | Notes
 **ServiceExtensions** | Pointer to [**[]NSOConfigDataXPath**](NSOConfigDataXPath.md) |  | [optional] 
 **ServiceConfigQueryRootXPaths** | Pointer to **[]string** |  | [optional] 
 **UiConfig** | Pointer to [**ServiceUIConfig**](ServiceUIConfig.md) |  | [optional] 
+**Tags** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
 ### NewProductCreate
 
-`func NewProductCreate(name string, label string, version int32, description string, image string, price string, options []ServiceElement, properties []ServiceElement, configuration map[string]string, isResource bool, hasChildren bool, ) *ProductCreate`
+`func NewProductCreate(name string, label string, version int32, description string, image string, options []ServiceElement, configuration map[string]string, isResource bool, hasChildren bool, ) *ProductCreate`
 
 NewProductCreate instantiates a new ProductCreate object
 This constructor will assign default values to properties that have it defined,
@@ -187,6 +188,11 @@ and a boolean to check if the value has been set.
 
 SetPrice sets Price field to given value.
 
+### HasPrice
+
+`func (o *ProductCreate) HasPrice() bool`
+
+HasPrice returns a boolean if a field has been set.
 
 ### GetDisplayOrder
 
@@ -302,6 +308,11 @@ and a boolean to check if the value has been set.
 
 SetProperties sets Properties field to given value.
 
+### HasProperties
+
+`func (o *ProductCreate) HasProperties() bool`
+
+HasProperties returns a boolean if a field has been set.
 
 ### SetPropertiesNil
 
@@ -473,6 +484,41 @@ SetUiConfig sets UiConfig field to given value.
 
 HasUiConfig returns a boolean if a field has been set.
 
+### GetTags
+
+`func (o *ProductCreate) GetTags() []string`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *ProductCreate) GetTagsOk() (*[]string, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *ProductCreate) SetTags(v []string)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *ProductCreate) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### SetTagsNil
+
+`func (o *ProductCreate) SetTagsNil(b bool)`
+
+ SetTagsNil sets the value for Tags to be an explicit nil
+
+### UnsetTags
+`func (o *ProductCreate) UnsetTags()`
+
+UnsetTags ensures that no value is present for Tags, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

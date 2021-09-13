@@ -1,6 +1,6 @@
 # \WorkflowEventsApi
 
-All URIs are relative to *http://localhost:8765*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ import (
 )
 
 func main() {
-    workflowEventCreate := *openapiclient.NewWorkflowEventCreate("Title_example", "TargetId_example", "SchemaId_example", map[string]map[string]interface{}{"key": map[string]interface{}(123)}) // WorkflowEventCreate | 
+    workflowEventCreate := *openapiclient.NewWorkflowEventCreate("Title_example", "TargetId_example", "SchemaId_example", map[string]interface{}{"key": interface{}(123)}) // WorkflowEventCreate | 
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -289,7 +289,7 @@ import (
 
 func main() {
     id := "id_example" // string | 
-    workflowEventUpdate := *openapiclient.NewWorkflowEventUpdate("Title_example", "TargetId_example", "SchemaId_example", map[string]map[string]interface{}{"key": map[string]interface{}(123)}) // WorkflowEventUpdate | 
+    workflowEventUpdate := *openapiclient.NewWorkflowEventUpdate("Title_example", "TargetId_example", "SchemaId_example", map[string]interface{}{"key": interface{}(123)}) // WorkflowEventUpdate | 
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)

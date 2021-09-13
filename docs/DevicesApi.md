@@ -1,6 +1,6 @@
 # \DevicesApi
 
-All URIs are relative to *http://localhost:8765*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,9 @@ Method | HTTP request | Description
 [**GetDeviceConfig**](DevicesApi.md#GetDeviceConfig) | **Get** /manage/api/v8/devices/{id}/config | Returns the running configuration for a device.
 [**GetDeviceTemplateHistory**](DevicesApi.md#GetDeviceTemplateHistory) | **Get** /manage/api/v8/devices/{id}/templates | Returns device template history.
 [**GetDevicesPage**](DevicesApi.md#GetDevicesPage) | **Get** /manage/api/v8/devices | Returns a page of devices.
+[**PatchDevice**](DevicesApi.md#PatchDevice) | **Patch** /manage/api/v8/devices/{id} | Update a device.
 [**RedeployDevice**](DevicesApi.md#RedeployDevice) | **Post** /manage/api/v8/devices/{id}/redeploy | Dedeploys a device.
+[**UpdateDevice**](DevicesApi.md#UpdateDevice) | **Put** /manage/api/v8/devices/{id} | Update a device.
 [**UpdateDeviceTemplates**](DevicesApi.md#UpdateDeviceTemplates) | **Put** /manage/api/v8/devices/{id}/templates | Update device templates that are already attached to a device.
 
 
@@ -107,7 +109,7 @@ import (
 )
 
 func main() {
-    deviceCreate := *openapiclient.NewDeviceCreate("TenantId_example", "Name_example", "Model_example", "Type_example", "SerialKey_example", "Version_example", false) // DeviceCreate | 
+    deviceCreate := *openapiclient.NewDeviceCreate("TenantId_example", false, "OnboardType_example", "Name_example", "Model_example", "Type_example") // DeviceCreate | 
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -565,7 +567,7 @@ No authorization required
 
 ## GetDevicesPage
 
-> DevicesPage GetDevicesPage(ctx).Page(page).PageSize(pageSize).DeviceIds(deviceIds).ServiceIds(serviceIds).Types(types).SerialKeys(serialKeys).ServiceTypes(serviceTypes).Models(models).Subtypes(subtypes).Names(names).Versions(versions).TenantIds(tenantIds).Severities(severities).SortBy(sortBy).SortOrder(sortOrder).Execute()
+> DevicesPage GetDevicesPage(ctx).Page(page).PageSize(pageSize).DeviceIds(deviceIds).ServiceIds(serviceIds).Types(types).SerialKeys(serialKeys).ServiceTypes(serviceTypes).Models(models).Subtypes(subtypes).Names(names).Versions(versions).TenantIds(tenantIds).IncludeSubtenants(includeSubtenants).Severities(severities).ComplianceStates(complianceStates).VulnerabilityStates(vulnerabilityStates).SortBy(sortBy).SortOrder(sortOrder).Execute()
 
 Returns a page of devices.
 
@@ -594,13 +596,16 @@ func main() {
     names := []string{"Inner_example"} // []string |  (optional)
     versions := []string{"Inner_example"} // []string |  (optional)
     tenantIds := []string{"Inner_example"} // []string |  (optional)
+    includeSubtenants := true // bool |  (optional) (default to false)
     severities := []string{"Inner_example"} // []string |  (optional)
+    complianceStates := []openapiclient.DeviceComplianceState{openapiclient.DeviceComplianceState("COMPLIANT")} // []DeviceComplianceState |  (optional)
+    vulnerabilityStates := []openapiclient.DeviceVulnerabilityState{openapiclient.DeviceVulnerabilityState("VULNERABLE")} // []DeviceVulnerabilityState |  (optional)
     sortBy := "name" // string |  (optional)
     sortOrder := "sortOrder_example" // string |  (optional) (default to "asc")
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.GetDevicesPage(context.Background()).Page(page).PageSize(pageSize).DeviceIds(deviceIds).ServiceIds(serviceIds).Types(types).SerialKeys(serialKeys).ServiceTypes(serviceTypes).Models(models).Subtypes(subtypes).Names(names).Versions(versions).TenantIds(tenantIds).Severities(severities).SortBy(sortBy).SortOrder(sortOrder).Execute()
+    resp, r, err := api_client.DevicesApi.GetDevicesPage(context.Background()).Page(page).PageSize(pageSize).DeviceIds(deviceIds).ServiceIds(serviceIds).Types(types).SerialKeys(serialKeys).ServiceTypes(serviceTypes).Models(models).Subtypes(subtypes).Names(names).Versions(versions).TenantIds(tenantIds).IncludeSubtenants(includeSubtenants).Severities(severities).ComplianceStates(complianceStates).VulnerabilityStates(vulnerabilityStates).SortBy(sortBy).SortOrder(sortOrder).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.GetDevicesPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -633,7 +638,10 @@ Name | Type | Description  | Notes
  **names** | **[]string** |  | 
  **versions** | **[]string** |  | 
  **tenantIds** | **[]string** |  | 
+ **includeSubtenants** | **bool** |  | [default to false]
  **severities** | **[]string** |  | 
+ **complianceStates** | [**[]DeviceComplianceState**](DeviceComplianceState.md) |  | 
+ **vulnerabilityStates** | [**[]DeviceVulnerabilityState**](DeviceVulnerabilityState.md) |  | 
  **sortBy** | **string** |  | 
  **sortOrder** | **string** |  | [default to &quot;asc&quot;]
 
@@ -648,6 +656,76 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PatchDevice
+
+> Device PatchDevice(ctx, id).DevicePatch(devicePatch).Execute()
+
+Update a device.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | 
+    devicePatch := *openapiclient.NewDevicePatch() // DevicePatch | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DevicesApi.PatchDevice(context.Background(), id).DevicePatch(devicePatch).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.PatchDevice``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PatchDevice`: Device
+    fmt.Fprintf(os.Stdout, "Response from `DevicesApi.PatchDevice`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPatchDeviceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **devicePatch** | [**DevicePatch**](DevicePatch.md) |  | 
+
+### Return type
+
+[**Device**](Device.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -714,6 +792,76 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateDevice
+
+> Device UpdateDevice(ctx, id).DeviceUpdate(deviceUpdate).Execute()
+
+Update a device.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | 
+    deviceUpdate := *openapiclient.NewDeviceUpdate(false, "OnboardType_example", "Name_example", "Model_example", "Type_example") // DeviceUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DevicesApi.UpdateDevice(context.Background(), id).DeviceUpdate(deviceUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.UpdateDevice``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateDevice`: Device
+    fmt.Fprintf(os.Stdout, "Response from `DevicesApi.UpdateDevice`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateDeviceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **deviceUpdate** | [**DeviceUpdate**](DeviceUpdate.md) |  | 
+
+### Return type
+
+[**Device**](Device.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

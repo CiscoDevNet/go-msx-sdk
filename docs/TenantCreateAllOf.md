@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ParentId** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -60,6 +61,41 @@ HasParentId returns a boolean if a field has been set.
 `func (o *TenantCreateAllOf) UnsetParentId()`
 
 UnsetParentId ensures that no value is present for ParentId, not even an explicit nil
+### GetExternalId
+
+`func (o *TenantCreateAllOf) GetExternalId() string`
+
+GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
+
+### GetExternalIdOk
+
+`func (o *TenantCreateAllOf) GetExternalIdOk() (*string, bool)`
+
+GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalId
+
+`func (o *TenantCreateAllOf) SetExternalId(v string)`
+
+SetExternalId sets ExternalId field to given value.
+
+### HasExternalId
+
+`func (o *TenantCreateAllOf) HasExternalId() bool`
+
+HasExternalId returns a boolean if a field has been set.
+
+### SetExternalIdNil
+
+`func (o *TenantCreateAllOf) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *TenantCreateAllOf) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

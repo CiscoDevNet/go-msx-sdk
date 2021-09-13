@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SiteCount** | Pointer to **map[string]interface{}** |  | [optional] 
 **Sites** | Pointer to [**[]LegacySite**](LegacySite.md) |  | [optional] 
-**OfferSelection** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**ServiceInstanceDetail** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**PriceDetail** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**OfferSelection** | Pointer to **map[string]interface{}** |  | [optional] 
+**ServiceInstanceDetail** | Pointer to **map[string]interface{}** |  | [optional] 
+**PriceDetail** | Pointer to **map[string]interface{}** |  | [optional] 
 **DealerCode** | Pointer to **string** |  | [optional] 
 **PricePlanId** | Pointer to **string** |  | [optional] 
 **TermsAndConditionId** | Pointer to **string** |  | [optional] 
@@ -85,20 +85,20 @@ HasSites returns a boolean if a field has been set.
 
 ### GetOfferSelection
 
-`func (o *LegacySubscriptionDetail) GetOfferSelection() map[string]map[string]interface{}`
+`func (o *LegacySubscriptionDetail) GetOfferSelection() map[string]interface{}`
 
 GetOfferSelection returns the OfferSelection field if non-nil, zero value otherwise.
 
 ### GetOfferSelectionOk
 
-`func (o *LegacySubscriptionDetail) GetOfferSelectionOk() (*map[string]map[string]interface{}, bool)`
+`func (o *LegacySubscriptionDetail) GetOfferSelectionOk() (*map[string]interface{}, bool)`
 
 GetOfferSelectionOk returns a tuple with the OfferSelection field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOfferSelection
 
-`func (o *LegacySubscriptionDetail) SetOfferSelection(v map[string]map[string]interface{})`
+`func (o *LegacySubscriptionDetail) SetOfferSelection(v map[string]interface{})`
 
 SetOfferSelection sets OfferSelection field to given value.
 
@@ -110,20 +110,20 @@ HasOfferSelection returns a boolean if a field has been set.
 
 ### GetServiceInstanceDetail
 
-`func (o *LegacySubscriptionDetail) GetServiceInstanceDetail() map[string]map[string]interface{}`
+`func (o *LegacySubscriptionDetail) GetServiceInstanceDetail() map[string]interface{}`
 
 GetServiceInstanceDetail returns the ServiceInstanceDetail field if non-nil, zero value otherwise.
 
 ### GetServiceInstanceDetailOk
 
-`func (o *LegacySubscriptionDetail) GetServiceInstanceDetailOk() (*map[string]map[string]interface{}, bool)`
+`func (o *LegacySubscriptionDetail) GetServiceInstanceDetailOk() (*map[string]interface{}, bool)`
 
 GetServiceInstanceDetailOk returns a tuple with the ServiceInstanceDetail field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServiceInstanceDetail
 
-`func (o *LegacySubscriptionDetail) SetServiceInstanceDetail(v map[string]map[string]interface{})`
+`func (o *LegacySubscriptionDetail) SetServiceInstanceDetail(v map[string]interface{})`
 
 SetServiceInstanceDetail sets ServiceInstanceDetail field to given value.
 
@@ -135,20 +135,20 @@ HasServiceInstanceDetail returns a boolean if a field has been set.
 
 ### GetPriceDetail
 
-`func (o *LegacySubscriptionDetail) GetPriceDetail() map[string]map[string]interface{}`
+`func (o *LegacySubscriptionDetail) GetPriceDetail() map[string]interface{}`
 
 GetPriceDetail returns the PriceDetail field if non-nil, zero value otherwise.
 
 ### GetPriceDetailOk
 
-`func (o *LegacySubscriptionDetail) GetPriceDetailOk() (*map[string]map[string]interface{}, bool)`
+`func (o *LegacySubscriptionDetail) GetPriceDetailOk() (*map[string]interface{}, bool)`
 
 GetPriceDetailOk returns a tuple with the PriceDetail field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceDetail
 
-`func (o *LegacySubscriptionDetail) SetPriceDetail(v map[string]map[string]interface{})`
+`func (o *LegacySubscriptionDetail) SetPriceDetail(v map[string]interface{})`
 
 SetPriceDetail sets PriceDetail field to given value.
 

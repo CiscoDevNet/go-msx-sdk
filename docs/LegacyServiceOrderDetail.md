@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **SubscriptionId** | Pointer to **string** |  | [optional] 
 **SubscriptionName** | Pointer to **string** |  | [optional] 
 **SubscriptionDetail** | Pointer to [**LegacySubscriptionDetail**](LegacySubscriptionDetail.md) |  | [optional] 
-**ServiceDowngrade** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**ServiceDowngrade** | Pointer to **map[string]interface{}** |  | [optional] 
 **NsoResponseTypes** | Pointer to [**LegacyNsoResponseTypes**](LegacyNsoResponseTypes.md) |  | [optional] 
 
 ## Methods
@@ -262,20 +262,20 @@ HasSubscriptionDetail returns a boolean if a field has been set.
 
 ### GetServiceDowngrade
 
-`func (o *LegacyServiceOrderDetail) GetServiceDowngrade() map[string]map[string]interface{}`
+`func (o *LegacyServiceOrderDetail) GetServiceDowngrade() map[string]interface{}`
 
 GetServiceDowngrade returns the ServiceDowngrade field if non-nil, zero value otherwise.
 
 ### GetServiceDowngradeOk
 
-`func (o *LegacyServiceOrderDetail) GetServiceDowngradeOk() (*map[string]map[string]interface{}, bool)`
+`func (o *LegacyServiceOrderDetail) GetServiceDowngradeOk() (*map[string]interface{}, bool)`
 
 GetServiceDowngradeOk returns a tuple with the ServiceDowngrade field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServiceDowngrade
 
-`func (o *LegacyServiceOrderDetail) SetServiceDowngrade(v map[string]map[string]interface{})`
+`func (o *LegacyServiceOrderDetail) SetServiceDowngrade(v map[string]interface{})`
 
 SetServiceDowngrade sets ServiceDowngrade field to given value.
 

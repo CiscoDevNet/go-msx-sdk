@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **Version** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **BaseType** | Pointer to **string** |  | [optional] 
-**Properties** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Properties** | Pointer to **map[string]interface{}** |  | [optional] 
 **Actions** | Pointer to [**[]WorkflowAction**](WorkflowAction.md) |  | [optional] 
 **Variables** | Pointer to [**[]WorkflowVariable**](WorkflowVariable.md) |  | [optional] 
-**Status** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Status** | Pointer to **map[string]interface{}** |  | [optional] 
 **StartedOn** | Pointer to **string** |  | [optional] 
 **EndedOn** | Pointer to **string** |  | [optional] 
 
@@ -214,20 +214,20 @@ HasBaseType returns a boolean if a field has been set.
 
 ### GetProperties
 
-`func (o *WorkflowInstanceAllOf) GetProperties() map[string]map[string]interface{}`
+`func (o *WorkflowInstanceAllOf) GetProperties() map[string]interface{}`
 
 GetProperties returns the Properties field if non-nil, zero value otherwise.
 
 ### GetPropertiesOk
 
-`func (o *WorkflowInstanceAllOf) GetPropertiesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowInstanceAllOf) GetPropertiesOk() (*map[string]interface{}, bool)`
 
 GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProperties
 
-`func (o *WorkflowInstanceAllOf) SetProperties(v map[string]map[string]interface{})`
+`func (o *WorkflowInstanceAllOf) SetProperties(v map[string]interface{})`
 
 SetProperties sets Properties field to given value.
 
@@ -262,6 +262,16 @@ SetActions sets Actions field to given value.
 
 HasActions returns a boolean if a field has been set.
 
+### SetActionsNil
+
+`func (o *WorkflowInstanceAllOf) SetActionsNil(b bool)`
+
+ SetActionsNil sets the value for Actions to be an explicit nil
+
+### UnsetActions
+`func (o *WorkflowInstanceAllOf) UnsetActions()`
+
+UnsetActions ensures that no value is present for Actions, not even an explicit nil
 ### GetVariables
 
 `func (o *WorkflowInstanceAllOf) GetVariables() []WorkflowVariable`
@@ -287,22 +297,32 @@ SetVariables sets Variables field to given value.
 
 HasVariables returns a boolean if a field has been set.
 
+### SetVariablesNil
+
+`func (o *WorkflowInstanceAllOf) SetVariablesNil(b bool)`
+
+ SetVariablesNil sets the value for Variables to be an explicit nil
+
+### UnsetVariables
+`func (o *WorkflowInstanceAllOf) UnsetVariables()`
+
+UnsetVariables ensures that no value is present for Variables, not even an explicit nil
 ### GetStatus
 
-`func (o *WorkflowInstanceAllOf) GetStatus() map[string]map[string]interface{}`
+`func (o *WorkflowInstanceAllOf) GetStatus() map[string]interface{}`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WorkflowInstanceAllOf) GetStatusOk() (*map[string]map[string]interface{}, bool)`
+`func (o *WorkflowInstanceAllOf) GetStatusOk() (*map[string]interface{}, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WorkflowInstanceAllOf) SetStatus(v map[string]map[string]interface{})`
+`func (o *WorkflowInstanceAllOf) SetStatus(v map[string]interface{})`
 
 SetStatus sets Status field to given value.
 

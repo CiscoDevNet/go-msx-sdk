@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ParentId** | Pointer to **string** |  | [optional] 
 **Name** | **string** |  | 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Address** | Pointer to [**NullableSiteAddress**](SiteAddress.md) |  | [optional] 
 **Contact** | Pointer to [**NullableSiteContact**](SiteContact.md) |  | [optional] 
@@ -103,6 +103,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *SiteUpdate) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *SiteUpdate) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetType
 
 `func (o *SiteUpdate) GetType() string`
