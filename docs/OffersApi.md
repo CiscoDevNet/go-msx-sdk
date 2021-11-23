@@ -34,7 +34,7 @@ import (
 )
 
 func main() {
-    offerCreate := *openapiclient.NewOfferCreate("Name_example", "Label_example", "Description_example", "ProductId_example", int32(123), int32(123), "Image_example", []string{"SupportedProperties_example"}, []openapiclient.NameValue{*openapiclient.NewNameValue()}) // OfferCreate | 
+    offerCreate := *openapiclient.NewOfferCreate("Name_example", "Label_example", "Description_example", "ProductId_example", int32(123), int32(123)) // OfferCreate | 
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -437,7 +437,7 @@ import (
 
 func main() {
     id := TODO // string | 
-    offerUpdate := *openapiclient.NewOfferUpdate("Name_example", "Label_example", "Description_example", "ProductId_example", int32(123), int32(123), "Image_example", []string{"SupportedProperties_example"}, []openapiclient.NameValue{*openapiclient.NewNameValue()}) // OfferUpdate | 
+    offerUpdate := *openapiclient.NewOfferUpdate("Name_example", "Label_example", "Description_example", "ProductId_example", int32(123), int32(123)) // OfferUpdate | 
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
