@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServiceInstanceId** | Pointer to **string** |  | [optional] 
-**SubscriptionId** | Pointer to **string** |  | [optional] 
+**ServiceInstanceId** | Pointer to **NullableString** |  | [optional] 
+**SubscriptionId** | Pointer to **NullableString** |  | [optional] 
 **TenantId** | **string** |  | 
 **ServiceType** | Pointer to **NullableString** |  | [optional] 
 **Tags** | Pointer to **map[string]string** |  | [optional] 
@@ -65,6 +65,16 @@ SetServiceInstanceId sets ServiceInstanceId field to given value.
 
 HasServiceInstanceId returns a boolean if a field has been set.
 
+### SetServiceInstanceIdNil
+
+`func (o *DeviceCreate) SetServiceInstanceIdNil(b bool)`
+
+ SetServiceInstanceIdNil sets the value for ServiceInstanceId to be an explicit nil
+
+### UnsetServiceInstanceId
+`func (o *DeviceCreate) UnsetServiceInstanceId()`
+
+UnsetServiceInstanceId ensures that no value is present for ServiceInstanceId, not even an explicit nil
 ### GetSubscriptionId
 
 `func (o *DeviceCreate) GetSubscriptionId() string`
@@ -90,6 +100,16 @@ SetSubscriptionId sets SubscriptionId field to given value.
 
 HasSubscriptionId returns a boolean if a field has been set.
 
+### SetSubscriptionIdNil
+
+`func (o *DeviceCreate) SetSubscriptionIdNil(b bool)`
+
+ SetSubscriptionIdNil sets the value for SubscriptionId to be an explicit nil
+
+### UnsetSubscriptionId
+`func (o *DeviceCreate) UnsetSubscriptionId()`
+
+UnsetSubscriptionId ensures that no value is present for SubscriptionId, not even an explicit nil
 ### GetTenantId
 
 `func (o *DeviceCreate) GetTenantId() string`

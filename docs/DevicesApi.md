@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AttachDeviceTemplates**](DevicesApi.md#AttachDeviceTemplates) | **Post** /manage/api/v8/devices/{id}/templates | Attaches one or more device templates to a device instance.
+[**BatchAttachDeviceTemplates**](DevicesApi.md#BatchAttachDeviceTemplates) | **Post** /manage/api/v8/devices/templates/attach | Attaches one or more device templates to a batch of device instances.
 [**CreateDevice**](DevicesApi.md#CreateDevice) | **Post** /manage/api/v8/devices | Creates a device.
 [**DeleteDevice**](DevicesApi.md#DeleteDevice) | **Delete** /manage/api/v8/devices/{id} | Deletes a device.
 [**DetachDeviceTemplate**](DevicesApi.md#DetachDeviceTemplate) | **Delete** /manage/api/v8/devices/{id}/templates/{templateId} | Detaches a template from a device.
@@ -75,6 +76,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]DeviceTemplateHistory**](DeviceTemplateHistory.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## BatchAttachDeviceTemplates
+
+> [][]DeviceTemplateHistorySummary BatchAttachDeviceTemplates(ctx).DeviceTemplateBatchAttachRequest(deviceTemplateBatchAttachRequest).Execute()
+
+Attaches one or more device templates to a batch of device instances.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    deviceTemplateBatchAttachRequest := *openapiclient.NewDeviceTemplateBatchAttachRequest() // DeviceTemplateBatchAttachRequest | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DevicesApi.BatchAttachDeviceTemplates(context.Background()).DeviceTemplateBatchAttachRequest(deviceTemplateBatchAttachRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.BatchAttachDeviceTemplates``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BatchAttachDeviceTemplates`: [][]DeviceTemplateHistorySummary
+    fmt.Fprintf(os.Stdout, "Response from `DevicesApi.BatchAttachDeviceTemplates`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBatchAttachDeviceTemplatesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **deviceTemplateBatchAttachRequest** | [**DeviceTemplateBatchAttachRequest**](DeviceTemplateBatchAttachRequest.md) |  | 
+
+### Return type
+
+[**[][]DeviceTemplateHistorySummary**](array.md)
 
 ### Authorization
 
@@ -488,7 +553,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

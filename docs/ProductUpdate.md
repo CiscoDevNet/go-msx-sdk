@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **ServiceExtensions** | Pointer to [**[]NSOConfigDataXPath**](NSOConfigDataXPath.md) |  | [optional] 
 **ServiceConfigQueryRootXPaths** | Pointer to **[]string** |  | [optional] 
 **UiConfig** | Pointer to [**ServiceUIConfig**](ServiceUIConfig.md) |  | [optional] 
+**SlmUiConfig** | Pointer to [**NullableServiceSLMUIConfig**](ServiceSLMUIConfig.md) |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
@@ -484,6 +486,76 @@ SetUiConfig sets UiConfig field to given value.
 
 HasUiConfig returns a boolean if a field has been set.
 
+### GetSlmUiConfig
+
+`func (o *ProductUpdate) GetSlmUiConfig() ServiceSLMUIConfig`
+
+GetSlmUiConfig returns the SlmUiConfig field if non-nil, zero value otherwise.
+
+### GetSlmUiConfigOk
+
+`func (o *ProductUpdate) GetSlmUiConfigOk() (*ServiceSLMUIConfig, bool)`
+
+GetSlmUiConfigOk returns a tuple with the SlmUiConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSlmUiConfig
+
+`func (o *ProductUpdate) SetSlmUiConfig(v ServiceSLMUIConfig)`
+
+SetSlmUiConfig sets SlmUiConfig field to given value.
+
+### HasSlmUiConfig
+
+`func (o *ProductUpdate) HasSlmUiConfig() bool`
+
+HasSlmUiConfig returns a boolean if a field has been set.
+
+### SetSlmUiConfigNil
+
+`func (o *ProductUpdate) SetSlmUiConfigNil(b bool)`
+
+ SetSlmUiConfigNil sets the value for SlmUiConfig to be an explicit nil
+
+### UnsetSlmUiConfig
+`func (o *ProductUpdate) UnsetSlmUiConfig()`
+
+UnsetSlmUiConfig ensures that no value is present for SlmUiConfig, not even an explicit nil
+### GetExternalId
+
+`func (o *ProductUpdate) GetExternalId() string`
+
+GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
+
+### GetExternalIdOk
+
+`func (o *ProductUpdate) GetExternalIdOk() (*string, bool)`
+
+GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalId
+
+`func (o *ProductUpdate) SetExternalId(v string)`
+
+SetExternalId sets ExternalId field to given value.
+
+### HasExternalId
+
+`func (o *ProductUpdate) HasExternalId() bool`
+
+HasExternalId returns a boolean if a field has been set.
+
+### SetExternalIdNil
+
+`func (o *ProductUpdate) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *ProductUpdate) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetTags
 
 `func (o *ProductUpdate) GetTags() []string`

@@ -11,18 +11,18 @@ Name | Type | Description | Notes
 **ProductId** | **string** |  | 
 **Version** | **int32** |  | 
 **DisplayOrder** | **int32** |  | 
-**Image** | **string** |  | 
+**Image** | Pointer to **string** |  | [optional] 
 **Price** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**SupportedProperties** | **[]string** |  | 
-**SupportedOptions** | [**[]NameValue**](NameValue.md) |  | 
+**SupportedProperties** | Pointer to **[]string** |  | [optional] 
+**SupportedOptions** | Pointer to [**[]NameValue**](NameValue.md) |  | [optional] 
 **Approvals** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewOffer
 
-`func NewOffer(name string, label string, description string, productId string, version int32, displayOrder int32, image string, supportedProperties []string, supportedOptions []NameValue, ) *Offer`
+`func NewOffer(name string, label string, description string, productId string, version int32, displayOrder int32, ) *Offer`
 
 NewOffer instantiates a new Offer object
 This constructor will assign default values to properties that have it defined,
@@ -201,6 +201,11 @@ and a boolean to check if the value has been set.
 
 SetImage sets Image field to given value.
 
+### HasImage
+
+`func (o *Offer) HasImage() bool`
+
+HasImage returns a boolean if a field has been set.
 
 ### GetPrice
 
@@ -271,6 +276,11 @@ and a boolean to check if the value has been set.
 
 SetSupportedProperties sets SupportedProperties field to given value.
 
+### HasSupportedProperties
+
+`func (o *Offer) HasSupportedProperties() bool`
+
+HasSupportedProperties returns a boolean if a field has been set.
 
 ### GetSupportedOptions
 
@@ -291,6 +301,11 @@ and a boolean to check if the value has been set.
 
 SetSupportedOptions sets SupportedOptions field to given value.
 
+### HasSupportedOptions
+
+`func (o *Offer) HasSupportedOptions() bool`
+
+HasSupportedOptions returns a boolean if a field has been set.
 
 ### GetApprovals
 
