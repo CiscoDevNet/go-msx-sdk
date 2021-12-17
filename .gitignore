@@ -22,3 +22,8 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+# Open API artifacts
+.openapi-generator-ignore
+.travis.yml
+.openapi-generator/
