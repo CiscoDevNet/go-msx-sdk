@@ -7,8 +7,7 @@ msx_sdk=$1
 release_tag=$2
 git_token=$3
 
-git_repo="https://oauth2:$git_token@cto-github.cisco.com/mtsizis/$msx_sdk.git"
-
+git_repo="https://oauth2:$git_token@github.com/CiscoDevNet/$msx_sdk.git"
 
 if [ "$release_tag" = "" ]; then
     echo "[INFO] No command line input provided. Set \$release_tag to $release_tag"
@@ -19,7 +18,6 @@ if [ "$git_token" = "" ]; then
     echo "[INFO] No command line input provided. Set \$git_token to $git_token"
     exit
 fi
-
 
 # Initialize the local directory as a Git repository
 git init
