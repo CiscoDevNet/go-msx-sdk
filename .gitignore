@@ -27,3 +27,4 @@ _testmain.go
 .openapi-generator-ignore
 .travis.yml
 .openapi-generator/
+git_push_sdk.sh
