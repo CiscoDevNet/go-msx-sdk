@@ -5,7 +5,7 @@ info:
     name: MIT
   termsOfService: https://www.cisco.com
   title: MSX SDK
-  version: 1.0.8
+  version: 1.0.9
 servers:
 - url: /
 paths:
@@ -11738,7 +11738,7 @@ paths:
         required: false
         schema:
           items:
-            format: ^[0-9a-zA-Z]+$
+            format: ^[-_0-9a-zA-Z]{1,128}$
             type: string
           type: array
         style: form
@@ -15392,17 +15392,19 @@ components:
       type: object
     AccessToken:
       example:
-        access_token: access_token
-        firstName: firstName
         lastName: lastName
-        scope: scope
         roles:
         - roles
         - roles
         id_token: id_token
-        tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         token_type: token_type
+        access_token: access_token
+        firstName: firstName
+        scope: scope
+        tenantId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        expiry: expiry
         expires_in: 0
+        iat: iat
         email: email
         username: username
       properties:
@@ -15431,6 +15433,12 @@ components:
           format: email
           type: string
         username:
+          type: string
+        expiry:
+          nullable: true
+          type: string
+        iat:
+          nullable: true
           type: string
       type: object
     body:
@@ -15500,7 +15508,7 @@ components:
           minLength: 1
           type: string
         description:
-          maxLength: 512
+          maxLength: 256
           nullable: true
           type: string
         url:
@@ -16955,6 +16963,7 @@ components:
         status:
           $ref: '#/components/schemas/TemplateStatus'
         statusDetails:
+          maxLength: 256
           nullable: true
           readOnly: true
           type: string
@@ -17001,6 +17010,7 @@ components:
         - tags
       properties:
         externalId:
+          nullable: true
           type: string
         name:
           maxLength: 128
@@ -17025,9 +17035,11 @@ components:
           type: object
         tags:
           items:
+            format: ^[-_0-9a-zA-Z]{1,128}$
             type: string
           type: array
         notes:
+          nullable: true
           type: string
       required:
       - name
@@ -17077,6 +17089,7 @@ components:
           type: object
         tags:
           items:
+            format: ^[-_0-9a-zA-Z]{1,128}$
             type: string
           type: array
         notes:
@@ -17342,6 +17355,7 @@ components:
           nullable: true
           type: string
         externalId:
+          format: ^[a-zA-Z0-9-_=]{1,256}$
           nullable: true
           type: string
       type: object

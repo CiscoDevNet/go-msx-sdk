@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] [readonly] 
-**ExternalId** | Pointer to **string** |  | [optional] 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **ServiceType** | **string** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Configuration** | Pointer to **string** |  | [optional] 
 **Attributes** | Pointer to **map[string]string** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
-**Notes** | Pointer to **string** |  | [optional] 
+**Notes** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to [**TemplateStatus**](TemplateStatus.md) |  | [optional] 
 **StatusDetails** | Pointer to **NullableString** |  | [optional] [readonly] 
 **CreatedOn** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -91,6 +91,16 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
+### SetExternalIdNil
+
+`func (o *Template) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *Template) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetName
 
 `func (o *Template) GetName() string`
@@ -311,6 +321,16 @@ SetNotes sets Notes field to given value.
 
 HasNotes returns a boolean if a field has been set.
 
+### SetNotesNil
+
+`func (o *Template) SetNotesNil(b bool)`
+
+ SetNotesNil sets the value for Notes to be an explicit nil
+
+### UnsetNotes
+`func (o *Template) UnsetNotes()`
+
+UnsetNotes ensures that no value is present for Notes, not even an explicit nil
 ### GetStatus
 
 `func (o *Template) GetStatus() TemplateStatus`

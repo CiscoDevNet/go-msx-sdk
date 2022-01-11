@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **TenantId** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Username** | Pointer to **string** |  | [optional] 
+**Expiry** | Pointer to **NullableString** |  | [optional] 
+**Iat** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -310,6 +312,76 @@ SetUsername sets Username field to given value.
 
 HasUsername returns a boolean if a field has been set.
 
+### GetExpiry
+
+`func (o *AccessToken) GetExpiry() string`
+
+GetExpiry returns the Expiry field if non-nil, zero value otherwise.
+
+### GetExpiryOk
+
+`func (o *AccessToken) GetExpiryOk() (*string, bool)`
+
+GetExpiryOk returns a tuple with the Expiry field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpiry
+
+`func (o *AccessToken) SetExpiry(v string)`
+
+SetExpiry sets Expiry field to given value.
+
+### HasExpiry
+
+`func (o *AccessToken) HasExpiry() bool`
+
+HasExpiry returns a boolean if a field has been set.
+
+### SetExpiryNil
+
+`func (o *AccessToken) SetExpiryNil(b bool)`
+
+ SetExpiryNil sets the value for Expiry to be an explicit nil
+
+### UnsetExpiry
+`func (o *AccessToken) UnsetExpiry()`
+
+UnsetExpiry ensures that no value is present for Expiry, not even an explicit nil
+### GetIat
+
+`func (o *AccessToken) GetIat() string`
+
+GetIat returns the Iat field if non-nil, zero value otherwise.
+
+### GetIatOk
+
+`func (o *AccessToken) GetIatOk() (*string, bool)`
+
+GetIatOk returns a tuple with the Iat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIat
+
+`func (o *AccessToken) SetIat(v string)`
+
+SetIat sets Iat field to given value.
+
+### HasIat
+
+`func (o *AccessToken) HasIat() bool`
+
+HasIat returns a boolean if a field has been set.
+
+### SetIatNil
+
+`func (o *AccessToken) SetIatNil(b bool)`
+
+ SetIatNil sets the value for Iat to be an explicit nil
+
+### UnsetIat
+`func (o *AccessToken) UnsetIat()`
+
+UnsetIat ensures that no value is present for Iat, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
