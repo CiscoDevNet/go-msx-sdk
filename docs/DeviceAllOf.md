@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **UserId** | Pointer to **string** |  | [optional] 
 **ProviderId** | Pointer to **string** |  | [optional] 
-**VulnerabilityState** | Pointer to [**DeviceVulnerabilityState**](DeviceVulnerabilityState.md) |  | [optional] 
+**VulnerabilityState** | Pointer to **string** | Valid values: VULNERABLE, NOT_VULNERABLE, NOT_APPLICABLE, UNKNOWN | [optional] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **ModifiedOn** | Pointer to **NullableTime** |  | [optional] 
 
@@ -107,20 +107,20 @@ HasProviderId returns a boolean if a field has been set.
 
 ### GetVulnerabilityState
 
-`func (o *DeviceAllOf) GetVulnerabilityState() DeviceVulnerabilityState`
+`func (o *DeviceAllOf) GetVulnerabilityState() string`
 
 GetVulnerabilityState returns the VulnerabilityState field if non-nil, zero value otherwise.
 
 ### GetVulnerabilityStateOk
 
-`func (o *DeviceAllOf) GetVulnerabilityStateOk() (*DeviceVulnerabilityState, bool)`
+`func (o *DeviceAllOf) GetVulnerabilityStateOk() (*string, bool)`
 
 GetVulnerabilityStateOk returns a tuple with the VulnerabilityState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVulnerabilityState
 
-`func (o *DeviceAllOf) SetVulnerabilityState(v DeviceVulnerabilityState)`
+`func (o *DeviceAllOf) SetVulnerabilityState(v string)`
 
 SetVulnerabilityState sets VulnerabilityState field to given value.
 

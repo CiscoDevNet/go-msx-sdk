@@ -31,8 +31,8 @@ func main() {
     virtualAccountId := "123123" // string | Virtual Account Identifier
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.LicensingLicensesApi.GetLicensesList(context.Background()).SmartAccountId(smartAccountId).VirtualAccountId(virtualAccountId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LicensingLicensesApi.GetLicensesList(context.Background()).SmartAccountId(smartAccountId).VirtualAccountId(virtualAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LicensingLicensesApi.GetLicensesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

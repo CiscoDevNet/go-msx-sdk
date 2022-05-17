@@ -35,8 +35,8 @@ func main() {
     endDate := time.Now() // time.Time | End date for date range filter on validation execution date. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ValidationApi.GetValidateProductVersionPage(context.Background()).Page(page).PageSize(pageSize).StartDate(startDate).EndDate(endDate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ValidationApi.GetValidateProductVersionPage(context.Background()).Page(page).PageSize(pageSize).StartDate(startDate).EndDate(endDate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ValidationApi.GetValidateProductVersionPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -101,8 +101,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ValidationApi.ValidateProductVersion(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ValidationApi.ValidateProductVersion(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ValidationApi.ValidateProductVersion``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

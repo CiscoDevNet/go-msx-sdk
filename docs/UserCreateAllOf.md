@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Username** | Pointer to **string** |  | [optional] 
+**Username** | **string** |  | 
 **Password** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
 ### NewUserCreateAllOf
 
-`func NewUserCreateAllOf() *UserCreateAllOf`
+`func NewUserCreateAllOf(username string, ) *UserCreateAllOf`
 
 NewUserCreateAllOf instantiates a new UserCreateAllOf object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetUsername sets Username field to given value.
 
-### HasUsername
-
-`func (o *UserCreateAllOf) HasUsername() bool`
-
-HasUsername returns a boolean if a field has been set.
 
 ### GetPassword
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **UserId** | Pointer to **string** |  | [optional] 
 **ProviderId** | Pointer to **string** |  | [optional] 
-**VulnerabilityState** | Pointer to [**DeviceVulnerabilityState**](DeviceVulnerabilityState.md) |  | [optional] 
+**VulnerabilityState** | Pointer to **string** | Valid values: VULNERABLE, NOT_VULNERABLE, NOT_APPLICABLE, UNKNOWN | [optional] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **ModifiedOn** | Pointer to **NullableTime** |  | [optional] 
 **ServiceInstanceId** | Pointer to **NullableString** |  | [optional] 
@@ -15,9 +15,8 @@ Name | Type | Description | Notes
 **TenantId** | **string** |  | 
 **ServiceType** | Pointer to **NullableString** |  | [optional] 
 **Tags** | Pointer to **map[string]string** |  | [optional] 
-**Managed** | **bool** |  | [default to false]
+**Managed** | Pointer to **bool** |  | [optional] [default to false]
 **OnboardType** | **string** |  | 
-**OnboardInformation** | Pointer to **map[string]interface{}** |  | [optional] 
 **Attributes** | Pointer to **map[string]interface{}** |  | [optional] 
 **Name** | **string** |  | 
 **Model** | **string** |  | 
@@ -25,13 +24,14 @@ Name | Type | Description | Notes
 **SubType** | Pointer to **NullableString** |  | [optional] 
 **SerialKey** | Pointer to **NullableString** |  | [optional] 
 **Version** | Pointer to **NullableString** |  | [optional] 
-**ComplianceState** | Pointer to [**DeviceComplianceState**](DeviceComplianceState.md) |  | [optional] 
+**ComplianceState** | Pointer to **string** | Valid values: COMPLIANT, NOT_COMPLIANT, APPLICABLE, NOT_APPLICABLE, UNKNOWN | [optional] 
+**OnboardInformation** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewDevice
 
-`func NewDevice(tenantId string, managed bool, onboardType string, name string, model string, type_ string, ) *Device`
+`func NewDevice(tenantId string, onboardType string, name string, model string, type_ string, ) *Device`
 
 NewDevice instantiates a new Device object
 This constructor will assign default values to properties that have it defined,
@@ -123,20 +123,20 @@ HasProviderId returns a boolean if a field has been set.
 
 ### GetVulnerabilityState
 
-`func (o *Device) GetVulnerabilityState() DeviceVulnerabilityState`
+`func (o *Device) GetVulnerabilityState() string`
 
 GetVulnerabilityState returns the VulnerabilityState field if non-nil, zero value otherwise.
 
 ### GetVulnerabilityStateOk
 
-`func (o *Device) GetVulnerabilityStateOk() (*DeviceVulnerabilityState, bool)`
+`func (o *Device) GetVulnerabilityStateOk() (*string, bool)`
 
 GetVulnerabilityStateOk returns a tuple with the VulnerabilityState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVulnerabilityState
 
-`func (o *Device) SetVulnerabilityState(v DeviceVulnerabilityState)`
+`func (o *Device) SetVulnerabilityState(v string)`
 
 SetVulnerabilityState sets VulnerabilityState field to given value.
 
@@ -385,6 +385,11 @@ and a boolean to check if the value has been set.
 
 SetManaged sets Managed field to given value.
 
+### HasManaged
+
+`func (o *Device) HasManaged() bool`
+
+HasManaged returns a boolean if a field has been set.
 
 ### GetOnboardType
 
@@ -406,41 +411,6 @@ and a boolean to check if the value has been set.
 SetOnboardType sets OnboardType field to given value.
 
 
-### GetOnboardInformation
-
-`func (o *Device) GetOnboardInformation() map[string]interface{}`
-
-GetOnboardInformation returns the OnboardInformation field if non-nil, zero value otherwise.
-
-### GetOnboardInformationOk
-
-`func (o *Device) GetOnboardInformationOk() (*map[string]interface{}, bool)`
-
-GetOnboardInformationOk returns a tuple with the OnboardInformation field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOnboardInformation
-
-`func (o *Device) SetOnboardInformation(v map[string]interface{})`
-
-SetOnboardInformation sets OnboardInformation field to given value.
-
-### HasOnboardInformation
-
-`func (o *Device) HasOnboardInformation() bool`
-
-HasOnboardInformation returns a boolean if a field has been set.
-
-### SetOnboardInformationNil
-
-`func (o *Device) SetOnboardInformationNil(b bool)`
-
- SetOnboardInformationNil sets the value for OnboardInformation to be an explicit nil
-
-### UnsetOnboardInformation
-`func (o *Device) UnsetOnboardInformation()`
-
-UnsetOnboardInformation ensures that no value is present for OnboardInformation, not even an explicit nil
 ### GetAttributes
 
 `func (o *Device) GetAttributes() map[string]interface{}`
@@ -643,20 +613,20 @@ HasVersion returns a boolean if a field has been set.
 UnsetVersion ensures that no value is present for Version, not even an explicit nil
 ### GetComplianceState
 
-`func (o *Device) GetComplianceState() DeviceComplianceState`
+`func (o *Device) GetComplianceState() string`
 
 GetComplianceState returns the ComplianceState field if non-nil, zero value otherwise.
 
 ### GetComplianceStateOk
 
-`func (o *Device) GetComplianceStateOk() (*DeviceComplianceState, bool)`
+`func (o *Device) GetComplianceStateOk() (*string, bool)`
 
 GetComplianceStateOk returns a tuple with the ComplianceState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetComplianceState
 
-`func (o *Device) SetComplianceState(v DeviceComplianceState)`
+`func (o *Device) SetComplianceState(v string)`
 
 SetComplianceState sets ComplianceState field to given value.
 
@@ -666,6 +636,41 @@ SetComplianceState sets ComplianceState field to given value.
 
 HasComplianceState returns a boolean if a field has been set.
 
+### GetOnboardInformation
+
+`func (o *Device) GetOnboardInformation() map[string]interface{}`
+
+GetOnboardInformation returns the OnboardInformation field if non-nil, zero value otherwise.
+
+### GetOnboardInformationOk
+
+`func (o *Device) GetOnboardInformationOk() (*map[string]interface{}, bool)`
+
+GetOnboardInformationOk returns a tuple with the OnboardInformation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnboardInformation
+
+`func (o *Device) SetOnboardInformation(v map[string]interface{})`
+
+SetOnboardInformation sets OnboardInformation field to given value.
+
+### HasOnboardInformation
+
+`func (o *Device) HasOnboardInformation() bool`
+
+HasOnboardInformation returns a boolean if a field has been set.
+
+### SetOnboardInformationNil
+
+`func (o *Device) SetOnboardInformationNil(b bool)`
+
+ SetOnboardInformationNil sets the value for OnboardInformation to be an explicit nil
+
+### UnsetOnboardInformation
+`func (o *Device) UnsetOnboardInformation()`
+
+UnsetOnboardInformation ensures that no value is present for OnboardInformation, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

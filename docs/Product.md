@@ -15,11 +15,11 @@ Name | Type | Description | Notes
 **DisplayOrder** | Pointer to **int32** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **OrderLimit** | Pointer to **int32** |  | [optional] 
-**Options** | [**[]ServiceElement**](ServiceElement.md) |  | 
+**Options** | Pointer to [**[]ServiceElement**](ServiceElement.md) |  | [optional] 
 **Properties** | Pointer to [**[]ServiceElement**](ServiceElement.md) |  | [optional] 
-**Configuration** | **map[string]string** |  | 
-**IsResource** | **bool** |  | 
-**HasChildren** | **bool** |  | 
+**Configuration** | Pointer to **map[string]string** |  | [optional] 
+**IsResource** | Pointer to **NullableBool** |  | [optional] 
+**HasChildren** | Pointer to **NullableBool** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
 **ServiceExtensions** | Pointer to [**[]NSOConfigDataXPath**](NSOConfigDataXPath.md) |  | [optional] 
 **ServiceConfigQueryRootXPaths** | Pointer to **[]string** |  | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewProduct
 
-`func NewProduct(name string, label string, version int32, description string, image string, options []ServiceElement, configuration map[string]string, isResource bool, hasChildren bool, ) *Product`
+`func NewProduct(name string, label string, version int32, description string, image string, ) *Product`
 
 NewProduct instantiates a new Product object
 This constructor will assign default values to properties that have it defined,
@@ -316,7 +316,22 @@ and a boolean to check if the value has been set.
 
 SetOptions sets Options field to given value.
 
+### HasOptions
 
+`func (o *Product) HasOptions() bool`
+
+HasOptions returns a boolean if a field has been set.
+
+### SetOptionsNil
+
+`func (o *Product) SetOptionsNil(b bool)`
+
+ SetOptionsNil sets the value for Options to be an explicit nil
+
+### UnsetOptions
+`func (o *Product) UnsetOptions()`
+
+UnsetOptions ensures that no value is present for Options, not even an explicit nil
 ### GetProperties
 
 `func (o *Product) GetProperties() []ServiceElement`
@@ -371,7 +386,22 @@ and a boolean to check if the value has been set.
 
 SetConfiguration sets Configuration field to given value.
 
+### HasConfiguration
 
+`func (o *Product) HasConfiguration() bool`
+
+HasConfiguration returns a boolean if a field has been set.
+
+### SetConfigurationNil
+
+`func (o *Product) SetConfigurationNil(b bool)`
+
+ SetConfigurationNil sets the value for Configuration to be an explicit nil
+
+### UnsetConfiguration
+`func (o *Product) UnsetConfiguration()`
+
+UnsetConfiguration ensures that no value is present for Configuration, not even an explicit nil
 ### GetIsResource
 
 `func (o *Product) GetIsResource() bool`
@@ -391,7 +421,22 @@ and a boolean to check if the value has been set.
 
 SetIsResource sets IsResource field to given value.
 
+### HasIsResource
 
+`func (o *Product) HasIsResource() bool`
+
+HasIsResource returns a boolean if a field has been set.
+
+### SetIsResourceNil
+
+`func (o *Product) SetIsResourceNil(b bool)`
+
+ SetIsResourceNil sets the value for IsResource to be an explicit nil
+
+### UnsetIsResource
+`func (o *Product) UnsetIsResource()`
+
+UnsetIsResource ensures that no value is present for IsResource, not even an explicit nil
 ### GetHasChildren
 
 `func (o *Product) GetHasChildren() bool`
@@ -411,7 +456,22 @@ and a boolean to check if the value has been set.
 
 SetHasChildren sets HasChildren field to given value.
 
+### HasHasChildren
 
+`func (o *Product) HasHasChildren() bool`
+
+HasHasChildren returns a boolean if a field has been set.
+
+### SetHasChildrenNil
+
+`func (o *Product) SetHasChildrenNil(b bool)`
+
+ SetHasChildrenNil sets the value for HasChildren to be an explicit nil
+
+### UnsetHasChildren
+`func (o *Product) UnsetHasChildren()`
+
+UnsetHasChildren ensures that no value is present for HasChildren, not even an explicit nil
 ### GetParentId
 
 `func (o *Product) GetParentId() string`

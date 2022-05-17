@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 **SubType** | Pointer to **NullableString** |  | [optional] 
 **SerialKey** | Pointer to **NullableString** |  | [optional] 
 **Version** | Pointer to **NullableString** |  | [optional] 
-**ComplianceState** | Pointer to [**DeviceComplianceState**](DeviceComplianceState.md) |  | [optional] 
+**ComplianceState** | Pointer to **string** | Valid values: COMPLIANT, NOT_COMPLIANT, APPLICABLE, NOT_APPLICABLE, UNKNOWN | [optional] 
+**OnboardInformation** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -213,20 +214,20 @@ HasVersion returns a boolean if a field has been set.
 UnsetVersion ensures that no value is present for Version, not even an explicit nil
 ### GetComplianceState
 
-`func (o *DevicePatch) GetComplianceState() DeviceComplianceState`
+`func (o *DevicePatch) GetComplianceState() string`
 
 GetComplianceState returns the ComplianceState field if non-nil, zero value otherwise.
 
 ### GetComplianceStateOk
 
-`func (o *DevicePatch) GetComplianceStateOk() (*DeviceComplianceState, bool)`
+`func (o *DevicePatch) GetComplianceStateOk() (*string, bool)`
 
 GetComplianceStateOk returns a tuple with the ComplianceState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetComplianceState
 
-`func (o *DevicePatch) SetComplianceState(v DeviceComplianceState)`
+`func (o *DevicePatch) SetComplianceState(v string)`
 
 SetComplianceState sets ComplianceState field to given value.
 
@@ -236,6 +237,41 @@ SetComplianceState sets ComplianceState field to given value.
 
 HasComplianceState returns a boolean if a field has been set.
 
+### GetOnboardInformation
+
+`func (o *DevicePatch) GetOnboardInformation() map[string]interface{}`
+
+GetOnboardInformation returns the OnboardInformation field if non-nil, zero value otherwise.
+
+### GetOnboardInformationOk
+
+`func (o *DevicePatch) GetOnboardInformationOk() (*map[string]interface{}, bool)`
+
+GetOnboardInformationOk returns a tuple with the OnboardInformation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnboardInformation
+
+`func (o *DevicePatch) SetOnboardInformation(v map[string]interface{})`
+
+SetOnboardInformation sets OnboardInformation field to given value.
+
+### HasOnboardInformation
+
+`func (o *DevicePatch) HasOnboardInformation() bool`
+
+HasOnboardInformation returns a boolean if a field has been set.
+
+### SetOnboardInformationNil
+
+`func (o *DevicePatch) SetOnboardInformationNil(b bool)`
+
+ SetOnboardInformationNil sets the value for OnboardInformation to be an explicit nil
+
+### UnsetOnboardInformation
+`func (o *DevicePatch) UnsetOnboardInformation()`
+
+UnsetOnboardInformation ensures that no value is present for OnboardInformation, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

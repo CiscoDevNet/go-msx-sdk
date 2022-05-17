@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**CreateTenant**](TenantsApi.md#CreateTenant) | **Post** /idm/api/v8/tenants | Creates a new tenant.
 [**DeleteTenant**](TenantsApi.md#DeleteTenant) | **Delete** /idm/api/v8/tenants/{id} | Deletes a tenant by id.
 [**GetTenant**](TenantsApi.md#GetTenant) | **Get** /idm/api/v8/tenants/{id} | Returns a tenant by id.
+[**GetTenantByExternalId**](TenantsApi.md#GetTenantByExternalId) | **Get** /idm/api/v8/tenants/externalId/{externalId} | Returns a tenant by externalId.
 [**GetTenantsList**](TenantsApi.md#GetTenantsList) | **Get** /idm/api/v8/tenants/list | Returns a list of tenants.
 [**GetTenantsPage**](TenantsApi.md#GetTenantsPage) | **Get** /idm/api/v8/tenants | Returns a page of tenants.
 [**UpdateTenant**](TenantsApi.md#UpdateTenant) | **Put** /idm/api/v8/tenants/{id} | Updates a tenant by id.
@@ -35,8 +36,8 @@ func main() {
     tenantCreate := *openapiclient.NewTenantCreate("Name_example") // TenantCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TenantsApi.CreateTenant(context.Background()).TenantCreate(tenantCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TenantsApi.CreateTenant(context.Background()).TenantCreate(tenantCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TenantsApi.CreateTenant``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -96,11 +97,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TenantsApi.DeleteTenant(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TenantsApi.DeleteTenant(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TenantsApi.DeleteTenant``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -114,7 +115,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -162,11 +163,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TenantsApi.GetTenant(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TenantsApi.GetTenant(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TenantsApi.GetTenant``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -182,7 +183,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -192,6 +193,76 @@ Other parameters are passed through a pointer to a apiGetTenantRequest struct vi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+
+### Return type
+
+[**Tenant**](Tenant.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTenantByExternalId
+
+> Tenant GetTenantByExternalId(ctx, externalId).ShowImage(showImage).Execute()
+
+Returns a tenant by externalId.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    externalId := "externalId_example" // string | 
+    showImage := true // bool |  (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TenantsApi.GetTenantByExternalId(context.Background(), externalId).ShowImage(showImage).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `TenantsApi.GetTenantByExternalId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetTenantByExternalId`: Tenant
+    fmt.Fprintf(os.Stdout, "Response from `TenantsApi.GetTenantByExternalId`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**externalId** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTenantByExternalIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **showImage** | **bool** |  | [default to false]
 
 ### Return type
 
@@ -234,8 +305,8 @@ func main() {
     showImage := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TenantsApi.GetTenantsList(context.Background()).Ids(ids).ShowImage(showImage).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TenantsApi.GetTenantsList(context.Background()).Ids(ids).ShowImage(showImage).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TenantsApi.GetTenantsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -298,14 +369,14 @@ import (
 func main() {
     page := int32(0) // int32 | 
     pageSize := int32(10) // int32 | 
-    parentId := TODO // string |  (optional)
+    parentId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     showImage := true // bool |  (optional) (default to false)
     sortBy := "name" // string |  (optional)
     sortOrder := "sortOrder_example" // string |  (optional) (default to "asc")
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TenantsApi.GetTenantsPage(context.Background()).Page(page).PageSize(pageSize).ParentId(parentId).ShowImage(showImage).SortBy(sortBy).SortOrder(sortOrder).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TenantsApi.GetTenantsPage(context.Background()).Page(page).PageSize(pageSize).ParentId(parentId).ShowImage(showImage).SortBy(sortBy).SortOrder(sortOrder).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TenantsApi.GetTenantsPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -328,7 +399,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int32** |  | 
  **pageSize** | **int32** |  | 
- **parentId** | [**string**](string.md) |  | 
+ **parentId** | **string** |  | 
  **showImage** | **bool** |  | [default to false]
  **sortBy** | **string** |  | 
  **sortOrder** | **string** |  | [default to &quot;asc&quot;]
@@ -370,12 +441,12 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     tenantUpdate := *openapiclient.NewTenantUpdate("Name_example") // TenantUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TenantsApi.UpdateTenant(context.Background(), id).TenantUpdate(tenantUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TenantsApi.UpdateTenant(context.Background(), id).TenantUpdate(tenantUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TenantsApi.UpdateTenant``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -391,7 +462,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 

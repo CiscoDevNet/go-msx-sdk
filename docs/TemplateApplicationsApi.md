@@ -32,12 +32,12 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     templateApplicationCreate := *openapiclient.NewTemplateApplicationCreate("TenantId_example", "TargetId_example", "TargetType_example") // TemplateApplicationCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TemplateApplicationsApi.ApplyTemplate(context.Background(), id).TemplateApplicationCreate(templateApplicationCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TemplateApplicationsApi.ApplyTemplate(context.Background(), id).TemplateApplicationCreate(templateApplicationCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateApplicationsApi.ApplyTemplate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +53,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -102,11 +102,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TemplateApplicationsApi.DeleteTemplateApplication(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TemplateApplicationsApi.DeleteTemplateApplication(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateApplicationsApi.DeleteTemplateApplication``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -168,11 +168,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TemplateApplicationsApi.GetTemplateApplication(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TemplateApplicationsApi.GetTemplateApplication(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateApplicationsApi.GetTemplateApplication``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -188,7 +188,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -236,11 +236,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TemplateApplicationsApi.GetTemplateApplicationHistory(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TemplateApplicationsApi.GetTemplateApplicationHistory(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateApplicationsApi.GetTemplateApplicationHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -256,7 +256,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -304,10 +304,10 @@ import (
 )
 
 func main() {
-    tenantId := TODO // string | 
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     page := int32(0) // int32 | 
     pageSize := int32(10) // int32 | 
-    templateId := TODO // string |  (optional)
+    templateId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     targetId := "targetId_example" // string |  (optional)
     targetType := "targetType_example" // string |  (optional)
     calculateTotalItems := true // bool |  (optional)
@@ -315,8 +315,8 @@ func main() {
     sortOrder := "sortOrder_example" // string |  (optional) (default to "asc")
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TemplateApplicationsApi.GetTemplateApplicationsPage(context.Background()).TenantId(tenantId).Page(page).PageSize(pageSize).TemplateId(templateId).TargetId(targetId).TargetType(targetType).CalculateTotalItems(calculateTotalItems).SortBy(sortBy).SortOrder(sortOrder).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TemplateApplicationsApi.GetTemplateApplicationsPage(context.Background()).TenantId(tenantId).Page(page).PageSize(pageSize).TemplateId(templateId).TargetId(targetId).TargetType(targetType).CalculateTotalItems(calculateTotalItems).SortBy(sortBy).SortOrder(sortOrder).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateApplicationsApi.GetTemplateApplicationsPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -337,10 +337,10 @@ Other parameters are passed through a pointer to a apiGetTemplateApplicationsPag
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenantId** | [**string**](string.md) |  | 
+ **tenantId** | **string** |  | 
  **page** | **int32** |  | 
  **pageSize** | **int32** |  | 
- **templateId** | [**string**](string.md) |  | 
+ **templateId** | **string** |  | 
  **targetId** | **string** |  | 
  **targetType** | **string** |  | 
  **calculateTotalItems** | **bool** |  | 
@@ -384,12 +384,12 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     templateApplicationStatusPatch := *openapiclient.NewTemplateApplicationStatusPatch(openapiclient.TemplateStatus("NEW")) // TemplateApplicationStatusPatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TemplateApplicationsApi.UpdateApplicationStatus(context.Background(), id).TemplateApplicationStatusPatch(templateApplicationStatusPatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TemplateApplicationsApi.UpdateApplicationStatus(context.Background(), id).TemplateApplicationStatusPatch(templateApplicationStatusPatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateApplicationsApi.UpdateApplicationStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -405,7 +405,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 

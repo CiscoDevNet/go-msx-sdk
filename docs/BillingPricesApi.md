@@ -36,8 +36,8 @@ func main() {
     billingPriceCreate := *openapiclient.NewBillingPriceCreate("Name_example", "Type_example", float64(123), "TenantId_example") // BillingPriceCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingPricesApi.AddPrice(context.Background()).BillingPriceCreate(billingPriceCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingPricesApi.AddPrice(context.Background()).BillingPriceCreate(billingPriceCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingPricesApi.AddPrice``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -99,11 +99,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingPricesApi.DeletePrice(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingPricesApi.DeletePrice(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingPricesApi.DeletePrice``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -117,7 +117,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -167,11 +167,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingPricesApi.GetPrice(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingPricesApi.GetPrice(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingPricesApi.GetPrice``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -187,7 +187,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -237,15 +237,15 @@ import (
 )
 
 func main() {
-    tenantId := TODO // string | 
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     page := int32(0) // int32 | 
     pageSize := int32(10) // int32 | 
     type_ := "type__example" // string |  (optional)
     subtype := "subtype_example" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingPricesApi.GetPricesPage(context.Background()).TenantId(tenantId).Page(page).PageSize(pageSize).Type_(type_).Subtype(subtype).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingPricesApi.GetPricesPage(context.Background()).TenantId(tenantId).Page(page).PageSize(pageSize).Type_(type_).Subtype(subtype).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingPricesApi.GetPricesPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -266,7 +266,7 @@ Other parameters are passed through a pointer to a apiGetPricesPageRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenantId** | [**string**](string.md) |  | 
+ **tenantId** | **string** |  | 
  **page** | **int32** |  | 
  **pageSize** | **int32** |  | 
  **type_** | **string** |  | 
@@ -311,12 +311,12 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     billingPriceUpdate := *openapiclient.NewBillingPriceUpdate("Name_example", "Type_example", float64(123), "TenantId_example") // BillingPriceUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingPricesApi.UpdatePrice(context.Background(), id).BillingPriceUpdate(billingPriceUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingPricesApi.UpdatePrice(context.Background(), id).BillingPriceUpdate(billingPriceUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingPricesApi.UpdatePrice``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -332,7 +332,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 

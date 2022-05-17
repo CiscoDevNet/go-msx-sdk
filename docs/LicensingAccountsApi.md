@@ -33,8 +33,8 @@ func main() {
     type_ := openapiclient.SmartAccountType("CUSTOMER") // SmartAccountType |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.LicensingAccountsApi.GetUserAccountsList(context.Background()).UserId(userId).Domain(domain).RoleName(roleName).Type_(type_).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LicensingAccountsApi.GetUserAccountsList(context.Background()).UserId(userId).Domain(domain).RoleName(roleName).Type_(type_).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LicensingAccountsApi.GetUserAccountsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

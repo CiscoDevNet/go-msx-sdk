@@ -32,8 +32,8 @@ func main() {
     schemaType := "schemaType_example" // string |  (optional) (default to "view")
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowSchemasApi.GetWorkflowSchema(context.Background(), id).SchemaType(schemaType).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowSchemasApi.GetWorkflowSchema(context.Background(), id).SchemaType(schemaType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowSchemasApi.GetWorkflowSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -103,8 +103,8 @@ func main() {
     variableType := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowSchemasApi.GetWorkflowSchemasList(context.Background()).BaseType(baseType).SchemaType(schemaType).VariableType(variableType).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowSchemasApi.GetWorkflowSchemasList(context.Background()).BaseType(baseType).SchemaType(schemaType).VariableType(variableType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowSchemasApi.GetWorkflowSchemasList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

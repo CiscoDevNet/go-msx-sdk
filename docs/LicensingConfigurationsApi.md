@@ -32,8 +32,8 @@ func main() {
     smartAccountConfigurationCreate := *openapiclient.NewSmartAccountConfigurationCreate() // SmartAccountConfigurationCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.LicensingConfigurationsApi.CreateSmartAccountConfiguration(context.Background()).SmartAccountConfigurationCreate(smartAccountConfigurationCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LicensingConfigurationsApi.CreateSmartAccountConfiguration(context.Background()).SmartAccountConfigurationCreate(smartAccountConfigurationCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LicensingConfigurationsApi.CreateSmartAccountConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -95,8 +95,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.LicensingConfigurationsApi.GetSmartAccountConfiguration(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LicensingConfigurationsApi.GetSmartAccountConfiguration(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LicensingConfigurationsApi.GetSmartAccountConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -155,8 +155,8 @@ func main() {
     smartAccountConfigurationUpdate := *openapiclient.NewSmartAccountConfigurationUpdate() // SmartAccountConfigurationUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.LicensingConfigurationsApi.UpdateSmartAccountConfiguration(context.Background()).SmartAccountConfigurationUpdate(smartAccountConfigurationUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LicensingConfigurationsApi.UpdateSmartAccountConfiguration(context.Background()).SmartAccountConfigurationUpdate(smartAccountConfigurationUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LicensingConfigurationsApi.UpdateSmartAccountConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NextBilledOn** | **string** |  | 
+**NextBilledOn** | **time.Time** |  | 
 
 ## Methods
 
 ### NewBillingCycleProcess
 
-`func NewBillingCycleProcess(nextBilledOn string, ) *BillingCycleProcess`
+`func NewBillingCycleProcess(nextBilledOn time.Time, ) *BillingCycleProcess`
 
 NewBillingCycleProcess instantiates a new BillingCycleProcess object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetNextBilledOn
 
-`func (o *BillingCycleProcess) GetNextBilledOn() string`
+`func (o *BillingCycleProcess) GetNextBilledOn() time.Time`
 
 GetNextBilledOn returns the NextBilledOn field if non-nil, zero value otherwise.
 
 ### GetNextBilledOnOk
 
-`func (o *BillingCycleProcess) GetNextBilledOnOk() (*string, bool)`
+`func (o *BillingCycleProcess) GetNextBilledOnOk() (*time.Time, bool)`
 
 GetNextBilledOnOk returns a tuple with the NextBilledOn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNextBilledOn
 
-`func (o *BillingCycleProcess) SetNextBilledOn(v string)`
+`func (o *BillingCycleProcess) SetNextBilledOn(v time.Time)`
 
 SetNextBilledOn sets NextBilledOn field to given value.
 

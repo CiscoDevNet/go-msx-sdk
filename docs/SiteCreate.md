@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Contact** | Pointer to [**NullableSiteContact**](SiteContact.md) |  | [optional] 
 **Location** | Pointer to [**NullableSiteLocation**](SiteLocation.md) |  | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
+**ManagingControlPlaneId** | Pointer to **NullableString** |  | [optional] 
 **Attributes** | Pointer to **map[string]string** |  | [optional] 
 
 ## Methods
@@ -341,6 +342,41 @@ SetImage sets Image field to given value.
 
 HasImage returns a boolean if a field has been set.
 
+### GetManagingControlPlaneId
+
+`func (o *SiteCreate) GetManagingControlPlaneId() string`
+
+GetManagingControlPlaneId returns the ManagingControlPlaneId field if non-nil, zero value otherwise.
+
+### GetManagingControlPlaneIdOk
+
+`func (o *SiteCreate) GetManagingControlPlaneIdOk() (*string, bool)`
+
+GetManagingControlPlaneIdOk returns a tuple with the ManagingControlPlaneId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManagingControlPlaneId
+
+`func (o *SiteCreate) SetManagingControlPlaneId(v string)`
+
+SetManagingControlPlaneId sets ManagingControlPlaneId field to given value.
+
+### HasManagingControlPlaneId
+
+`func (o *SiteCreate) HasManagingControlPlaneId() bool`
+
+HasManagingControlPlaneId returns a boolean if a field has been set.
+
+### SetManagingControlPlaneIdNil
+
+`func (o *SiteCreate) SetManagingControlPlaneIdNil(b bool)`
+
+ SetManagingControlPlaneIdNil sets the value for ManagingControlPlaneId to be an explicit nil
+
+### UnsetManagingControlPlaneId
+`func (o *SiteCreate) UnsetManagingControlPlaneId()`
+
+UnsetManagingControlPlaneId ensures that no value is present for ManagingControlPlaneId, not even an explicit nil
 ### GetAttributes
 
 `func (o *SiteCreate) GetAttributes() map[string]string`

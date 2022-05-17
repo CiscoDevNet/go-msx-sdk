@@ -35,12 +35,12 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     requestBody := []string{"Property_example"} // []string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SitesApi.AddDevicesToSite(context.Background(), id).RequestBody(requestBody).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SitesApi.AddDevicesToSite(context.Background(), id).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SitesApi.AddDevicesToSite``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -56,7 +56,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -105,12 +105,12 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     requestBody := []string{"Property_example"} // []string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SitesApi.AddServicesToSite(context.Background(), id).RequestBody(requestBody).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SitesApi.AddServicesToSite(context.Background(), id).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SitesApi.AddServicesToSite``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -126,7 +126,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -178,8 +178,8 @@ func main() {
     siteCreate := *openapiclient.NewSiteCreate("TenantId_example", "Name_example") // SiteCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SitesApi.CreateSite(context.Background()).SiteCreate(siteCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SitesApi.CreateSite(context.Background()).SiteCreate(siteCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SitesApi.CreateSite``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -239,11 +239,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SitesApi.DeleteSite(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SitesApi.DeleteSite(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SitesApi.DeleteSite``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -257,7 +257,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -305,12 +305,12 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     showImage := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SitesApi.GetSite(context.Background(), id).ShowImage(showImage).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SitesApi.GetSite(context.Background(), id).ShowImage(showImage).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SitesApi.GetSite``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -326,7 +326,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -377,7 +377,7 @@ import (
 func main() {
     page := int32(0) // int32 | 
     pageSize := int32(10) // int32 | 
-    tenantId := TODO // string |  (optional)
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     includeSubtenants := true // bool |  (optional) (default to false)
     serviceId := "serviceId_example" // string |  (optional)
     serviceType := "serviceType_example" // string |  (optional)
@@ -388,8 +388,8 @@ func main() {
     showImage := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SitesApi.GetSitesPage(context.Background()).Page(page).PageSize(pageSize).TenantId(tenantId).IncludeSubtenants(includeSubtenants).ServiceId(serviceId).ServiceType(serviceType).DeviceId(deviceId).ParentId(parentId).Type_(type_).ManagingControlPlaneId(managingControlPlaneId).ShowImage(showImage).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SitesApi.GetSitesPage(context.Background()).Page(page).PageSize(pageSize).TenantId(tenantId).IncludeSubtenants(includeSubtenants).ServiceId(serviceId).ServiceType(serviceType).DeviceId(deviceId).ParentId(parentId).Type_(type_).ManagingControlPlaneId(managingControlPlaneId).ShowImage(showImage).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SitesApi.GetSitesPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int32** |  | 
  **pageSize** | **int32** |  | 
- **tenantId** | [**string**](string.md) |  | 
+ **tenantId** | **string** |  | 
  **includeSubtenants** | **bool** |  | [default to false]
  **serviceId** | **string** |  | 
  **serviceType** | **string** |  | 
@@ -459,12 +459,12 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     requestBody := []string{"Property_example"} // []string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SitesApi.RemoveDevicesFromSite(context.Background(), id).RequestBody(requestBody).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SitesApi.RemoveDevicesFromSite(context.Background(), id).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SitesApi.RemoveDevicesFromSite``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -480,7 +480,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -533,8 +533,8 @@ func main() {
     requestBody := []string{"Property_example"} // []string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SitesApi.RemoveServicesFromSite(context.Background(), id).RequestBody(requestBody).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SitesApi.RemoveServicesFromSite(context.Background(), id).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SitesApi.RemoveServicesFromSite``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -599,13 +599,13 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     siteUpdate := *openapiclient.NewSiteUpdate("Name_example") // SiteUpdate | 
     sendNotification := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SitesApi.UpdateSite(context.Background(), id).SiteUpdate(siteUpdate).SendNotification(sendNotification).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SitesApi.UpdateSite(context.Background(), id).SiteUpdate(siteUpdate).SendNotification(sendNotification).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SitesApi.UpdateSite``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -621,7 +621,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 

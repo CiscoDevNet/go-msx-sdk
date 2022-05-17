@@ -9,14 +9,14 @@ Name | Type | Description | Notes
 **Email** | **string** |  | 
 **RoleIds** | Pointer to **[]string** |  | [optional] 
 **TenantIds** | Pointer to **[]string** |  | [optional] 
-**PasswordPolicyName** | **string** |  | 
+**PasswordPolicyName** | Pointer to **string** |  | [optional] 
 **Locale** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
 ### NewUserUpdate
 
-`func NewUserUpdate(lastName string, email string, passwordPolicyName string, ) *UserUpdate`
+`func NewUserUpdate(lastName string, email string, ) *UserUpdate`
 
 NewUserUpdate instantiates a new UserUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -165,6 +165,11 @@ and a boolean to check if the value has been set.
 
 SetPasswordPolicyName sets PasswordPolicyName field to given value.
 
+### HasPasswordPolicyName
+
+`func (o *UserUpdate) HasPasswordPolicyName() bool`
+
+HasPasswordPolicyName returns a boolean if a field has been set.
 
 ### GetLocale
 

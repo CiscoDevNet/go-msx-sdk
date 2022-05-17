@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**PatchDevice**](DevicesApi.md#PatchDevice) | **Patch** /manage/api/v8/devices/{id} | Update a device.
 [**RedeployDevice**](DevicesApi.md#RedeployDevice) | **Post** /manage/api/v8/devices/{id}/redeploy | Dedeploys a device.
 [**UpdateDevice**](DevicesApi.md#UpdateDevice) | **Put** /manage/api/v8/devices/{id} | Update a device.
+[**UpdateDeviceConfig**](DevicesApi.md#UpdateDeviceConfig) | **Post** /manage/api/v8/devices/{id}/config/update | push device configuration to the actual device
 [**UpdateDeviceTemplates**](DevicesApi.md#UpdateDeviceTemplates) | **Put** /manage/api/v8/devices/{id}/templates | Update device templates that are already attached to a device.
 
 
@@ -44,8 +45,8 @@ func main() {
     deviceTemplateAttachRequest := *openapiclient.NewDeviceTemplateAttachRequest() // DeviceTemplateAttachRequest | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.AttachDeviceTemplates(context.Background(), id).DeviceTemplateAttachRequest(deviceTemplateAttachRequest).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.AttachDeviceTemplates(context.Background(), id).DeviceTemplateAttachRequest(deviceTemplateAttachRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.AttachDeviceTemplates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -113,8 +114,8 @@ func main() {
     deviceTemplateBatchAttachRequest := *openapiclient.NewDeviceTemplateBatchAttachRequest() // DeviceTemplateBatchAttachRequest | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.BatchAttachDeviceTemplates(context.Background()).DeviceTemplateBatchAttachRequest(deviceTemplateBatchAttachRequest).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.BatchAttachDeviceTemplates(context.Background()).DeviceTemplateBatchAttachRequest(deviceTemplateBatchAttachRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.BatchAttachDeviceTemplates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -174,11 +175,11 @@ import (
 )
 
 func main() {
-    deviceCreate := *openapiclient.NewDeviceCreate("TenantId_example", false, "OnboardType_example", "Name_example", "Model_example", "Type_example") // DeviceCreate | 
+    deviceCreate := *openapiclient.NewDeviceCreate("TenantId_example", "OnboardType_example", "Name_example", "Model_example", "Type_example") // DeviceCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.CreateDevice(context.Background()).DeviceCreate(deviceCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.CreateDevice(context.Background()).DeviceCreate(deviceCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.CreateDevice``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -241,8 +242,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.DeleteDevice(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.DeleteDevice(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.DeleteDevice``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -305,11 +306,11 @@ import (
 
 func main() {
     id := "id_example" // string | 
-    templateId := TODO // string | 
+    templateId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.DetachDeviceTemplate(context.Background(), id, templateId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.DetachDeviceTemplate(context.Background(), id, templateId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.DetachDeviceTemplate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -326,7 +327,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **id** | **string** |  | 
-**templateId** | [**string**](.md) |  | 
+**templateId** | **string** |  | 
 
 ### Other Parameters
 
@@ -378,8 +379,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.DetachDeviceTemplates(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.DetachDeviceTemplates(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.DetachDeviceTemplates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -446,8 +447,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.GetDevice(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.GetDevice(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.GetDevice``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -514,8 +515,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.GetDeviceConfig(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.GetDeviceConfig(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.GetDeviceConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -580,11 +581,11 @@ import (
 
 func main() {
     id := "id_example" // string | 
-    templateId := TODO // string |  (optional)
+    templateId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.GetDeviceTemplateHistory(context.Background(), id).TemplateId(templateId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.GetDeviceTemplateHistory(context.Background(), id).TemplateId(templateId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.GetDeviceTemplateHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -610,7 +611,7 @@ Other parameters are passed through a pointer to a apiGetDeviceTemplateHistoryRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **templateId** | [**string**](string.md) |  | 
+ **templateId** | **string** |  | 
 
 ### Return type
 
@@ -663,14 +664,14 @@ func main() {
     tenantIds := []string{"Inner_example"} // []string |  (optional)
     includeSubtenants := true // bool |  (optional) (default to false)
     severities := []string{"Inner_example"} // []string |  (optional)
-    complianceStates := []openapiclient.DeviceComplianceState{openapiclient.DeviceComplianceState("COMPLIANT")} // []DeviceComplianceState |  (optional)
-    vulnerabilityStates := []openapiclient.DeviceVulnerabilityState{openapiclient.DeviceVulnerabilityState("VULNERABLE")} // []DeviceVulnerabilityState |  (optional)
+    complianceStates := []string{"Inner_example"} // []string | Valid values: COMPLIANT, NOT_COMPLIANT, APPLICABLE, NOT_APPLICABLE, UNKNOWN (optional)
+    vulnerabilityStates := []string{"Inner_example"} // []string | Valid values: VULNERABLE, NOT_VULNERABLE, NOT_APPLICABLE, UNKNOWN (optional)
     sortBy := "name" // string |  (optional)
     sortOrder := "sortOrder_example" // string |  (optional) (default to "asc")
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.GetDevicesPage(context.Background()).Page(page).PageSize(pageSize).DeviceIds(deviceIds).ServiceIds(serviceIds).Types(types).SerialKeys(serialKeys).ServiceTypes(serviceTypes).Models(models).Subtypes(subtypes).Names(names).Versions(versions).TenantIds(tenantIds).IncludeSubtenants(includeSubtenants).Severities(severities).ComplianceStates(complianceStates).VulnerabilityStates(vulnerabilityStates).SortBy(sortBy).SortOrder(sortOrder).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.GetDevicesPage(context.Background()).Page(page).PageSize(pageSize).DeviceIds(deviceIds).ServiceIds(serviceIds).Types(types).SerialKeys(serialKeys).ServiceTypes(serviceTypes).Models(models).Subtypes(subtypes).Names(names).Versions(versions).TenantIds(tenantIds).IncludeSubtenants(includeSubtenants).Severities(severities).ComplianceStates(complianceStates).VulnerabilityStates(vulnerabilityStates).SortBy(sortBy).SortOrder(sortOrder).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.GetDevicesPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -705,8 +706,8 @@ Name | Type | Description  | Notes
  **tenantIds** | **[]string** |  | 
  **includeSubtenants** | **bool** |  | [default to false]
  **severities** | **[]string** |  | 
- **complianceStates** | [**[]DeviceComplianceState**](DeviceComplianceState.md) |  | 
- **vulnerabilityStates** | [**[]DeviceVulnerabilityState**](DeviceVulnerabilityState.md) |  | 
+ **complianceStates** | **[]string** | Valid values: COMPLIANT, NOT_COMPLIANT, APPLICABLE, NOT_APPLICABLE, UNKNOWN | 
+ **vulnerabilityStates** | **[]string** | Valid values: VULNERABLE, NOT_VULNERABLE, NOT_APPLICABLE, UNKNOWN | 
  **sortBy** | **string** |  | 
  **sortOrder** | **string** |  | [default to &quot;asc&quot;]
 
@@ -734,6 +735,8 @@ No authorization required
 
 Update a device.
 
+
+
 ### Example
 
 ```go
@@ -751,8 +754,8 @@ func main() {
     devicePatch := *openapiclient.NewDevicePatch() // DevicePatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.PatchDevice(context.Background(), id).DevicePatch(devicePatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.PatchDevice(context.Background(), id).DevicePatch(devicePatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.PatchDevice``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -820,8 +823,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.RedeployDevice(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.RedeployDevice(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.RedeployDevice``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -884,11 +887,11 @@ import (
 
 func main() {
     id := "id_example" // string | 
-    deviceUpdate := *openapiclient.NewDeviceUpdate(false, "OnboardType_example", "Name_example", "Model_example", "Type_example") // DeviceUpdate | 
+    deviceUpdate := *openapiclient.NewDeviceUpdate("OnboardType_example", "Name_example", "Model_example", "Type_example") // DeviceUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.UpdateDevice(context.Background(), id).DeviceUpdate(deviceUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.UpdateDevice(context.Background(), id).DeviceUpdate(deviceUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.UpdateDevice``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -934,6 +937,76 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## UpdateDeviceConfig
+
+> ManageChangeRequestPending UpdateDeviceConfig(ctx, id).DeviceConfigUpdate(deviceConfigUpdate).Execute()
+
+push device configuration to the actual device
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | 
+    deviceConfigUpdate := *openapiclient.NewDeviceConfigUpdate("CorrelationId_example", "Format_example") // DeviceConfigUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.UpdateDeviceConfig(context.Background(), id).DeviceConfigUpdate(deviceConfigUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.UpdateDeviceConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateDeviceConfig`: ManageChangeRequestPending
+    fmt.Fprintf(os.Stdout, "Response from `DevicesApi.UpdateDeviceConfig`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateDeviceConfigRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **deviceConfigUpdate** | [**DeviceConfigUpdate**](DeviceConfigUpdate.md) |  | 
+
+### Return type
+
+[**ManageChangeRequestPending**](ManageChangeRequestPending.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## UpdateDeviceTemplates
 
 > []DeviceTemplateHistory UpdateDeviceTemplates(ctx, id).DeviceTemplateUpdateRequest(deviceTemplateUpdateRequest).Execute()
@@ -957,8 +1030,8 @@ func main() {
     deviceTemplateUpdateRequest := *openapiclient.NewDeviceTemplateUpdateRequest() // DeviceTemplateUpdateRequest | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DevicesApi.UpdateDeviceTemplates(context.Background(), id).DeviceTemplateUpdateRequest(deviceTemplateUpdateRequest).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DevicesApi.UpdateDeviceTemplates(context.Background(), id).DeviceTemplateUpdateRequest(deviceTemplateUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DevicesApi.UpdateDeviceTemplates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

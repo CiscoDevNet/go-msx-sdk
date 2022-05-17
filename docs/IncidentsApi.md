@@ -36,8 +36,8 @@ func main() {
     incidentCancel := *openapiclient.NewIncidentCancel("Tenant_example") // IncidentCancel | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentsApi.CancelIncident(context.Background(), id).IncidentCancel(incidentCancel).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentsApi.CancelIncident(context.Background(), id).IncidentCancel(incidentCancel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentsApi.CancelIncident``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -105,8 +105,8 @@ func main() {
     incidentCreate := *openapiclient.NewIncidentCreate("Description_example") // IncidentCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentsApi.CreateIncident(context.Background()).IncidentCreate(incidentCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentsApi.CreateIncident(context.Background()).IncidentCreate(incidentCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentsApi.CreateIncident``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -169,8 +169,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentsApi.DeleteIncident(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentsApi.DeleteIncident(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentsApi.DeleteIncident``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -235,8 +235,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentsApi.GetIncident(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentsApi.GetIncident(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentsApi.GetIncident``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -314,8 +314,8 @@ func main() {
     sortOrder := "sortOrder_example" // string | ASC/DESC (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentsApi.GetIncidents(context.Background()).Page(page).PageSize(pageSize).Id(id).ExternalId(externalId).TenantId(tenantId).Category(category).Subcategory(subcategory).State(state).Priority(priority).Severity(severity).SortBy(sortBy).SortOrder(sortOrder).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentsApi.GetIncidents(context.Background()).Page(page).PageSize(pageSize).Id(id).ExternalId(externalId).TenantId(tenantId).Category(category).Subcategory(subcategory).State(state).Priority(priority).Severity(severity).SortBy(sortBy).SortOrder(sortOrder).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentsApi.GetIncidents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -390,8 +390,8 @@ func main() {
     incidentUpdate := *openapiclient.NewIncidentUpdate("Description_example") // IncidentUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentsApi.UpdateIncident(context.Background(), id).IncidentUpdate(incidentUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentsApi.UpdateIncident(context.Background(), id).IncidentUpdate(incidentUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentsApi.UpdateIncident``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Description** | **string** |  | 
 **ProductId** | **string** |  | 
 **Version** | **int32** |  | 
-**DisplayOrder** | **int32** |  | 
+**DisplayOrder** | Pointer to **NullableInt32** |  | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
 **Price** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewOfferUpdate
 
-`func NewOfferUpdate(name string, label string, description string, productId string, version int32, displayOrder int32, ) *OfferUpdate`
+`func NewOfferUpdate(name string, label string, description string, productId string, version int32, ) *OfferUpdate`
 
 NewOfferUpdate instantiates a new OfferUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -155,7 +155,22 @@ and a boolean to check if the value has been set.
 
 SetDisplayOrder sets DisplayOrder field to given value.
 
+### HasDisplayOrder
 
+`func (o *OfferUpdate) HasDisplayOrder() bool`
+
+HasDisplayOrder returns a boolean if a field has been set.
+
+### SetDisplayOrderNil
+
+`func (o *OfferUpdate) SetDisplayOrderNil(b bool)`
+
+ SetDisplayOrderNil sets the value for DisplayOrder to be an explicit nil
+
+### UnsetDisplayOrder
+`func (o *OfferUpdate) UnsetDisplayOrder()`
+
+UnsetDisplayOrder ensures that no value is present for DisplayOrder, not even an explicit nil
 ### GetImage
 
 `func (o *OfferUpdate) GetImage() string`

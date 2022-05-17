@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] [readonly] 
 **EventId** | Pointer to **string** |  | [optional] [readonly] 
-**LastBilledOn** | Pointer to **string** |  | [optional] 
-**NextBilledOn** | Pointer to **string** |  | [optional] 
+**LastBilledOn** | Pointer to **time.Time** |  | [optional] 
+**NextBilledOn** | Pointer to **time.Time** |  | [optional] 
 **TenantId** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -81,20 +81,20 @@ HasEventId returns a boolean if a field has been set.
 
 ### GetLastBilledOn
 
-`func (o *BillingCycle) GetLastBilledOn() string`
+`func (o *BillingCycle) GetLastBilledOn() time.Time`
 
 GetLastBilledOn returns the LastBilledOn field if non-nil, zero value otherwise.
 
 ### GetLastBilledOnOk
 
-`func (o *BillingCycle) GetLastBilledOnOk() (*string, bool)`
+`func (o *BillingCycle) GetLastBilledOnOk() (*time.Time, bool)`
 
 GetLastBilledOnOk returns a tuple with the LastBilledOn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastBilledOn
 
-`func (o *BillingCycle) SetLastBilledOn(v string)`
+`func (o *BillingCycle) SetLastBilledOn(v time.Time)`
 
 SetLastBilledOn sets LastBilledOn field to given value.
 
@@ -106,20 +106,20 @@ HasLastBilledOn returns a boolean if a field has been set.
 
 ### GetNextBilledOn
 
-`func (o *BillingCycle) GetNextBilledOn() string`
+`func (o *BillingCycle) GetNextBilledOn() time.Time`
 
 GetNextBilledOn returns the NextBilledOn field if non-nil, zero value otherwise.
 
 ### GetNextBilledOnOk
 
-`func (o *BillingCycle) GetNextBilledOnOk() (*string, bool)`
+`func (o *BillingCycle) GetNextBilledOnOk() (*time.Time, bool)`
 
 GetNextBilledOnOk returns a tuple with the NextBilledOn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNextBilledOn
 
-`func (o *BillingCycle) SetNextBilledOn(v string)`
+`func (o *BillingCycle) SetNextBilledOn(v time.Time)`
 
 SetNextBilledOn sets NextBilledOn field to given value.
 

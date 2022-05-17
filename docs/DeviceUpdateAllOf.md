@@ -6,16 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ServiceType** | Pointer to **NullableString** |  | [optional] 
 **Tags** | Pointer to **map[string]string** |  | [optional] 
-**Managed** | **bool** |  | [default to false]
+**Managed** | Pointer to **bool** |  | [optional] [default to false]
 **OnboardType** | **string** |  | 
-**OnboardInformation** | Pointer to **map[string]interface{}** |  | [optional] 
 **Attributes** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewDeviceUpdateAllOf
 
-`func NewDeviceUpdateAllOf(managed bool, onboardType string, ) *DeviceUpdateAllOf`
+`func NewDeviceUpdateAllOf(onboardType string, ) *DeviceUpdateAllOf`
 
 NewDeviceUpdateAllOf instantiates a new DeviceUpdateAllOf object
 This constructor will assign default values to properties that have it defined,
@@ -119,6 +118,11 @@ and a boolean to check if the value has been set.
 
 SetManaged sets Managed field to given value.
 
+### HasManaged
+
+`func (o *DeviceUpdateAllOf) HasManaged() bool`
+
+HasManaged returns a boolean if a field has been set.
 
 ### GetOnboardType
 
@@ -140,41 +144,6 @@ and a boolean to check if the value has been set.
 SetOnboardType sets OnboardType field to given value.
 
 
-### GetOnboardInformation
-
-`func (o *DeviceUpdateAllOf) GetOnboardInformation() map[string]interface{}`
-
-GetOnboardInformation returns the OnboardInformation field if non-nil, zero value otherwise.
-
-### GetOnboardInformationOk
-
-`func (o *DeviceUpdateAllOf) GetOnboardInformationOk() (*map[string]interface{}, bool)`
-
-GetOnboardInformationOk returns a tuple with the OnboardInformation field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOnboardInformation
-
-`func (o *DeviceUpdateAllOf) SetOnboardInformation(v map[string]interface{})`
-
-SetOnboardInformation sets OnboardInformation field to given value.
-
-### HasOnboardInformation
-
-`func (o *DeviceUpdateAllOf) HasOnboardInformation() bool`
-
-HasOnboardInformation returns a boolean if a field has been set.
-
-### SetOnboardInformationNil
-
-`func (o *DeviceUpdateAllOf) SetOnboardInformationNil(b bool)`
-
- SetOnboardInformationNil sets the value for OnboardInformation to be an explicit nil
-
-### UnsetOnboardInformation
-`func (o *DeviceUpdateAllOf) UnsetOnboardInformation()`
-
-UnsetOnboardInformation ensures that no value is present for OnboardInformation, not even an explicit nil
 ### GetAttributes
 
 `func (o *DeviceUpdateAllOf) GetAttributes() map[string]interface{}`

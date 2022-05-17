@@ -34,8 +34,8 @@ func main() {
     changeRequestCreate := *openapiclient.NewChangeRequestCreate() // ChangeRequestCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentChangeRequestsApi.CreateChangeRequest(context.Background()).ChangeRequestCreate(changeRequestCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentChangeRequestsApi.CreateChangeRequest(context.Background()).ChangeRequestCreate(changeRequestCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentChangeRequestsApi.CreateChangeRequest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -96,11 +96,11 @@ import (
 
 func main() {
     id := "id_example" // string | 
-    tenantId := TODO // string | Required for bi-directional scenario (optional)
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Required for bi-directional scenario (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentChangeRequestsApi.DeleteChangeRequest(context.Background(), id).TenantId(tenantId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentChangeRequestsApi.DeleteChangeRequest(context.Background(), id).TenantId(tenantId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentChangeRequestsApi.DeleteChangeRequest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -124,7 +124,7 @@ Other parameters are passed through a pointer to a apiDeleteChangeRequestRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **tenantId** | [**string**](string.md) | Required for bi-directional scenario | 
+ **tenantId** | **string** | Required for bi-directional scenario | 
 
 ### Return type
 
@@ -164,11 +164,11 @@ import (
 
 func main() {
     id := "id_example" // string | Change Request Number  CHG0030022
-    tenantId := TODO // string | Required for bi-directional scenario (optional)
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Required for bi-directional scenario (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentChangeRequestsApi.GetChangeRequest(context.Background(), id).TenantId(tenantId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentChangeRequestsApi.GetChangeRequest(context.Background(), id).TenantId(tenantId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentChangeRequestsApi.GetChangeRequest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGetChangeRequestRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **tenantId** | [**string**](string.md) | Required for bi-directional scenario | 
+ **tenantId** | **string** | Required for bi-directional scenario | 
 
 ### Return type
 
@@ -235,11 +235,11 @@ import (
 func main() {
     page := int32(0) // int32 | 
     pageSize := int32(10) // int32 | 
-    tenantId := TODO // string |  (optional)
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentChangeRequestsApi.GetChangeRequestsPage(context.Background()).Page(page).PageSize(pageSize).TenantId(tenantId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentChangeRequestsApi.GetChangeRequestsPage(context.Background()).Page(page).PageSize(pageSize).TenantId(tenantId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentChangeRequestsApi.GetChangeRequestsPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int32** |  | 
  **pageSize** | **int32** |  | 
- **tenantId** | [**string**](string.md) |  | 
+ **tenantId** | **string** |  | 
 
 ### Return type
 
@@ -307,8 +307,8 @@ func main() {
     changeRequestUpdate := *openapiclient.NewChangeRequestUpdate() // ChangeRequestUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentChangeRequestsApi.UpdateChangeRequest(context.Background(), id).ChangeRequestUpdate(changeRequestUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentChangeRequestsApi.UpdateChangeRequest(context.Background(), id).ChangeRequestUpdate(changeRequestUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentChangeRequestsApi.UpdateChangeRequest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -30,15 +30,16 @@ import (
     "context"
     "fmt"
     "os"
+    "time"
     openapiclient "./openapi"
 )
 
 func main() {
-    billingCycleCreate := *openapiclient.NewBillingCycleCreate("EventId_example", "2020-09-18T18:37:33.810Z", "2020-09-18T18:37:33.810Z", "TenantId_example") // BillingCycleCreate | 
+    billingCycleCreate := *openapiclient.NewBillingCycleCreate("EventId_example", time.Now(), time.Now(), "TenantId_example") // BillingCycleCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingCyclesApi.AddBillingCycle(context.Background()).BillingCycleCreate(billingCycleCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingCyclesApi.AddBillingCycle(context.Background()).BillingCycleCreate(billingCycleCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingCyclesApi.AddBillingCycle``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -100,11 +101,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingCyclesApi.DeleteBillingCycle(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingCyclesApi.DeleteBillingCycle(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingCyclesApi.DeleteBillingCycle``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -118,7 +119,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -168,11 +169,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingCyclesApi.GetBillingCycle(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingCyclesApi.GetBillingCycle(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingCyclesApi.GetBillingCycle``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -188,7 +189,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -239,14 +240,14 @@ import (
 )
 
 func main() {
-    tenantId := TODO // string | 
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     page := int32(0) // int32 | 
     pageSize := int32(10) // int32 | 
     nextBilledOn := time.Now() // time.Time |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingCyclesApi.GetBillingCyclesPage(context.Background()).TenantId(tenantId).Page(page).PageSize(pageSize).NextBilledOn(nextBilledOn).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingCyclesApi.GetBillingCyclesPage(context.Background()).TenantId(tenantId).Page(page).PageSize(pageSize).NextBilledOn(nextBilledOn).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingCyclesApi.GetBillingCyclesPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -267,7 +268,7 @@ Other parameters are passed through a pointer to a apiGetBillingCyclesPageReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenantId** | [**string**](string.md) |  | 
+ **tenantId** | **string** |  | 
  **page** | **int32** |  | 
  **pageSize** | **int32** |  | 
  **nextBilledOn** | **time.Time** |  | 
@@ -307,15 +308,16 @@ import (
     "context"
     "fmt"
     "os"
+    "time"
     openapiclient "./openapi"
 )
 
 func main() {
-    billingCycleProcess := *openapiclient.NewBillingCycleProcess("2020-09-18T18:37:33.810Z") // BillingCycleProcess | 
+    billingCycleProcess := *openapiclient.NewBillingCycleProcess(time.Now()) // BillingCycleProcess | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingCyclesApi.ProcessBillingCycle(context.Background()).BillingCycleProcess(billingCycleProcess).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingCyclesApi.ProcessBillingCycle(context.Background()).BillingCycleProcess(billingCycleProcess).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingCyclesApi.ProcessBillingCycle``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -373,16 +375,17 @@ import (
     "context"
     "fmt"
     "os"
+    "time"
     openapiclient "./openapi"
 )
 
 func main() {
-    id := TODO // string | 
-    billingCycleUpdate := *openapiclient.NewBillingCycleUpdate("EventId_example", "2020-09-18T18:37:33.810Z", "2020-09-18T18:37:33.810Z", "TenantId_example") // BillingCycleUpdate | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
+    billingCycleUpdate := *openapiclient.NewBillingCycleUpdate("EventId_example", time.Now(), time.Now(), "TenantId_example") // BillingCycleUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingCyclesApi.UpdateBillingCycle(context.Background(), id).BillingCycleUpdate(billingCycleUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingCyclesApi.UpdateBillingCycle(context.Background(), id).BillingCycleUpdate(billingCycleUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingCyclesApi.UpdateBillingCycle``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +401,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 

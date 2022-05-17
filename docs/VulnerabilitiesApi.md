@@ -36,8 +36,8 @@ func main() {
     endDate := time.Now() // time.Time | End date for date range filter on validation execution date. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VulnerabilitiesApi.GetIngestVulnerabilitiesTasksPage(context.Background()).Page(page).PageSize(pageSize).StartDate(startDate).EndDate(endDate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VulnerabilitiesApi.GetIngestVulnerabilitiesTasksPage(context.Background()).Page(page).PageSize(pageSize).StartDate(startDate).EndDate(endDate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesApi.GetIngestVulnerabilitiesTasksPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -115,8 +115,8 @@ func main() {
     sortOrder := "sortOrder_example" // string |  (optional) (default to "asc")
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VulnerabilitiesApi.GetVulnerabilitiesPage(context.Background()).Page(page).PageSize(pageSize).CveId(cveId).Vendor(vendor).Product(product).Version(version).Severity(severity).StartDate(startDate).EndDate(endDate).Year(year).SortBy(sortBy).SortOrder(sortOrder).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VulnerabilitiesApi.GetVulnerabilitiesPage(context.Background()).Page(page).PageSize(pageSize).CveId(cveId).Vendor(vendor).Product(product).Version(version).Severity(severity).StartDate(startDate).EndDate(endDate).Year(year).SortBy(sortBy).SortOrder(sortOrder).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesApi.GetVulnerabilitiesPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -190,8 +190,8 @@ func main() {
     vulnerabilityFeed := *openapiclient.NewVulnerabilityFeed() // VulnerabilityFeed | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VulnerabilitiesApi.IngestVulnerabilities(context.Background()).VulnerabilityFeed(vulnerabilityFeed).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VulnerabilitiesApi.IngestVulnerabilities(context.Background()).VulnerabilityFeed(vulnerabilityFeed).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesApi.IngestVulnerabilities``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

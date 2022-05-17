@@ -29,11 +29,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RegistrationApi.DeleteRegisteredProductVersion(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RegistrationApi.DeleteRegisteredProductVersion(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RegistrationApi.DeleteRegisteredProductVersion``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -47,7 +47,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -101,8 +101,8 @@ func main() {
     version := "12.3" // string | Product version (as defined in NIST's CPE dictionary) filter to filter by. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RegistrationApi.GetRegisteredProductVersionPage(context.Background()).Page(page).PageSize(pageSize).Product(product).Version(version).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RegistrationApi.GetRegisteredProductVersionPage(context.Background()).Page(page).PageSize(pageSize).Product(product).Version(version).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RegistrationApi.GetRegisteredProductVersionPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -168,8 +168,8 @@ func main() {
     vulnerabilityRegistrationCreate := *openapiclient.NewVulnerabilityRegistrationCreate() // VulnerabilityRegistrationCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RegistrationApi.RegisterProductVersion(context.Background()).VulnerabilityRegistrationCreate(vulnerabilityRegistrationCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RegistrationApi.RegisterProductVersion(context.Background()).VulnerabilityRegistrationCreate(vulnerabilityRegistrationCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RegistrationApi.RegisterProductVersion``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

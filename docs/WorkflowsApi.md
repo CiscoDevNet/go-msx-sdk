@@ -38,8 +38,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowsApi.DeleteWorkflow(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowsApi.DeleteWorkflow(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowsApi.DeleteWorkflow``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -104,8 +104,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowsApi.ExportWorkflow(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowsApi.ExportWorkflow(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowsApi.ExportWorkflow``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -172,8 +172,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowsApi.GetWorkflow(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowsApi.GetWorkflow(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowsApi.GetWorkflow``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -240,8 +240,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowsApi.GetWorkflowStartConfig(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowsApi.GetWorkflowStartConfig(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowsApi.GetWorkflowStartConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -305,12 +305,12 @@ import (
 )
 
 func main() {
-    tenantId := TODO // string |  (optional)
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     atomic := true // bool |  (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowsApi.GetWorkflowsList(context.Background()).TenantId(tenantId).Atomic(atomic).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowsApi.GetWorkflowsList(context.Background()).TenantId(tenantId).Atomic(atomic).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowsApi.GetWorkflowsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiGetWorkflowsListRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenantId** | [**string**](string.md) |  | 
+ **tenantId** | **string** |  | 
  **atomic** | **bool** |  | [default to false]
 
 ### Return type
@@ -376,8 +376,8 @@ func main() {
     global := true // bool |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowsApi.ImportWorkflow(context.Background()).RequestBody(requestBody).TenantIds(tenantIds).Global(global).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowsApi.ImportWorkflow(context.Background()).RequestBody(requestBody).TenantIds(tenantIds).Global(global).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowsApi.ImportWorkflow``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -444,8 +444,8 @@ func main() {
     sync := true // bool |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowsApi.StartWorkflow(context.Background(), id).WorkflowStartConfig(workflowStartConfig).Sync(sync).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowsApi.StartWorkflow(context.Background(), id).WorkflowStartConfig(workflowStartConfig).Sync(sync).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowsApi.StartWorkflow``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -517,8 +517,8 @@ func main() {
     global := true // bool |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowsApi.UpdateWorkflow(context.Background(), id).RequestBody(requestBody).TenantIds(tenantIds).Global(global).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowsApi.UpdateWorkflow(context.Background(), id).RequestBody(requestBody).TenantIds(tenantIds).Global(global).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowsApi.UpdateWorkflow``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -588,8 +588,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowsApi.ValidateWorkflow(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowsApi.ValidateWorkflow(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowsApi.ValidateWorkflow``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

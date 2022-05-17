@@ -34,8 +34,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowInstancesApi.CancelWorkflowInstance(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowInstancesApi.CancelWorkflowInstance(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowInstancesApi.CancelWorkflowInstance``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -102,8 +102,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowInstancesApi.DeleteWorkflowInstance(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowInstancesApi.DeleteWorkflowInstance(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowInstancesApi.DeleteWorkflowInstance``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -170,8 +170,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowInstancesApi.GetWorkflowInstance(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowInstancesApi.GetWorkflowInstance(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowInstancesApi.GetWorkflowInstance``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -239,8 +239,8 @@ func main() {
     actionId := "actionId_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowInstancesApi.GetWorkflowInstanceAction(context.Background(), id, actionId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowInstancesApi.GetWorkflowInstanceAction(context.Background(), id, actionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowInstancesApi.GetWorkflowInstanceAction``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -314,8 +314,8 @@ func main() {
     dateTo := time.Now() // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowInstancesApi.GetWorkflowInstancesList(context.Background(), id).Page(page).PageSize(pageSize).DateFrom(dateFrom).DateTo(dateTo).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowInstancesApi.GetWorkflowInstancesList(context.Background(), id).Page(page).PageSize(pageSize).DateFrom(dateFrom).DateTo(dateTo).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowInstancesApi.GetWorkflowInstancesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -12,16 +12,16 @@ Name | Type | Description | Notes
 **Email** | **string** |  | 
 **RoleIds** | Pointer to **[]string** |  | [optional] 
 **TenantIds** | Pointer to **[]string** |  | [optional] 
-**PasswordPolicyName** | **string** |  | 
+**PasswordPolicyName** | Pointer to **string** |  | [optional] 
 **Locale** | Pointer to **NullableString** |  | [optional] 
-**Username** | Pointer to **string** |  | [optional] 
+**Username** | **string** |  | 
 **Password** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
 ### NewUser
 
-`func NewUser(lastName string, email string, passwordPolicyName string, ) *User`
+`func NewUser(lastName string, email string, username string, ) *User`
 
 NewUser instantiates a new User object
 This constructor will assign default values to properties that have it defined,
@@ -245,6 +245,11 @@ and a boolean to check if the value has been set.
 
 SetPasswordPolicyName sets PasswordPolicyName field to given value.
 
+### HasPasswordPolicyName
+
+`func (o *User) HasPasswordPolicyName() bool`
+
+HasPasswordPolicyName returns a boolean if a field has been set.
 
 ### GetLocale
 
@@ -300,11 +305,6 @@ and a boolean to check if the value has been set.
 
 SetUsername sets Username field to given value.
 
-### HasUsername
-
-`func (o *User) HasUsername() bool`
-
-HasUsername returns a boolean if a field has been set.
 
 ### GetPassword
 

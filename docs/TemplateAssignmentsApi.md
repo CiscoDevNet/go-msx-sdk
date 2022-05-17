@@ -32,13 +32,13 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     requestBody := []string{"Property_example"} // []string | 
     inheritable := true // bool |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TemplateAssignmentsApi.BatchAssignTemplate(context.Background(), id).RequestBody(requestBody).Inheritable(inheritable).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TemplateAssignmentsApi.BatchAssignTemplate(context.Background(), id).RequestBody(requestBody).Inheritable(inheritable).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateAssignmentsApi.BatchAssignTemplate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -54,7 +54,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -104,12 +104,12 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     requestBody := []string{"Property_example"} // []string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TemplateAssignmentsApi.BatchUnassignTemplate(context.Background(), id).RequestBody(requestBody).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TemplateAssignmentsApi.BatchUnassignTemplate(context.Background(), id).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateAssignmentsApi.BatchUnassignTemplate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -125,7 +125,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -174,11 +174,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | ID of template assignment record.
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of template assignment record.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TemplateAssignmentsApi.GetAssignment(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TemplateAssignmentsApi.GetAssignment(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateAssignmentsApi.GetAssignment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -194,7 +194,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of template assignment record. | 
+**id** | **string** | ID of template assignment record. | 
 
 ### Other Parameters
 
@@ -242,11 +242,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TemplateAssignmentsApi.GetAssignmentHistory(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TemplateAssignmentsApi.GetAssignmentHistory(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateAssignmentsApi.GetAssignmentHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -312,13 +312,13 @@ import (
 func main() {
     page := int32(0) // int32 | 
     pageSize := int32(10) // int32 | 
-    templateId := TODO // string |  (optional)
-    tenantId := TODO // string |  (optional)
+    templateId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     calculateTotalItems := true // bool |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TemplateAssignmentsApi.GetTemplateAssignmentsPage(context.Background()).Page(page).PageSize(pageSize).TemplateId(templateId).TenantId(tenantId).CalculateTotalItems(calculateTotalItems).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TemplateAssignmentsApi.GetTemplateAssignmentsPage(context.Background()).Page(page).PageSize(pageSize).TemplateId(templateId).TenantId(tenantId).CalculateTotalItems(calculateTotalItems).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateAssignmentsApi.GetTemplateAssignmentsPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -341,8 +341,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int32** |  | 
  **pageSize** | **int32** |  | 
- **templateId** | [**string**](string.md) |  | 
- **tenantId** | [**string**](string.md) |  | 
+ **templateId** | **string** |  | 
+ **tenantId** | **string** |  | 
  **calculateTotalItems** | **bool** |  | 
 
 ### Return type
@@ -382,12 +382,12 @@ import (
 )
 
 func main() {
-    id := TODO // string | ID of template assignment record.
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of template assignment record.
     templateAssignmentStatusPatch := *openapiclient.NewTemplateAssignmentStatusPatch(openapiclient.TemplateStatus("NEW")) // TemplateAssignmentStatusPatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TemplateAssignmentsApi.UpdateAssignmentStatus(context.Background(), id).TemplateAssignmentStatusPatch(templateAssignmentStatusPatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TemplateAssignmentsApi.UpdateAssignmentStatus(context.Background(), id).TemplateAssignmentStatusPatch(templateAssignmentStatusPatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateAssignmentsApi.UpdateAssignmentStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -403,7 +403,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of template assignment record. | 
+**id** | **string** | ID of template assignment record. | 
 
 ### Other Parameters
 

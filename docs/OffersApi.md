@@ -34,11 +34,11 @@ import (
 )
 
 func main() {
-    offerCreate := *openapiclient.NewOfferCreate("Name_example", "Label_example", "Description_example", "ProductId_example", int32(123), int32(123)) // OfferCreate | 
+    offerCreate := *openapiclient.NewOfferCreate("Name_example", "Label_example", "Description_example", "ProductId_example", int32(123)) // OfferCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OffersApi.CreateOffer(context.Background()).OfferCreate(offerCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OffersApi.CreateOffer(context.Background()).OfferCreate(offerCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OffersApi.CreateOffer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,11 +98,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OffersApi.DeleteOffer(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OffersApi.DeleteOffer(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OffersApi.DeleteOffer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -116,7 +116,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -164,11 +164,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OffersApi.GetOffer(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OffersApi.GetOffer(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OffersApi.GetOffer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -184,7 +184,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -232,11 +232,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OffersApi.GetOfferAssignmentsList(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OffersApi.GetOfferAssignmentsList(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OffersApi.GetOfferAssignmentsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -252,7 +252,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -300,12 +300,12 @@ import (
 )
 
 func main() {
-    productId := TODO // string |  (optional)
-    tenantId := TODO // string |  (optional)
+    productId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OffersApi.GetOffersCount(context.Background()).ProductId(productId).TenantId(tenantId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OffersApi.GetOffersCount(context.Background()).ProductId(productId).TenantId(tenantId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OffersApi.GetOffersCount``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -326,8 +326,8 @@ Other parameters are passed through a pointer to a apiGetOffersCountRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | [**string**](string.md) |  | 
- **tenantId** | [**string**](string.md) |  | 
+ **productId** | **string** |  | 
+ **tenantId** | **string** |  | 
 
 ### Return type
 
@@ -368,12 +368,12 @@ import (
 func main() {
     page := int32(0) // int32 | 
     pageSize := int32(10) // int32 | 
-    productId := TODO // string |  (optional)
+    productId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     tenantIds := []string{"Inner_example"} // []string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OffersApi.GetOffersPage(context.Background()).Page(page).PageSize(pageSize).ProductId(productId).TenantIds(tenantIds).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OffersApi.GetOffersPage(context.Background()).Page(page).PageSize(pageSize).ProductId(productId).TenantIds(tenantIds).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OffersApi.GetOffersPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int32** |  | 
  **pageSize** | **int32** |  | 
- **productId** | [**string**](string.md) |  | 
+ **productId** | **string** |  | 
  **tenantIds** | **[]string** |  | 
 
 ### Return type
@@ -436,12 +436,12 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
-    offerUpdate := *openapiclient.NewOfferUpdate("Name_example", "Label_example", "Description_example", "ProductId_example", int32(123), int32(123)) // OfferUpdate | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
+    offerUpdate := *openapiclient.NewOfferUpdate("Name_example", "Label_example", "Description_example", "ProductId_example", int32(123)) // OfferUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OffersApi.UpdateOffer(context.Background(), id).OfferUpdate(offerUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OffersApi.UpdateOffer(context.Background(), id).OfferUpdate(offerUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OffersApi.UpdateOffer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -457,7 +457,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -506,12 +506,12 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     requestBody := []string{"Property_example"} // []string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OffersApi.UpdateOfferAssignments(context.Background(), id).RequestBody(requestBody).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OffersApi.UpdateOfferAssignments(context.Background(), id).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OffersApi.UpdateOfferAssignments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -527,7 +527,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 

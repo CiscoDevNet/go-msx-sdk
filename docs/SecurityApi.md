@@ -33,14 +33,14 @@ func main() {
     password := "password_example" // string |  (optional)
     accessToken := "accessToken_example" // string |  (optional)
     switchUsername := "switchUsername_example" // string |  (optional)
-    tenantId := TODO // string |  (optional)
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     scope := "scope_example" // string |  (optional)
     nonce := "nonce_example" // string |  (optional)
     tenantName := "tenantName_example" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SecurityApi.GetAccessToken(context.Background()).Authorization(authorization).GrantType(grantType).Username(username).Password(password).AccessToken(accessToken).SwitchUsername(switchUsername).TenantId(tenantId).Scope(scope).Nonce(nonce).TenantName(tenantName).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecurityApi.GetAccessToken(context.Background()).Authorization(authorization).GrantType(grantType).Username(username).Password(password).AccessToken(accessToken).SwitchUsername(switchUsername).TenantId(tenantId).Scope(scope).Nonce(nonce).TenantName(tenantName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.GetAccessToken``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
  **password** | **string** |  | 
  **accessToken** | **string** |  | 
  **switchUsername** | **string** |  | 
- **tenantId** | [**string**](string.md) |  | 
+ **tenantId** | **string** |  | 
  **scope** | **string** |  | 
  **nonce** | **string** |  | 
  **tenantName** | **string** |  | 

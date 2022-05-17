@@ -31,8 +31,8 @@ func main() {
     ids := []string{"Inner_example"} // []string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.HealthApi.GetDevicesHealthList(context.Background()).Ids(ids).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HealthApi.GetDevicesHealthList(context.Background()).Ids(ids).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HealthApi.GetDevicesHealthList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -95,8 +95,8 @@ func main() {
     ids := []string{"Inner_example"} // []string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.HealthApi.GetServicesHealthList(context.Background()).Ids(ids).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HealthApi.GetServicesHealthList(context.Background()).Ids(ids).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HealthApi.GetServicesHealthList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

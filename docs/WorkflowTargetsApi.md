@@ -34,8 +34,8 @@ func main() {
     workflowTargetCreate := *openapiclient.NewWorkflowTargetCreate("Name_example", map[string]interface{}{"key": interface{}(123)}) // WorkflowTargetCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowTargetsApi.CreateWorkflowTarget(context.Background()).WorkflowTargetCreate(workflowTargetCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowTargetsApi.CreateWorkflowTarget(context.Background()).WorkflowTargetCreate(workflowTargetCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowTargetsApi.CreateWorkflowTarget``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,8 +98,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowTargetsApi.DeleteWorkflowTarget(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowTargetsApi.DeleteWorkflowTarget(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowTargetsApi.DeleteWorkflowTarget``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -164,8 +164,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowTargetsApi.GetWorkflowTarget(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowTargetsApi.GetWorkflowTarget(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowTargetsApi.GetWorkflowTarget``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -233,8 +233,8 @@ func main() {
     type_ := "type__example" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowTargetsApi.GetWorkflowTargetsList(context.Background()).Internal(internal).Type_(type_).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowTargetsApi.GetWorkflowTargetsList(context.Background()).Internal(internal).Type_(type_).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowTargetsApi.GetWorkflowTargetsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -299,8 +299,8 @@ func main() {
     workflowTargetUpdate := *openapiclient.NewWorkflowTargetUpdate("Name_example", map[string]interface{}{"key": interface{}(123)}) // WorkflowTargetUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowTargetsApi.UpdateWorkflowTarget(context.Background(), id).WorkflowTargetUpdate(workflowTargetUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowTargetsApi.UpdateWorkflowTarget(context.Background(), id).WorkflowTargetUpdate(workflowTargetUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowTargetsApi.UpdateWorkflowTarget``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

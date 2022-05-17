@@ -32,14 +32,14 @@ import (
 )
 
 func main() {
-    tenantId := TODO // string | 
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     fromDate := time.Now() // time.Time |  (optional)
     toDate := time.Now() // time.Time |  (optional)
     groupBy := "type, subtype or service" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingEventsApi.GetCostSummary(context.Background()).TenantId(tenantId).FromDate(fromDate).ToDate(toDate).GroupBy(groupBy).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingEventsApi.GetCostSummary(context.Background()).TenantId(tenantId).FromDate(fromDate).ToDate(toDate).GroupBy(groupBy).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingEventsApi.GetCostSummary``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,7 +60,7 @@ Other parameters are passed through a pointer to a apiGetCostSummaryRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenantId** | [**string**](string.md) |  | 
+ **tenantId** | **string** |  | 
  **fromDate** | **time.Time** |  | 
  **toDate** | **time.Time** |  | 
  **groupBy** | **string** |  | 
@@ -104,11 +104,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingEventsApi.GetEvent(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingEventsApi.GetEvent(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingEventsApi.GetEvent``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -124,7 +124,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -175,7 +175,7 @@ import (
 )
 
 func main() {
-    tenantId := TODO // string | 
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     page := int32(0) // int32 | 
     pageSize := int32(10) // int32 | 
     fromDate := time.Now() // time.Time |  (optional)
@@ -184,8 +184,8 @@ func main() {
     subtype := "subtype_example" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingEventsApi.GetEventsPage(context.Background()).TenantId(tenantId).Page(page).PageSize(pageSize).FromDate(fromDate).ToDate(toDate).Type_(type_).Subtype(subtype).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingEventsApi.GetEventsPage(context.Background()).TenantId(tenantId).Page(page).PageSize(pageSize).FromDate(fromDate).ToDate(toDate).Type_(type_).Subtype(subtype).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingEventsApi.GetEventsPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -206,7 +206,7 @@ Other parameters are passed through a pointer to a apiGetEventsPageRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenantId** | [**string**](string.md) |  | 
+ **tenantId** | **string** |  | 
  **page** | **int32** |  | 
  **pageSize** | **int32** |  | 
  **fromDate** | **time.Time** |  | 

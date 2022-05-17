@@ -14,11 +14,11 @@ Name | Type | Description | Notes
 **DisplayOrder** | Pointer to **int32** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **OrderLimit** | Pointer to **int32** |  | [optional] 
-**Options** | [**[]ServiceElement**](ServiceElement.md) |  | 
+**Options** | Pointer to [**[]ServiceElement**](ServiceElement.md) |  | [optional] 
 **Properties** | Pointer to [**[]ServiceElement**](ServiceElement.md) |  | [optional] 
-**Configuration** | **map[string]string** |  | 
-**IsResource** | **bool** |  | 
-**HasChildren** | **bool** |  | 
+**Configuration** | Pointer to **map[string]string** |  | [optional] 
+**IsResource** | Pointer to **NullableBool** |  | [optional] 
+**HasChildren** | Pointer to **NullableBool** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
 **ServiceExtensions** | Pointer to [**[]NSOConfigDataXPath**](NSOConfigDataXPath.md) |  | [optional] 
 **ServiceConfigQueryRootXPaths** | Pointer to **[]string** |  | [optional] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewProductCreate
 
-`func NewProductCreate(name string, label string, version int32, description string, image string, options []ServiceElement, configuration map[string]string, isResource bool, hasChildren bool, ) *ProductCreate`
+`func NewProductCreate(name string, label string, version int32, description string, image string, ) *ProductCreate`
 
 NewProductCreate instantiates a new ProductCreate object
 This constructor will assign default values to properties that have it defined,
@@ -290,7 +290,22 @@ and a boolean to check if the value has been set.
 
 SetOptions sets Options field to given value.
 
+### HasOptions
 
+`func (o *ProductCreate) HasOptions() bool`
+
+HasOptions returns a boolean if a field has been set.
+
+### SetOptionsNil
+
+`func (o *ProductCreate) SetOptionsNil(b bool)`
+
+ SetOptionsNil sets the value for Options to be an explicit nil
+
+### UnsetOptions
+`func (o *ProductCreate) UnsetOptions()`
+
+UnsetOptions ensures that no value is present for Options, not even an explicit nil
 ### GetProperties
 
 `func (o *ProductCreate) GetProperties() []ServiceElement`
@@ -345,7 +360,22 @@ and a boolean to check if the value has been set.
 
 SetConfiguration sets Configuration field to given value.
 
+### HasConfiguration
 
+`func (o *ProductCreate) HasConfiguration() bool`
+
+HasConfiguration returns a boolean if a field has been set.
+
+### SetConfigurationNil
+
+`func (o *ProductCreate) SetConfigurationNil(b bool)`
+
+ SetConfigurationNil sets the value for Configuration to be an explicit nil
+
+### UnsetConfiguration
+`func (o *ProductCreate) UnsetConfiguration()`
+
+UnsetConfiguration ensures that no value is present for Configuration, not even an explicit nil
 ### GetIsResource
 
 `func (o *ProductCreate) GetIsResource() bool`
@@ -365,7 +395,22 @@ and a boolean to check if the value has been set.
 
 SetIsResource sets IsResource field to given value.
 
+### HasIsResource
 
+`func (o *ProductCreate) HasIsResource() bool`
+
+HasIsResource returns a boolean if a field has been set.
+
+### SetIsResourceNil
+
+`func (o *ProductCreate) SetIsResourceNil(b bool)`
+
+ SetIsResourceNil sets the value for IsResource to be an explicit nil
+
+### UnsetIsResource
+`func (o *ProductCreate) UnsetIsResource()`
+
+UnsetIsResource ensures that no value is present for IsResource, not even an explicit nil
 ### GetHasChildren
 
 `func (o *ProductCreate) GetHasChildren() bool`
@@ -385,7 +430,22 @@ and a boolean to check if the value has been set.
 
 SetHasChildren sets HasChildren field to given value.
 
+### HasHasChildren
 
+`func (o *ProductCreate) HasHasChildren() bool`
+
+HasHasChildren returns a boolean if a field has been set.
+
+### SetHasChildrenNil
+
+`func (o *ProductCreate) SetHasChildrenNil(b bool)`
+
+ SetHasChildrenNil sets the value for HasChildren to be an explicit nil
+
+### UnsetHasChildren
+`func (o *ProductCreate) UnsetHasChildren()`
+
+UnsetHasChildren ensures that no value is present for HasChildren, not even an explicit nil
 ### GetParentId
 
 `func (o *ProductCreate) GetParentId() string`

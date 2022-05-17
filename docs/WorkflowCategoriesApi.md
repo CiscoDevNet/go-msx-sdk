@@ -31,12 +31,12 @@ import (
 )
 
 func main() {
-    tenantId := TODO // string | 
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     workflowCategoryCreate := *openapiclient.NewWorkflowCategoryCreate("Name_example", "Title_example", "Description_example", "SchemaId_example") // WorkflowCategoryCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowCategoriesApi.CreateWorkflowCategory(context.Background()).TenantId(tenantId).WorkflowCategoryCreate(workflowCategoryCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowCategoriesApi.CreateWorkflowCategory(context.Background()).TenantId(tenantId).WorkflowCategoryCreate(workflowCategoryCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowCategoriesApi.CreateWorkflowCategory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -57,7 +57,7 @@ Other parameters are passed through a pointer to a apiCreateWorkflowCategoryRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenantId** | [**string**](string.md) |  | 
+ **tenantId** | **string** |  | 
  **workflowCategoryCreate** | [**WorkflowCategoryCreate**](WorkflowCategoryCreate.md) |  | 
 
 ### Return type
@@ -100,8 +100,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowCategoriesApi.DeleteWorkflowCategory(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowCategoriesApi.DeleteWorkflowCategory(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowCategoriesApi.DeleteWorkflowCategory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -163,11 +163,11 @@ import (
 )
 
 func main() {
-    tenantId := TODO // string |  (optional)
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowCategoriesApi.GetWorkflowCategoriesList(context.Background()).TenantId(tenantId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowCategoriesApi.GetWorkflowCategoriesList(context.Background()).TenantId(tenantId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowCategoriesApi.GetWorkflowCategoriesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -188,7 +188,7 @@ Other parameters are passed through a pointer to a apiGetWorkflowCategoriesListR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenantId** | [**string**](string.md) |  | 
+ **tenantId** | **string** |  | 
 
 ### Return type
 
@@ -230,8 +230,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowCategoriesApi.GetWorkflowCategory(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowCategoriesApi.GetWorkflowCategory(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowCategoriesApi.GetWorkflowCategory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -299,8 +299,8 @@ func main() {
     workflowCategoryUpdate := *openapiclient.NewWorkflowCategoryUpdate("Name_example", "Title_example", "Description_example", "SchemaId_example") // WorkflowCategoryUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkflowCategoriesApi.UpdateWorkflowCategory(context.Background(), id).WorkflowCategoryUpdate(workflowCategoryUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkflowCategoriesApi.UpdateWorkflowCategory(context.Background(), id).WorkflowCategoryUpdate(workflowCategoryUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowCategoriesApi.UpdateWorkflowCategory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

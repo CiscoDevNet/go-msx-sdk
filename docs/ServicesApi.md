@@ -35,8 +35,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ServicesApi.DeleteService(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServicesApi.DeleteService(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServicesApi.DeleteService``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -101,8 +101,8 @@ func main() {
     id := "id_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ServicesApi.GetService(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServicesApi.GetService(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServicesApi.GetService``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -171,8 +171,8 @@ func main() {
     tenantIds := []string{"Inner_example"} // []string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ServicesApi.GetServicesPage(context.Background()).Page(page).PageSize(pageSize).TenantIds(tenantIds).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServicesApi.GetServicesPage(context.Background()).Page(page).PageSize(pageSize).TenantIds(tenantIds).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServicesApi.GetServicesPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -234,13 +234,13 @@ import (
 )
 
 func main() {
-    productId := TODO // string | 
-    offerId := TODO // string | 
+    productId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
+    offerId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     legacyServiceOrder := *openapiclient.NewLegacyServiceOrder() // LegacyServiceOrder | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ServicesApi.SubmitOrder(context.Background()).ProductId(productId).OfferId(offerId).LegacyServiceOrder(legacyServiceOrder).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServicesApi.SubmitOrder(context.Background()).ProductId(productId).OfferId(offerId).LegacyServiceOrder(legacyServiceOrder).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServicesApi.SubmitOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -261,8 +261,8 @@ Other parameters are passed through a pointer to a apiSubmitOrderRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | [**string**](string.md) |  | 
- **offerId** | [**string**](string.md) |  | 
+ **productId** | **string** |  | 
+ **offerId** | **string** |  | 
  **legacyServiceOrder** | [**LegacyServiceOrder**](LegacyServiceOrder.md) |  | 
 
 ### Return type
@@ -302,13 +302,13 @@ import (
 )
 
 func main() {
-    productId := TODO // string | 
-    offerId := TODO // string | 
+    productId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
+    offerId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
     legacyServiceOrder := *openapiclient.NewLegacyServiceOrder() // LegacyServiceOrder | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ServicesApi.UpdateOrder(context.Background()).ProductId(productId).OfferId(offerId).LegacyServiceOrder(legacyServiceOrder).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServicesApi.UpdateOrder(context.Background()).ProductId(productId).OfferId(offerId).LegacyServiceOrder(legacyServiceOrder).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServicesApi.UpdateOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,8 +329,8 @@ Other parameters are passed through a pointer to a apiUpdateOrderRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productId** | [**string**](string.md) |  | 
- **offerId** | [**string**](string.md) |  | 
+ **productId** | **string** |  | 
+ **offerId** | **string** |  | 
  **legacyServiceOrder** | [**LegacyServiceOrder**](LegacyServiceOrder.md) |  | 
 
 ### Return type
@@ -374,8 +374,8 @@ func main() {
     serviceUpdate := *openapiclient.NewServiceUpdate() // ServiceUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ServicesApi.UpdateService(context.Background(), id).ServiceUpdate(serviceUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServicesApi.UpdateService(context.Background(), id).ServiceUpdate(serviceUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServicesApi.UpdateService``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

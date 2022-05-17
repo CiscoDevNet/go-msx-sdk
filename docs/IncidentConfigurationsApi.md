@@ -36,8 +36,8 @@ func main() {
     serviceNowConfigurationCreate := *openapiclient.NewServiceNowConfigurationCreate() // ServiceNowConfigurationCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentConfigurationsApi.CreateServiceNowConfiguration(context.Background()).ServiceNowConfigurationCreate(serviceNowConfigurationCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentConfigurationsApi.CreateServiceNowConfiguration(context.Background()).ServiceNowConfigurationCreate(serviceNowConfigurationCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentConfigurationsApi.CreateServiceNowConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -99,11 +99,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentConfigurationsApi.DeleteServiceNowConfiguration(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentConfigurationsApi.DeleteServiceNowConfiguration(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentConfigurationsApi.DeleteServiceNowConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -117,7 +117,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -167,8 +167,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentConfigurationsApi.GetConfiguration(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentConfigurationsApi.GetConfiguration(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentConfigurationsApi.GetConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -224,11 +224,11 @@ import (
 )
 
 func main() {
-    id := TODO // string | 
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentConfigurationsApi.GetServiceNowConfiguration(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentConfigurationsApi.GetServiceNowConfiguration(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentConfigurationsApi.GetServiceNowConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -244,7 +244,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) |  | 
+**id** | **string** |  | 
 
 ### Other Parameters
 
@@ -294,12 +294,12 @@ import (
 func main() {
     page := int32(0) // int32 | 
     pageSize := int32(10) // int32 | 
-    tenantId := TODO // string |  (optional)
+    tenantId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     domain := "domain_example" // string |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentConfigurationsApi.GetServiceNowConfigurationsPage(context.Background()).Page(page).PageSize(pageSize).TenantId(tenantId).Domain(domain).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentConfigurationsApi.GetServiceNowConfigurationsPage(context.Background()).Page(page).PageSize(pageSize).TenantId(tenantId).Domain(domain).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentConfigurationsApi.GetServiceNowConfigurationsPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int32** |  | 
  **pageSize** | **int32** |  | 
- **tenantId** | [**string**](string.md) |  | 
+ **tenantId** | **string** |  | 
  **domain** | **string** |  | 
 
 ### Return type
@@ -365,8 +365,8 @@ func main() {
     incidentConfigPatch := *openapiclient.NewIncidentConfigPatch() // IncidentConfigPatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentConfigurationsApi.PatchConfiguration(context.Background()).IncidentConfigPatch(incidentConfigPatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentConfigurationsApi.PatchConfiguration(context.Background()).IncidentConfigPatch(incidentConfigPatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentConfigurationsApi.PatchConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -429,8 +429,8 @@ func main() {
     incidentConfigUpdate := *openapiclient.NewIncidentConfigUpdate("ClientId_example", "ClientSecret_example", "Domain_example", "Password_example", "UserName_example") // IncidentConfigUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IncidentConfigurationsApi.UpdateConfiguration(context.Background()).IncidentConfigUpdate(incidentConfigUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IncidentConfigurationsApi.UpdateConfiguration(context.Background()).IncidentConfigUpdate(incidentConfigUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IncidentConfigurationsApi.UpdateConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EventId** | **string** |  | 
-**LastBilledOn** | **string** |  | 
-**NextBilledOn** | **string** |  | 
+**LastBilledOn** | **time.Time** |  | 
+**NextBilledOn** | **time.Time** |  | 
 **TenantId** | **string** |  | 
 
 ## Methods
 
 ### NewBillingCycleCreate
 
-`func NewBillingCycleCreate(eventId string, lastBilledOn string, nextBilledOn string, tenantId string, ) *BillingCycleCreate`
+`func NewBillingCycleCreate(eventId string, lastBilledOn time.Time, nextBilledOn time.Time, tenantId string, ) *BillingCycleCreate`
 
 NewBillingCycleCreate instantiates a new BillingCycleCreate object
 This constructor will assign default values to properties that have it defined,
@@ -50,40 +50,40 @@ SetEventId sets EventId field to given value.
 
 ### GetLastBilledOn
 
-`func (o *BillingCycleCreate) GetLastBilledOn() string`
+`func (o *BillingCycleCreate) GetLastBilledOn() time.Time`
 
 GetLastBilledOn returns the LastBilledOn field if non-nil, zero value otherwise.
 
 ### GetLastBilledOnOk
 
-`func (o *BillingCycleCreate) GetLastBilledOnOk() (*string, bool)`
+`func (o *BillingCycleCreate) GetLastBilledOnOk() (*time.Time, bool)`
 
 GetLastBilledOnOk returns a tuple with the LastBilledOn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastBilledOn
 
-`func (o *BillingCycleCreate) SetLastBilledOn(v string)`
+`func (o *BillingCycleCreate) SetLastBilledOn(v time.Time)`
 
 SetLastBilledOn sets LastBilledOn field to given value.
 
 
 ### GetNextBilledOn
 
-`func (o *BillingCycleCreate) GetNextBilledOn() string`
+`func (o *BillingCycleCreate) GetNextBilledOn() time.Time`
 
 GetNextBilledOn returns the NextBilledOn field if non-nil, zero value otherwise.
 
 ### GetNextBilledOnOk
 
-`func (o *BillingCycleCreate) GetNextBilledOnOk() (*string, bool)`
+`func (o *BillingCycleCreate) GetNextBilledOnOk() (*time.Time, bool)`
 
 GetNextBilledOnOk returns a tuple with the NextBilledOn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNextBilledOn
 
-`func (o *BillingCycleCreate) SetNextBilledOn(v string)`
+`func (o *BillingCycleCreate) SetNextBilledOn(v time.Time)`
 
 SetNextBilledOn sets NextBilledOn field to given value.
 
